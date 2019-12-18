@@ -1,0 +1,126 @@
+/* General Website Styling */
+body {
+  margin: 0;
+  padding: 0;
+  background: #ffffff;
+  font-family: 'Roboto', sans-serif;
+}
+
+footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+  color: #ffffff;
+  background: #520975;
+}
+
+img {
+  height: 400px;
+  width: auto;
+}
+
+.headshot {
+  height: 200px;
+  width: auto;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.content {
+  padding-bottom: 100px;
+  margin-left: 100px;
+  margin-right: 100px;
+}
+
+.buffer {
+  padding-top: 48px;
+}
+
+.title {
+  font-size: 68px;
+}
+
+/* Social Icons */
+.fas {
+  color: #ffffff;
+}
+
+.fas:hover {
+  opacity: 0.8;
+  color: #000000;
+  cursor: pointer;
+}
+
+.fab {
+  color: #ffffff;
+}
+
+.fab:hover {
+  opacity: 0.8;
+  color: #000000;
+  cursor: pointer;
+}
+
+/* Centered Name & TypeScript */
+.header-centered {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  text-align: center;
+  color: #000000;
+}
+
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+.column2 {
+  float: left;
+  width: 50%;
+}
+
+.column3 {
+  float: left;
+  width: 33.33%;
+}
+
+.column4 {
+  float: left;
+  width: 25%;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Logo */
+/* .luxbar-brand:hover {
+  opacity: 0.8;
+  color: #666666;
+  cursor: pointer;
+} */
+
+/* .luxbar-menu-royal,
+.luxbar-menu-royal .dropdown ul {
+    background-color: #520975;
+    color: #ffffff;
+} */
+
+.luxbar-menu-royal {
+  background-color: #520975;
+  color: #ffffff;
+}
+
+.luxbar-item:hover {
+  color: #000000;
+}
