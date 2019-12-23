@@ -121,6 +121,23 @@ img {
   color: #ffffff;
 }
 
+.luxbar-menu-royal .active {
+  background-color: #630092;
+}
+
 .luxbar-item:hover {
+  color: #000000;
+}
+
+.dropdown>ul .active{
+  background-color: #630092;
+}
+
+.dropdown>ul .luxbar-item {
+  background-color: #520975;
+  color: #ffffff;
+}
+
+.dropdown>ul .luxbar-item:hover {
   color: #000000;
 }

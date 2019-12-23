@@ -11,12 +11,27 @@
         <img src="assets/images/logo.png" alt="Fiji Crest">
       </div> -->
       <!-- <li class="luxbar-item"><a href="/">Zachary Andrews</a></li> -->
-      {% for page in site.listed_pages %}
-        <li class="luxbar-item">
-          <a href="{{ page.url }}" {% if page.url contains "assets" %} target="_blank" {% endif %}>
-            {{ page.name }}
-          </a>
-        </li>
+      {% for p in site.listed_pages %}
+        {% if p.type == "page" %}
+          <li class="luxbar-item {% if p.name == page.title or p.name == 'Home' and page.title == 'Pi Chapter of Phi Gamma Delta' %}active{% endif %}">
+            <a href="{{ p.url }}" {% if p.url contains "assets" %} target="_blank" {% endif %}>
+              {{ p.name }}
+            </a>
+          </li>
+        {% else if p.type == "dropdown" %}
+          <li class="luxbar-item dropdown {% if p.name == page.title or p.name == 'Home' and page.title == 'Pi Chapter of Phi Gamma Delta' %}active{% endif %}">
+            <a href="{{ p.url }}">{{ p.name }}</a>
+            <ul>
+            {% for sub in p.subpage %}
+              <li class="luxbar-item {% if sub.name == page.title %}active{% endif %}">
+                <a href="{{ sub.url }}" {% if sub.url contains "assets" %} target="_blank" {% endif %}>
+                  {{ sub.name }}
+                </a>
+              </li>
+            {% endfor %}
+            </ul>
+          </li>
+        {% endif %}
       {% endfor %}
       <!-- <li class="luxbar-item"><a href="/">Home</a></li>
       <li class="luxbar-item"><a href="/assets/Resume.pdf" target="_blank">Resume</a></li> -->

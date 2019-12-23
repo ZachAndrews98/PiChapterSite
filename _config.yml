@@ -44,14 +44,23 @@ plugins:
 
 listed_pages:
  - name: Home
+   type: page
    url: /
  - name: About
+   type: page
    url: /about.html
  - name: Brothers
+   type: dropdown
    url: /brothers.html
+   subpage:
+     - name: Cabinet
+       type: page
+       url: /cabinet.html
  - name: Media
+   type: page
    url: /media.html
  - name: Contact
+   type: page
    url: /contact.html
 
 motto: Friendship, Knowledge, Service, Morality, & Excellence
