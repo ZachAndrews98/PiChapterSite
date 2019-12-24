@@ -21,6 +21,68 @@ img {
   width: auto;
 }
 
+@media only screen and (max-width: 600px) {
+  img {
+    height: 200px;
+    width: auto;
+  }
+
+  h2 {
+    font-size: 20px;
+  }
+
+  .title {
+    font-size: 35px;
+  }
+
+  .column2 {
+    /* float: left; */
+    width: 100%;
+  }
+
+  .column3 {
+    /* float: left; */
+    width: 100%;
+  }
+
+  .column4 {
+    /* float: left; */
+    width: 100%;
+  }
+
+  /* !important */
+  .luxbar-brand {
+    font-size: 1.1em !important;
+    padding: 18px 24px 18px 24px;
+  }
+}
+
+@media only screen and (min-width: 600px) {
+  .title {
+    font-size: 68px;
+  }
+
+  .column2 {
+    float: left;
+    width: 50%;
+  }
+
+  .column3 {
+    float: left;
+    width: 33.33%;
+  }
+
+  .column4 {
+    float: left;
+    width: 25%;
+  }
+
+  .luxbar-brand {
+    font-size: 1.6em;
+    padding: 18px 24px 18px 24px;
+  }
+}
+
 .headshot {
   height: 200px;
   width: auto;
@@ -37,10 +99,6 @@ img {
 
 .buffer {
   padding-top: 48px;
-}
-
-.title {
-  font-size: 68px;
 }
 
 /* Social Icons */
@@ -81,40 +139,11 @@ img {
   text-align: center;
 }
 
-.column2 {
-  float: left;
-  width: 50%;
-}
-
-.column3 {
-  float: left;
-  width: 33.33%;
-}
-
-.column4 {
-  float: left;
-  width: 25%;
-}
-
-/* Clear floats after the columns */
 .row:after {
   content: "";
   display: table;
   clear: both;
 }
-
-/* Logo */
-/* .luxbar-brand:hover {
-  opacity: 0.8;
-  color: #666666;
-  cursor: pointer;
-} */
-
-/* .luxbar-menu-royal,
-.luxbar-menu-royal .dropdown ul {
-    background-color: #520975;
-    color: #ffffff;
-} */
 
 .luxbar-menu-royal {
   background-color: #520975;
@@ -123,6 +152,20 @@ img {
 
 .luxbar-menu-royal .active {
   background-color: #630092;
+}
+
+/* .luxbar-hamburger {
+  padding: 18px 24px 18px 24px;
+  position: relative;
+  cursor: pointer;
+} */
+
+.luxbar-hamburger span, .luxbar-hamburger span::before, .luxbar-hamburger span::after {
+    display: block;
+    height: 2px;
+    width: 26px;
+    transition: 0.6s ease;
+    background-color: black;
 }
 
 .luxbar-item:hover {
