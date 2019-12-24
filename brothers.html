@@ -2,8 +2,53 @@
 layout: default
 title: Brothers
 ---
+{% assign num = site.data.brothers | size %}
 <h1 class="center">Brothers</h1>
-<h2 class="center">Seniors</h2>
+
+<!-- Smart brother list -> gets brother's name and info from brothers.yml -->
+{% for brother in site.data.brothers %}
+  <div class="column4">
+    <img class="headshot" src="{% if brother.image != None %} {{brother.image}} {% else %} /assets/images/test.jpg {% endif %}">
+    <h3 class="center">{{ brother.name }}</h3>
+    <p class="center">Major: {{ brother.major }}<br>Minor: {{ brother.minor }}<br></p>
+  </div>
+{% endfor %}
+
+<!-- Smart broken up into year
+<h2>Seniors</h2>
+{% for brother in site.data.brothers.Seniors %}
+  <div class="column4">
+    <img class="headshot" src="{% if brother.image != None %} {{brother.image}} {% else %} /assets/images/test.jpg {% endif %}">
+    <h3 class="center">{{ brother.name }}</h3>
+    <p class="center">Major: {{ brother.major }}<br>Minor: {{ brother.minor }}</p>
+  </div>
+{% endfor %}
+<h2>Juniors</h2>
+{% for brother in site.data.brothers.Juniors %}
+  <div class="column4">
+    <img class="headshot" src="{% if brother.image != None %} {{brother.image}} {% else %} /assets/images/test.jpg {% endif %}">
+    <h3 class="center">{{ brother.name }}</h3>
+    <p class="center">Major: {{ brother.major }}<br>Minor: {{ brother.minor }}</p>
+  </div>
+{% endfor %}
+<h2>Sophmores</h2>
+{% for brother in site.data.brothers.Sophmores %}
+  <div class="column4">
+    <img class="headshot" src="{% if brother.image != None %} {{brother.image}} {% else %} /assets/images/test.jpg {% endif %}">
+    <h3 class="center">{{ brother.name }}</h3>
+    <p class="center">Major: {{ brother.major }}<br>Minor: {{ brother.minor }}</p>
+  </div>
+{% endfor %}
+<h2>Freshmen</h2>
+{% for brother in site.data.brothers.Freshmen %}
+  <div class="column4">
+    <img class="headshot" src="{% if brother.image != None %} {{brother.image}} {% else %} /assets/images/test.jpg {% endif %}">
+    <h3 class="center">{{ brother.name }}</h3>
+    <p class="center">Major: {{ brother.major }}<br>Minor: {{ brother.minor }}</p>
+  </div>
+{% endfor %} -->
+
+<!--<h2 class="center">Seniors</h2>
 <div class="row">
   <div class="column4">
     <img class="headshot" src="assets/images/2020/andrews.jpg">
@@ -127,4 +172,4 @@ title: Brothers
     <img class="headshot" class="headshot" src="assets/images/test.jpg">
     <p class="center">Test3</p>
   </div>
-</div>
+</div> -->

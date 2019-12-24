@@ -159,13 +159,9 @@ footer {
   background-color: #630092;
 }
 
-/* .luxbar-hamburger {
-  padding: 18px 24px 18px 24px;
-  position: relative;
-  cursor: pointer;
-} */
-
-.luxbar-hamburger span, .luxbar-hamburger span::before, .luxbar-hamburger span::after {
+.luxbar-hamburger span,
+.luxbar-hamburger span::before,
+.luxbar-hamburger span::after {
     display: block;
     height: 2px;
     width: 26px;
@@ -175,6 +171,7 @@ footer {
 
 .luxbar-item:hover {
   color: #000000;
+  font-weight: bolder;
 }
 
 .dropdown>ul .active{
@@ -184,8 +181,10 @@ footer {
 .dropdown>ul .luxbar-item {
   background-color: #520975;
   color: #ffffff;
+  font-weight: normal;
 }
 
 .dropdown>ul .luxbar-item:hover {
   color: #000000;
+  font-weight: bolder;
 }

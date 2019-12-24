@@ -1,0 +1,136 @@
+# Seniors:
+- name: Zachary Andrews
+  image: /assets/images/2020/andrews.jpg
+  class: 2020
+  major: Computer Science
+  minor: Economics
+
+- name: Cayton Hornberger
+  image: /assets/images/2020/hornberger.png
+  class: 2020
+  major: Physics
+  minor: History
+
+- name: Devin Spitalny
+  image: /assets/images/2020/spitalny.png
+  class: 2020
+  major: Computer Science
+  minor: Economics
+
+- name: Matt Bauer
+  image: /assets/images/2020/bauer.png
+  class: 2020
+  major: Political Science
+  minor: Economics
+
+- name: Jared Boboeck
+  image: /assets/images/2020/bobeck.png
+  class: 2020
+  major: Biology
+  minor: History
+
+- name: Jerfenson Cerda Meija
+  image: /assets/images/2020/meija.png
+  class: 2020
+  major: Computer Science
+  minor: Economics
+
+- name: Zachary Zoll
+  image: /assets/images/2020/zoll.png
+  class: 2020
+  major: Physics
+  minor: History
+
+- name: Andrew Kirn
+  image:
+  class: 2020
+  major: Economics
+  minor: English
+
+# Juniors:
+- name: Jakob Drozd
+  image: /assets/images/2021/drozd.jpg
+  class: 2021
+  major:
+  minor:
+
+- name: Colin Quigley
+  image: /assets/images/2021/quigley.png
+  class: 2021
+  major: Neurology
+  minor:
+
+- name: William Sutherland
+  image: /assets/images/2021/sutherland.png
+  class: 2021
+  major: History
+  minor:
+
+# Sophmores:
+- name: Max Boshaw
+  image: /assets/images/2022/boshaw.jpg
+  class: 2022
+  major: Physics
+  minor:
+
+- name: Nathan Bruner
+  image: /assets/images/2022/bruner.png
+  class: 2022
+  major: Psycology
+  minor:
+
+- name: Caden Koscinski
+  image: /assets/images/2022/koscinski.png
+  class: 2022
+  major: Computer Science
+  minor:
+
+- name: Wesley Long
+  image: /assets/images/2022/long.png
+  class: 2022
+  major: Computer Science
+  minor:
+
+- name: Danny Ullrich
+  image: /assets/images/2022/ullrich.png
+  class: 2022
+  major: Computer Science
+  minor:
+
+- name: Marcus Wolf
+  image: /assets/images/2022/wolf.jpg
+  class: 2022
+  major: Business
+  minor:
+
+- name: Aj Yarborough
+  image: /assets/images/2022/yarborough.jpg
+  class: 2022
+  major: Business
+  minor: Psych
+
+- name: David Salazar
+  image:
+  class: 2022
+  major: Biology
+  minor:
+
+- name: Conner Masterlarz
+  image:
+  class: 2022
+  major: Business
+  minor:
+
+- name: Jose Chavez
+  image:
+  class: 2022
+  major: Business
+  minor:
+
+- name: Zachary Ecker
+  image:
+  class: 2022
+  major: Biology
+  minor:
+
+# Freshmen:
