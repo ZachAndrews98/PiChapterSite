@@ -63,7 +63,9 @@ listed_pages:
    type: page
    url: /contact.html
 
-motto: Friendship, Knowledge, Service, Morality, & Excellence
+message: >-
+  Friendship^1000, Knowledge^1000, Service^1000, Morality^1000,
+  & Excellence^1000<br><br>Building Couragous Leaders
 
 # Exclude from processing.
 # The following items will not be processed, by default.
