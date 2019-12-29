@@ -1,6 +1,6 @@
 # Seniors:
 - name: Zachary Andrews
-  image: /assets/images/2020/andrews.jpg
+  image: /assets/images/2020/andrews.png
   class: 2020
   major: Computer Science
   minor: Economics
@@ -49,7 +49,7 @@
 
 # Juniors:
 - name: Jakob Drozd
-  image: /assets/images/2021/drozd.jpg
+  image: /assets/images/2021/drozd.png
   class: 2021
   major:
   minor:
@@ -68,7 +68,7 @@
 
 # Sophmores:
 - name: Max Boshaw
-  image: /assets/images/2022/boshaw.jpg
+  image: /assets/images/2022/boshaw.png
   class: 2022
   major: Physics
   minor:
@@ -98,13 +98,13 @@
   minor:
 
 - name: Marcus Wolf
-  image: /assets/images/2022/wolf.jpg
+  image: /assets/images/2022/wolf.png
   class: 2022
   major: Business
   minor:
 
 - name: Aj Yarborough
-  image: /assets/images/2022/yarborough.jpg
+  image: /assets/images/2022/yarborough.png
   class: 2022
   major: Business
   minor: Psych
