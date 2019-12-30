@@ -25,8 +25,8 @@ description: >- # this means to ignore newlines until "baseurl:"
   of extraordinary gentlemen through diversity, excellence, and love for oneself.
   We aim to seek the highest standard of Friendship through diverse lifelong
   bonds of brotherhood. We aim to achieve true Knowledge through scholarly
-  excellence. We aim to be the standard of Servic for fraternities and
-  sororities on campus through our commitment to philanthropy and comomunity
+  excellence. We aim to be the standard of Service for fraternities and
+  sororities on campus through our commitment to philanthropy and community
   service. We aim to be the definition of Morality for knowing right from wrong
   and treating others with the utmost respect and showing we are truly Fiji
   gentlemen. We aim to achieve Excellence by upholding these four values and
@@ -39,8 +39,8 @@ url: "" # the base hostname & protocol for your site, e.g. http://example.com
 
 # Build settings
 theme: minima
-plugins:
-  - jekyll-feed
+# plugins:
+  # - jekyll-feed
 
 listed_pages:
  - name: Home
