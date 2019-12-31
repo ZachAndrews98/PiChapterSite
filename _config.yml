@@ -56,9 +56,9 @@ listed_pages:
      - name: Cabinet
        type: page
        url: /cabinet.html
- - name: Media
-   type: page
-   url: /media.html
+ # - name: Media
+ #   type: page
+   # url: /media.html
  - name: Contact
    type: page
    url: /contact.html

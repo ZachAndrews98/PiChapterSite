@@ -30,7 +30,8 @@ title: Brothers
     {% endif %}
     <div class="{{ cSize }}">
       <img class="headshot"
-      src="{% if brother.image != None %} {{brother.image}} {% else %} /assets/images/test.jpg {% endif %}">
+      src="{% if brother.image != None %} {{brother.image}} {% else %} /assets/images/test.jpg {% endif %}"
+      alt="{{ brother.name }}">
       <h3 class="center">{{ brother.name }}</h3>
       <p class="center">Major: {{ brother.major }}<br>Minor: {{ brother.minor }}<br></p>
     </div>
