@@ -1,18 +1,16 @@
+# In order to have a brother appear on the <Brothers> page they must be added here under their class year.
+# This is something that will have to be updated at the end of each academic year and whenever there are new
+# members. The required information can be seen below and a sample is available below (remove '#').
+
+# - name:
+#   image:
+#   class:
+#   major:
+#   minor:
+
 Seniors:
 - name: Zachary Andrews
   image: /assets/images/2020/andrews.png
-  class: 2020
-  major: major
-  minor: minor
-
-- name: Cayton Hornberger
-  image: /assets/images/2020/hornberger.png
-  class: 2020
-  major: major
-  minor: minor
-
-- name: Devin Spitalny
-  image: /assets/images/2020/spitalny.png
   class: 2020
   major: major
   minor: minor
@@ -23,26 +21,38 @@ Seniors:
   major: major
   minor: minor
 
-- name: Jared Boboeck
+- name: Jared Bobeck
   image: /assets/images/2020/bobeck.png
   class: 2020
   major: major
   minor: minor
 
-- name: Jerfenson Cerda Meija
-  image: /assets/images/2020/meija.png
-  class: 2020
-  major: major
-  minor: minor
-
-- name: Zachary Zoll
-  image: /assets/images/2020/zoll.png
+- name: Cayton Hornberger
+  image: /assets/images/2020/hornberger.png
   class: 2020
   major: major
   minor: minor
 
 - name: Andrew Kirn
   image:
+  class: 2020
+  major: major
+  minor: minor
+
+- name: Jerfenson Meija
+  image: /assets/images/2020/meija.png
+  class: 2020
+  major: major
+  minor: minor
+
+- name: Devin Spitalny
+  image: /assets/images/2020/spitalny.png
+  class: 2020
+  major: major
+  minor: minor
+
+- name: Zachary Zoll
+  image: /assets/images/2020/zoll.png
   class: 2020
   major: major
   minor: minor
@@ -79,6 +89,18 @@ Sophmores:
   major: major
   minor: minor
 
+- name: Jose Chavez
+  image:
+  class: 2022
+  major: major
+  minor: minor
+
+- name: Zachary Ecker
+  image:
+  class: 2022
+  major: major
+  minor: minor
+
 - name: Caden Koscinski
   image: /assets/images/2022/koscinski.png
   class: 2022
@@ -87,6 +109,18 @@ Sophmores:
 
 - name: Wesley Long
   image: /assets/images/2022/long.png
+  class: 2022
+  major: major
+  minor: minor
+
+- name: Conner Masterlarz
+  image:
+  class: 2022
+  major: major
+  minor: minor
+
+- name: David Salazar
+  image:
   class: 2022
   major: major
   minor: minor
@@ -105,30 +139,6 @@ Sophmores:
 
 - name: Aj Yarborough
   image: /assets/images/2022/yarborough.png
-  class: 2022
-  major: major
-  minor: minor
-
-- name: David Salazar
-  image:
-  class: 2022
-  major: major
-  minor: minor
-
-- name: Conner Masterlarz
-  image:
-  class: 2022
-  major: major
-  minor: minor
-
-- name: Jose Chavez
-  image:
-  class: 2022
-  major: major
-  minor: minor
-
-- name: Zachary Ecker
-  image:
   class: 2022
   major: major
   minor: minor

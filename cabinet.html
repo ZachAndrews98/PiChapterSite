@@ -5,30 +5,40 @@ title: Cabinet
 <h1 class="center">Cabinet</h1>
 <div class="row">
   <div class="column3">
+    {% assign last = site.data.committees.Cabinet[0].name | split: ' ' %}
     <h2 class="center">President</h2>
-    <img class="headshot" class="headshot" src="assets/images/2022/wolf.png">
-    <p class="center">Marcus Wolf</p>
+    <img class="headshot"
+    src="assets/images/{{ site.data.committees.Cabinet[0].class }}/{{ last[1] | downcase }}.png">
+    <p class="center">{{ site.data.committees.Cabinet[0].name }}</p>
   </div>
   <div class="column3">
+    {% assign last = site.data.committees.Cabinet[1].name | split: ' ' %}
     <h2 class="center">Treasurer</h2>
-    <img class="headshot" class="headshot" src="/assets/images/2022/boshaw.png">
-    <p class="center">Max Boshaw</p>
+    <img class="headshot"
+     src="/assets/images/{{ site.data.committees.Cabinet[1].class }}/{{ last[1] | downcase }}.png">
+    <p class="center">{{ site.data.committees.Cabinet[1].name }}</p>
   </div>
   <div class="column3">
+    {% assign last = site.data.committees.Cabinet[2].name | split: ' ' %}
     <h2 class="center">Recording Secretary</h2>
-    <img class="headshot" src="/assets/images/2022/koscinski.png">
-    <p class="center">Caden Koscinski</p>
+    <img class="headshot"
+    src="/assets/images/{{ site.data.committees.Cabinet[2].class }}/{{ last[1] | downcase }}.png">
+    <p class="center">{{ site.data.committees.Cabinet[2].name }}</p>
   </div>
 </div>
 <div class="row">
   <div class="column2">
+    {% assign last = site.data.committees.Cabinet[3].name | split: ' ' %}
      <h2 class="center">Corresponding Secretary</h2>
-     <img class="headshot" src="/assets/images/2022/yarborough.png">
-     <p class="center">AJ Yarborough</p>
+     <img class="headshot"
+     src="/assets/images/{{ site.data.committees.Cabinet[3].class }}/{{ last[1] | downcase }}.png">
+     <p class="center">{{ site.data.committees.Cabinet[3].name }}</p>
   </div>
   <div class="column2">
+    {% assign last = site.data.committees.Cabinet[4].name | split: ' ' %}
      <h2 class="center">Historian</h2>
-     <img class="headshot" src="/assets/images/2021/sutherland.png">
-     <p class="center">William Sutherland</p>
+     <img class="headshot"
+     src="/assets/images/{{ site.data.committees.Cabinet[4].class }}/{{ last[1] | downcase }}.png">
+     <p class="center">{{ site.data.committees.Cabinet[4].name }}</p>
   </div>
 </div>

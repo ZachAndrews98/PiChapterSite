@@ -41,6 +41,11 @@ footer {
     width: 25%;
   }
 
+  .column5 {
+    float: left;
+    width: 20%;
+  }
+
   .luxbar-brand {
     font-size: 1.6em;
     padding: 18px 24px 18px 24px;
@@ -50,6 +55,22 @@ footer {
     padding-bottom: 100px;
     margin-left: 100px;
     margin-right: 100px;
+  }
+
+  .dropdown>ul .luxbar-item {
+    background-color: #520975;
+    color: #ffffff;
+    font-weight: normal;
+    text-align: center;
+    padding: 5px 10px 5px 0px !important;
+  }
+
+  .headshot {
+    height: 200px;
+    width: auto;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
   }
 }
 
@@ -68,17 +89,18 @@ footer {
   }
 
   .column2 {
-    /* float: left; */
     width: 100%;
   }
 
   .column3 {
-    /* float: left; */
     width: 100%;
   }
 
   .column4 {
-    /* float: left; */
+    width: 100%;
+  }
+
+  .column5 {
     width: 100%;
   }
 
@@ -92,14 +114,20 @@ footer {
     margin-left: 50px;
     margin-right: 50px;
   }
-}
 
-.headshot {
-  height: 200px;
-  width: auto;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
+  .dropdown>ul .luxbar-item {
+    background-color: #520975;
+    color: #ffffff;
+    font-weight: normal;
+  }
+
+  .headshot {
+    height: 300px;
+    width: auto;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
 }
 
 .buffer {
@@ -176,12 +204,6 @@ footer {
 
 .dropdown>ul .active{
   background-color: #630092;
-}
-
-.dropdown>ul .luxbar-item {
-  background-color: #520975;
-  color: #ffffff;
-  font-weight: normal;
 }
 
 .dropdown>ul .luxbar-item:hover {

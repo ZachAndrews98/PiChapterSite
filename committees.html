@@ -1,0 +1,37 @@
+---
+title: Committees
+layout: default
+---
+{% assign length = site.data.committees.Committees | size %}
+{% if length != 0 %}
+  {% assign cSize = "column4" %}
+  {% for committee in site.data.committees.Committees %}
+    {% assign check = forloop.index | modulo: 4 %}
+    {% assign diff = length | minus: forloop.index %}
+    {% if check == 1 %}
+      <div class="row">
+      {% if diff < 4 %}
+        {% if diff == 2 %}
+          {% assign cSize = "column3" %}
+        {% endif %}
+        {% if diff == 1 %}
+          {% assign cSize = "column2" %}
+        {% endif %}
+        {% if diff == 0 %}
+          {% assign cSize = "" %}
+        {% endif %}
+      {% endif %}
+    {% endif %}
+    <div class="{{ cSize }}">
+      <h2  class="center">{{ committee.role }}</h2>
+      <img class="headshot"
+      src="/assets/images/test.jpg"
+      alt="{{ commitee.name }}">
+      <h3 class="center">{{ committee.name }}</h3>
+      <!-- <p class="center">Major: {{ brother.major }}<br>Minor: {{ commitee.minor }}<br></p> -->
+    </div>
+    {% if check == 0 or diff == 0%}
+    </div>
+    {% endif %}
+  {% endfor %}
+{% endif %}

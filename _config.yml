@@ -32,7 +32,7 @@ description: >- # this means to ignore newlines until "baseurl:"
   gentlemen. We aim to achieve Excellence by upholding these four values and
   will aim to always lead with love and compassion for oneself and for the world.
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "" # the base hostname & protocol for your site, e.g. http://example.com
+url: "https://alleghenyfiji.netlify.com" # the base hostname & protocol for your site, e.g. http://example.com
 # twitter_username: jekyllrb
 # github_username:  ZachAndrews98
 # linkedin_username: ZachAndrews98
@@ -56,6 +56,9 @@ listed_pages:
      - name: Cabinet
        type: page
        url: /cabinet.html
+     - name: Committees
+       type: page
+       url: /committees.html
  # - name: Media
  #   type: page
    # url: /media.html

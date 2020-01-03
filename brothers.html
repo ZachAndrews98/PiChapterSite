@@ -4,11 +4,13 @@ title: Brothers
 ---
 <h1 class="center">Brothers</h1>
 <!-- Smart layout broken up into year -->
-{% assign length = site.data.brothers.Seniors | size %}
+
+<!-- Seniors -->
+{% assign length = site.data.brothers_list.Seniors | size %}
 {% if length != 0 %}
   <h2>Seniors</h2>
   {% assign cSize = "column4" %}
-  {% for brother in site.data.brothers.Seniors %}
+  {% for brother in site.data.brothers_list.Seniors %}
     {% assign check = forloop.index | modulo: 4 %}
     {% assign diff = length | minus: forloop.index %}
     {% if check == 1 %}
@@ -16,22 +18,19 @@ title: Brothers
       {% if diff < 4 %}
         {% if diff == 2 %}
           {% assign cSize = "column3" %}
-          {% assign check = false %}
         {% endif %}
         {% if diff == 1 %}
           {% assign cSize = "column2" %}
-          {% assign check = false %}
         {% endif %}
         {% if diff == 0 %}
           {% assign cSize = "" %}
-          {% assign check = false %}
         {% endif %}
       {% endif %}
     {% endif %}
     <div class="{{ cSize }}">
-      <img class="headshot"
-      src="{% if brother.image != None %} {{brother.image}} {% else %} /assets/images/test.jpg {% endif %}"
-      alt="{{ brother.name }}">
+      {% assign last = brother.name | split: ' ' %}
+      {% assign image = "/assets/images/" | append: brother.class | append: "/" | append: last[1] | downcase | append: ".png" %}
+      <img class="headshot" src="{{ image }}" onerror="this.src='/assets/images/logo.png';" alt="{{ brother.name }}">
       <h3 class="center">{{ brother.name }}</h3>
       <p class="center">Major: {{ brother.major }}<br>Minor: {{ brother.minor }}<br></p>
     </div>
@@ -40,12 +39,14 @@ title: Brothers
     {% endif %}
   {% endfor %}
 {% endif %}
-{% assign length = site.data.brothers.Juniors | size %}
+
+<!-- Juniors -->
+{% assign length = site.data.brothers_list.Juniors | size %}
 {% if length != 0 %}
   <br>
   <h2>Juniors</h2>
   {% assign cSize = "column4" %}
-  {% for brother in site.data.brothers.Juniors %}
+  {% for brother in site.data.brothers_list.Juniors %}
     {% assign check = forloop.index | modulo: 4 %}
     {% assign diff = length | minus: forloop.index %}
     {% if check == 1 %}
@@ -53,21 +54,19 @@ title: Brothers
       {% if diff < 4 %}
         {% if diff == 2 %}
           {% assign cSize = "column3" %}
-          {% assign check = false %}
         {% endif %}
         {% if diff == 1 %}
           {% assign cSize = "column2" %}
-          {% assign check = false %}
         {% endif %}
         {% if diff == 0 %}
           {% assign cSize = "" %}
-          {% assign check = false %}
         {% endif %}
       {% endif %}
     {% endif %}
     <div class="{{ cSize }}">
-      <img class="headshot"
-      src="{% if brother.image != None %} {{brother.image}} {% else %} /assets/images/test.jpg {% endif %}">
+      {% assign last = brother.name | split: ' ' %}
+            {% assign image = "/assets/images/" | append: brother.class | append: "/" | append: last[1] | downcase | append: ".png" %}
+      <img class="headshot" src="{{ image }}" onerror="this.src='/assets/images/logo.png';" alt="{{ brother.name }}">
       <h3 class="center">{{ brother.name }}</h3>
       <p class="center">Major: {{ brother.major }}<br>Minor: {{ brother.minor }}<br></p>
     </div>
@@ -76,12 +75,14 @@ title: Brothers
     {% endif %}
   {% endfor %}
 {% endif %}
-{% assign length = site.data.brothers.Sophmores | size %}
+
+<!-- Sophmores -->
+{% assign length = site.data.brothers_list.Sophmores | size %}
 {% if length != 0 %}
   <br>
   <h2>Sophmores</h2>
   {% assign cSize = "column4" %}
-  {% for brother in site.data.brothers.Sophmores %}
+  {% for brother in site.data.brothers_list.Sophmores %}
     {% assign check = forloop.index | modulo: 4 %}
     {% assign diff = length | minus: forloop.index %}
     {% if check == 1 %}
@@ -90,21 +91,19 @@ title: Brothers
       {% if diff < 4 %}
         {% if diff == 2 %}
           {% assign cSize = "column3" %}
-          {% assign check = false %}
         {% endif %}
         {% if diff == 1 %}
           {% assign cSize = "column2" %}
-          {% assign check = false %}
         {% endif %}
         {% if diff == 0 %}
           {% assign cSize = "" %}
-          {% assign check = false %}
         {% endif %}
       {% endif %}
     {% endif %}
     <div class="{{ cSize }}">
-      <img class="headshot"
-      src="{% if brother.image != None %} {{brother.image}} {% else %} /assets/images/test.jpg {% endif %}">
+      {% assign last = brother.name | split: ' ' %}
+            {% assign image = "/assets/images/" | append: brother.class | append: "/" | append: last[1] | downcase | append: ".png" %}
+      <img class="headshot" src="{{ image }}" onerror="this.src='/assets/images/logo.png';" alt="{{ brother.name }}">
       <h3 class="center">{{ brother.name }}</h3>
       <p class="center">Major: {{ brother.major }}<br>Minor: {{ brother.minor }}<br></p>
     </div>
@@ -113,12 +112,14 @@ title: Brothers
     {% endif %}
   {% endfor %}
 {% endif %}
-{% assign length = site.data.brothers.Freshmen | size %}
+
+<!-- Freshmen -->
+{% assign length = site.data.brothers_list.Freshmen | size %}
 {% if length != 0 %}
   <br>
   <h2>Freshmen</h2>
   {% assign cSize = "column4" %}
-  {% for brother in site.data.brothers.Freshmen %}
+  {% for brother in site.data.brothers_list.Freshmen %}
     {% assign check = forloop.index | modulo: 4 %}
     {% assign diff = length | minus: forloop.index %}
     {% if check == 1 %}
@@ -127,21 +128,19 @@ title: Brothers
       {% if diff < 4 %}
         {% if diff == 2 %}
           {% assign cSize = "column3" %}
-          {% assign check = false %}
         {% endif %}
         {% if diff == 1 %}
           {% assign cSize = "column2" %}
-          {% assign check = false %}
         {% endif %}
         {% if diff == 0 %}
           {% assign cSize = "" %}
-          {% assign check = false %}
         {% endif %}
       {% endif %}
     {% endif %}
     <div class="{{ cSize }}">
-      <img class="headshot"
-      src="{% if brother.image != None %} {{brother.image}} {% else %} /assets/images/test.jpg {% endif %}">
+      {% assign last = brother.name | split: ' ' %}
+            {% assign image = "/assets/images/" | append: brother.class | append: "/" | append: last[1] | downcase | append: ".png" %}
+      <img class="headshot" src="{{ image }}" onerror="this.src='/assets/images/logo.png';" alt="{{ brother.name }}">
       <h3 class="center">{{ brother.name }}</h3>
       <p class="center">Major: {{ brother.major }}<br>Minor: {{ brother.minor }}<br></p>
     </div>

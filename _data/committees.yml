@@ -1,0 +1,57 @@
+Cabinet:
+- role: President
+  name: Marcus Wolf
+  class: 2022
+
+- role: Treasurer
+  name: Max Boshaw
+  class: 2022
+
+- role: Recording Secretary
+  name: Caden Koscinski
+  class: 2022
+
+- role: Corresponding Secretary
+  name: AJ Yarborough
+  class: 2022
+
+- role: Historian
+  name: William Sutherland
+  class: 2021
+
+Committees:
+- role: Recruitment Chair
+  name: test test
+  class:
+
+- role: Brotherhood Chair
+  name: test test
+  class:
+
+- role: Social Chair
+  name: test test
+  class:
+
+- role: Risk Management Chair
+  name: test test
+  class:
+
+- role: Pig Dinner Chair
+  name: test test
+  class:
+
+- role: Tech Chair
+  name: test test
+  class:
+
+- role: Social Media Chair
+  name: test test
+  class:
+
+- role: T-Shirt Chair
+  name: test test
+  class:
+
+- role: Fundraising
+  name: test test
+  class: 
