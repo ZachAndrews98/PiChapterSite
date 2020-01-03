@@ -83,9 +83,10 @@
   </div>
   <div class="content">
     <div class="center">
-  <!-- <form style="border:solid"> -->
   <h1>Contact</h1>
-  <form class="form-style-9" name="contact" method="POST" data-netlify="true" data-netlify-recaptcha="true">
+  <!-- <p>If you would like to contact the chapter, please fill out the following form with your name, email, and
+    why you are reaching out to us.</p> -->
+  <form class="form-style-9" name="contact" method="POST" data-netlify="true" data-netlify-recaptcha="true" action="/success.html">
     <ul>
     <li>
         <input type="text" name="name" class="field-style field-split align-left" placeholder="Name" >
@@ -100,15 +101,13 @@
     <li>
       <textarea name="message" class="field-style" placeholder="Message"></textarea>
     </li>
-    <div data-netlify-recaptcha="true"></div>
+    <div data-netlify-recaptcha="true" style="padding-bottom: 10px"></div>
     <li>
       <input type="submit" value="Send Message"/>
     </li>
     </ul>
   </form>
 </div>
-<!-- <div class="buffer">
-</div> -->
 
   </div>
 </body>
@@ -116,12 +115,18 @@
   <script src="/assets/js/typedjs/typed.min.js"></script>
   <script src="/assets/js/site.js"></script>
   <script src="https://kit.fontawesome.com/05f94537f5.js" crossorigin="anonymous"></script>
-  <div style="padding-top: 15px">
-    <a href="mailto:fiji@allegheny.edu"><i class="fas fa-envelope fa-2x"></i></a>
-    <a href="https://www.facebook.com/allegheny.fiji/"><i class="fab fa-facebook fa-2x"></i></a>
-    <a href="#/"><i class="fab fa-instagram fa-2x"></i></a>
+  <div class="row">
+    <div>
+      <div class="column2" style="margin-top: 10px">
+        <a href="mailto:fiji@allegheny.edu"><i class="fas fa-envelope fa-2x"></i></a>
+        <a href="https://www.facebook.com/allegheny.fiji/"><i class="fab fa-facebook fa-2x"></i></a>
+        <a href="#/"><i class="fab fa-instagram fa-2x"></i></a>
+      </div>
+    </div>
+    <div class="column2">
+      <p>&copy Phi Gamma Delta Pi Chapter. All Rights Reserved.</p>
+    </div>
   </div>
-  <p>&copy Phi Gamma Delta Pi Chapter. All Rights Reserved.</p>
 </footer>
 
 </html>
