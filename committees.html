@@ -26,9 +26,9 @@ layout: default
     <div class="{{ cSize }}">
       {% assign last = committee.name | split: ' ' %}
       {% assign image = "/assets/images/" | append: committee.class | append: "/" | append: last[1] | downcase | append: ".png" %}
-      <h3 class="center">{{ committee.role }}</h3>
+      <h2 class="center">{{ committee.role }}</h2>
       <img class="headshot" src="{{ image }}" onerror="this.src='/assets/images/logo.png';" alt="{{ committee.name }}">
-      <h4 class="center">{{ committee.name }}</h4>
+      <p class="center">{{ committee.name }}</p>
       <!-- <p class="center">Major: {{ brother.major }}<br>Minor: {{ commitee.minor }}<br></p> -->
     </div>
     {% if check == 0 or diff == 0%}
