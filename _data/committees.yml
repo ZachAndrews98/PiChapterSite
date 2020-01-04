@@ -21,37 +21,77 @@ Cabinet:
 
 Committees:
 - role: Recruitment Chair
-  name: test test
-  class:
+  name: Conner Masterlarz
+  class: 2022
 
 - role: Brotherhood Chair
-  name: test test
-  class:
+  name: Jose Chavez
+  class: 2022
+
+- role: Brotherhood Chair
+  name: Danny Ullrich
+  class: 2022
+
+- role: Brotherhood Co-Chair
+  name: Zachary Ecker
+  class: 2022
 
 - role: Social Chair
-  name: test test
-  class:
+  name: David Salazar
+  class: 2022
 
 - role: Risk Management Chair
-  name: test test
-  class:
+  name: Matt Bauer
+  class: 2020
 
 - role: Pig Dinner Chair
-  name: test test
-  class:
+  name: Andrew Kirn
+  class: 2020
 
 - role: Tech Chair
-  name: test test
-  class:
+  name: Zachary Andrews
+  class: 2020
+
+- role: Tech Co-Chair
+  name: Danny Ullrich
+  class: 2022
+
+- role: Tech Co-Chair
+  name: Wes Long
+  class: 2022
 
 - role: Social Media Chair
-  name: test test
-  class:
+  name: Cayton Hornberger
+  class: 2020
 
 - role: T-Shirt Chair
-  name: test test
-  class:
+  name: Jared Bobeck
+  class: 2020
 
-- role: Fundraising
-  name: test test
-  class: 
+- role: T-Shirt Chair
+  name: Danny Ullrich
+  class: 2022
+
+- role: Graduate Relations Chair
+  name: David Salazar
+  class: 2022
+
+- role: Graduate Relations Chair
+  name: Caython Hornberger
+  class: 2020
+
+- role: Scholarship Chair
+  name: Zachary Ecker
+  class: 2022
+
+- role: Philanthropy Chair
+  name: Cayton Hornberger
+  class: 2020
+
+- role: Philanthropy Chair
+  name: Matt Bauer
+  class: 2020
+
+- role: Service Chair
+  name: Nathan Bruner
+  class: 2022
