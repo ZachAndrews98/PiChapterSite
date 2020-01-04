@@ -72,6 +72,11 @@ footer {
     margin-left: auto;
     margin-right: auto;
   }
+
+  .recaptcha {
+    text-align: center;
+    padding-bottom: 10px;
+  }
 }
 
 @media only screen and (max-width: 600px) {
@@ -127,6 +132,15 @@ footer {
     display: block;
     margin-left: auto;
     margin-right: auto;
+  }
+
+  .recaptcha {
+    text-align: center;
+    padding-bottom: 10px;
+    transform:scale(0.77);
+    -webkit-transform:scale(0.77);
+    transform-origin:0 0;
+    -webkit-transform-origin:0 0;
   }
 }
 
