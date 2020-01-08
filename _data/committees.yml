@@ -1,97 +1,156 @@
 Cabinet:
-- role: President
-  name: Marcus Wolf
-  class: 2022
+  President:
+    name: Marcus Wolf
+    class: 2022
+  Treasurer:
+    name: Max Boshaw
+    class: 2022
+  Rec_Sec:
+    name: Caden Koscinski
+    class: 2022
+  Corr_Sec:
+    name: AJ Yarborough
+    class: 2022
+  Historian:
+    name: William Sutherland
+    class: 2021
 
-- role: Treasurer
-  name: Max Boshaw
-  class: 2022
+# Committees:
+# - role: Recruitment Chair
+#   name: Conner Masterlarz
+#   class: 2022
+#
+# - role: Brotherhood Chair
+#   name: Jose Chavez
+#   class: 2022
+#
+# - role: Brotherhood Chair
+#   name: Danny Ullrich
+#   class: 2022
+#
+# - role: Brotherhood Co-Chair
+#   name: Zachary Ecker
+#   class: 2022
+#
+# - role: Social Chair
+#   name: David Salazar
+#   class: 2022
+#
+# - role: Risk Management Chair
+#   name: Matt Bauer
+#   class: 2020
+#
+# - role: Pig Dinner Chair
+#   name: Andrew Kirn
+#   class: 2020
+#
+# - role: Tech Chair
+#   name: Zachary Andrews
+#   class: 2020
+#
+# - role: Tech Co-Chair
+#   name: Danny Ullrich
+#   class: 2022
+#
+# - role: Tech Co-Chair
+#   name: Wes Long
+#   class: 2022
+#
+# - role: Social Media Chair
+#   name: Cayton Hornberger
+#   class: 2020
+#
+# - role: T-Shirt Chair
+#   name: Jared Bobeck
+#   class: 2020
+#
+# - role: T-Shirt Chair
+#   name: Danny Ullrich
+#   class: 2022
+#
+# - role: Graduate Relations Chair
+#   name: David Salazar
+#   class: 2022
+#
+# - role: Graduate Relations Chair
+#   name: Caython Hornberger
+#   class: 2020
+#
+# - role: Scholarship Chair
+#   name: Zachary Ecker
+#   class: 2022
+#
+# - role: Philanthropy Chair
+#   name: Cayton Hornberger
+#   class: 2020
+#
+# - role: Philanthropy Chair
+#   name: Matt Bauer
+#   class: 2020
+#
+# - role: Service Chair
+#   name: Nathan Bruner
+#   class: 2022
 
-- role: Recording Secretary
-  name: Caden Koscinski
-  class: 2022
-
-- role: Corresponding Secretary
-  name: AJ Yarborough
-  class: 2022
-
-- role: Historian
-  name: William Sutherland
-  class: 2021
 
 Committees:
-- role: Recruitment Chair
-  name: Conner Masterlarz
-  class: 2022
-
-- role: Brotherhood Chair
-  name: Jose Chavez
-  class: 2022
-
-- role: Brotherhood Chair
-  name: Danny Ullrich
-  class: 2022
-
-- role: Brotherhood Co-Chair
-  name: Zachary Ecker
-  class: 2022
-
-- role: Social Chair
-  name: David Salazar
-  class: 2022
-
-- role: Risk Management Chair
-  name: Matt Bauer
-  class: 2020
-
-- role: Pig Dinner Chair
-  name: Andrew Kirn
-  class: 2020
-
-- role: Tech Chair
-  name: Zachary Andrews
-  class: 2020
-
-- role: Tech Co-Chair
-  name: Danny Ullrich
-  class: 2022
-
-- role: Tech Co-Chair
-  name: Wes Long
-  class: 2022
-
-- role: Social Media Chair
-  name: Cayton Hornberger
-  class: 2020
-
-- role: T-Shirt Chair
-  name: Jared Bobeck
-  class: 2020
-
-- role: T-Shirt Chair
-  name: Danny Ullrich
-  class: 2022
-
-- role: Graduate Relations Chair
-  name: David Salazar
-  class: 2022
-
-- role: Graduate Relations Chair
-  name: Caython Hornberger
-  class: 2020
-
-- role: Scholarship Chair
-  name: Zachary Ecker
-  class: 2022
-
-- role: Philanthropy Chair
-  name: Cayton Hornberger
-  class: 2020
-
-- role: Philanthropy Chair
-  name: Matt Bauer
-  class: 2020
-
-- role: Service Chair
-  name: Nathan Bruner
-  class: 2022
+- committee: Recruitment
+  brothers:
+    - name: Conner Masterlarz
+      class: 2022
+- committee: Brotherhood
+  brothers:
+    - name: Jose Chavez
+      class: 2022
+    - name: Danny Ullrich
+      class: 2022
+    - name: Zachary Ecker
+      class: 2022
+- committee: Social
+  brothers:
+    - name: David Salazar
+      class: 2022
+- committee: Risk Management
+  brothers:
+    - name: Matt Bauer
+      class: 2020
+- committee: Pig Dinner
+  brothers:
+    - name: Andrew Kirn
+      class: 2020
+- committee: Technology
+  brothers:
+   - name: Zachary Andrews
+     class: 2020
+   - name: Danny Ullrich
+     class: 2022
+   - name: Wes Long
+     class: 2022
+- committee: Social Media
+  brothers:
+    - name: Cayton Hornberger
+      class: 2020
+- committee: T-Shirt
+  brothers:
+    - name: Jared Bobeck
+      class: 2020
+    - name: Danny Ullrich
+      class: 2022
+- committee: Graduate Relations
+  brothers:
+    - name: David Salazar
+      class: 2022
+    - name: Caython Hornberger
+      class: 2020
+- committee: Scholarship
+  brothers:
+    - name: Zachary Ecker
+      class: 2022
+- committee: Philanthropy
+  brothers:
+    - name: Cayton Hornberger
+      class: 2020
+    - name: Matt Bauer
+      class: 2020
+    - name: Nathan Bruner
+      class: 2022
