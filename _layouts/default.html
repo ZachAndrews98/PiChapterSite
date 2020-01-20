@@ -13,7 +13,13 @@
 
 {% include head.html %}
 
-<body>
+<body
+{% if page.title == "Pi Chapter of Phi Gamma Delta" %}
+style="background-image: url('{{ page.background }}');
+background-repeat: no-repeat;
+background-attachment: fixed;
+background-size: cover;"
+{% endif %}>
   {% include header.html %}
   <div class="buffer">
   </div>

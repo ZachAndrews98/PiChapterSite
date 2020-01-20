@@ -56,12 +56,9 @@ listed_pages:
      - name: Cabinet
        type: page
        url: /cabinet.html
-     # - name: Committees
-     #   type: page
-     #   url: /committees.html
- # - name: Media
+ # - name: Donate
  #   type: page
-   # url: /media.html
+ #   url: /donate.html
  - name: Contact
    type: page
    url: /contact.html
