@@ -3,94 +3,83 @@
 # members. The required information can be seen below and a sample is available below (remove '#').
 
 # - name:
-#   image:
 #   class:
 #   major:
 #   minor:
 
 Seniors:
 - name: Zachary Andrews
-  image: /assets/images/2020/andrews.jpeg
   class: 2020
   major: major
   minor: minor
 
 - name: Matt Bauer
-  image: /assets/images/2020/bauer.jpeg
   class: 2020
   major: major
   minor: minor
 
 - name: Jared Bobeck
-  image: /assets/images/2020/bobeck.jpeg
   class: 2020
   major: major
   minor: minor
 
 - name: Cayton Hornberger
-  image: /assets/images/2020/hornberger.jpeg
   class: 2020
   major: major
   minor: minor
 
 - name: Andrew Kirn
-  image:
   class: 2020
   major: major
   minor: minor
 
 - name: Jerfenson Meija
-  image: /assets/images/2020/meija.jpeg
   class: 2020
   major: major
   minor: minor
 
 - name: Devin Spitalny
-  image: /assets/images/2020/spitalny.jpeg
   class: 2020
   major: major
   minor: minor
 
 - name: Zachary Zoll
-  image: /assets/images/2020/zoll.jpeg
   class: 2020
   major: major
   minor: minor
 
 Juniors:
 - name: Jakob Drozd
-  image: /assets/images/2021/drozd.jpeg
   class: 2021
   major: major
   minor: minor
 
 - name: Colin Quigley
-  image: /assets/images/2021/quigley.jpeg
   class: 2021
   major: major
   minor: minor
 
 - name: William Sutherland
-  image: /assets/images/2021/sutherland.jpeg
   class: 2021
   major: major
   minor: minor
 
 Sophmores:
+- name: Alton Caylor
+  major: major
+  minor: minor
+
 - name: Max Boshaw
-  image: /assets/images/2022/boshaw.jpeg
   class: 2022
   major: major
   minor: minor
 
 - name: Nathan Bruner
-  image: /assets/images/2022/bruner.jpeg
   class: 2022
   major: major
   minor: minor
 
 - name: Jose Chavez
-  image:
   class: 2022
   major: major
   minor: minor
@@ -101,51 +90,55 @@ Sophmores:
   major: major
   minor: minor
 
+- name: Caden Hinckley
+  major: major
+  minor: minor
+
 - name: Caden Koscinski
-  image: /assets/images/2022/koscinski.jpeg
   class: 2022
   major: major
   minor: minor
 
 - name: Wesley Long
-  image: /assets/images/2022/long.jpeg
   class: 2022
   major: major
   minor: minor
 
 - name: Conner Masterlarz
-  image:
   class: 2022
   major: major
   minor: minor
 
 - name: David Salazar
-  image:
   class: 2022
   major: major
   minor: minor
 
 - name: Danny Ullrich
-  image: /assets/images/2022/ullrich.jpeg
   class: 2022
   major: major
   minor: minor
 
 - name: Marcus Wolf
-  image: /assets/images/2022/wolf.jpeg
   class: 2022
   major: major
   minor: minor
 
 - name: Aj Yarborough
-  image: /assets/images/2022/yarborough.jpeg
   class: 2022
   major: major
   minor: minor
 
 
 Freshmen:
-# - name:
-#   image:
-#   major:
-#   minor:
+- name: Ryan Diprose
+  major: major
+  minor: minor
+
+- name: Ryan Sesler
+  major: major
+  minor: minor
+
+- name: Luke Stephenson
+  major: major
+  minor: minor
