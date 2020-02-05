@@ -66,6 +66,7 @@ Juniors:
 
 Sophmores:
 - name: Alton Caylor
+  class: 2022
   major: major
   minor: minor
 
@@ -85,12 +86,12 @@ Sophmores:
   minor: minor
 
 - name: Zachary Ecker
-  image:
   class: 2022
   major: major
   minor: minor
 
 - name: Caden Hinckley
+  class: 2022
   major: major
   minor: minor
 
@@ -137,13 +138,16 @@ Sophmores:
 
 Freshmen:
 - name: Ryan Diprose
+  class: 2023
   major: major
   minor: minor
 
 - name: Ryan Sesler
+  class: 2023
   major: major
   minor: minor
 
 - name: Luke Stephenson
+  class: 2023
   major: major
   minor: minor

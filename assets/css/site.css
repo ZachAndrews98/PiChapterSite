@@ -15,8 +15,8 @@ footer {
   color: #ffffff;
   background: #520975;
 }
-
-@media only screen and (min-width: 812px) {
+/* Computer */
+@media only screen and (min-width: 1024px) {
   img {
     height: 400px;
     width: auto;
@@ -25,7 +25,7 @@ footer {
   .title {
     font-size: 68px;
     color: #520975;
-    text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white;
+    text-shadow: -2px 0 white, 0 2px white, 2px 0 white, 0 -2px white;
   }
 
   .column2 {
@@ -84,9 +84,20 @@ footer {
     height:375px;
     width:auto;
   }
-}
 
-@media only screen and (min-width: 600px) and (max-width: 812px){
+  .donateButton {
+    border-radius: 6px;
+    background-color: #520975;
+    font-size: 24px;
+    width: 100%
+  }
+  .donateButton:hover {
+    background-color: #630092;
+    color: #ffffff;
+  }
+}
+/* Ipad/tablet */
+@media only screen and (min-width: 600px) and (max-width: 1024px){
   img {
     height: 400px;
     width: auto;
@@ -95,7 +106,84 @@ footer {
   .title {
     font-size: 48px;
     color: #520975;
-    text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white;
+    text-shadow: -2px 0 white, 0 2px white, 2px 0 white, 0 -2px white;
+  }
+
+  .column2 {
+    width: 100%;
+  }
+
+  .column3 {
+    width: 100%;
+  }
+
+  .column4 {
+    width: 100%;
+  }
+
+  .column5 {
+    width: 100%;
+  }
+
+  .luxbar-brand {
+    font-size: 1.0em !important;
+    padding: 18px 24px 18px 24px;
+  }
+
+  .content {
+    padding-bottom: 100px;
+    margin-left: 100px;
+    margin-right: 100px;
+  }
+
+  .dropdown>ul .luxbar-item {
+    background-color: #520975;
+    color: #ffffff;
+    font-weight: normal;
+    text-align: center;
+    padding: 5px 10px 5px 0px !important;
+  }
+
+  .headshot {
+    height: 160px;
+    width: auto;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .recaptcha {
+    text-align: center;
+    padding-bottom: 10px;
+  }
+
+  .donate {
+    height:275px;
+    width:auto;
+  }
+
+  .donateButton {
+    border-radius: 6px;
+    background-color: #520975;
+    font-size: 24px;
+    width: 100%
+  }
+  .donateButton:hover {
+    background-color: #630092;
+    color: #ffffff;
+  }
+}
+/* Horizontal Phone */
+/* @media only screen and (min-width: 600px) and (max-width: 768px){
+  img {
+    height: 400px;
+    width: auto;
+  }
+
+  .title {
+    font-size: 48px;
+    color: #520975;
+    text-shadow: -2px 0 white, 0 2px white, 2px 0 white, 0 -2px white;
   }
 
   .column2 {
@@ -154,8 +242,19 @@ footer {
     height:275px;
     width:auto;
   }
-}
 
+  .donateButton {
+    border-radius: 6px;
+    background-color: #520975;
+    font-size: 24px;
+    width: 100%
+  }
+  .donateButton:hover {
+    background-color: #630092;
+    color: #ffffff;
+  }
+} */
+/* Phone */
 @media only screen and (max-width: 600px) {
   img {
     height: 200px;
@@ -169,7 +268,7 @@ footer {
   .title {
     font-size: 40px;
     color: #520975;
-    text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white;
+    text-shadow: -2px 0 white, 0 2px white, 2px 0 white, 0 -2px white;
   }
 
   .column2 {
@@ -225,6 +324,17 @@ footer {
   .donate {
     height:175px;
     width:auto;
+  }
+
+  .donateButton {
+    border-radius: 6px;
+    background-color: #520975;
+    font-size: 24px;
+    width: 100%
+  }
+  .donateButton:hover {
+    background-color: #630092;
+    color: #ffffff;
   }
 }
 
