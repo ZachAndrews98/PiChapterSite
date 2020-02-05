@@ -36,11 +36,11 @@ url: "https://alleghenyfiji.netlify.com" # the base hostname & protocol for your
 # twitter_username: jekyllrb
 # github_username:  ZachAndrews98
 # linkedin_username: ZachAndrews98
+facebook_page: allegheny.fiji
+instagram_page: allegheny_fiji
 
 # Build settings
 theme: minima
-# plugins:
-  # - jekyll-feed
 
 listed_pages:
  - name: Home
@@ -63,9 +63,6 @@ listed_pages:
    type: page
    url: /contact.html
 
-message: >-
-  Friendship^1000, Knowledge^1000, Service^1000, Morality^1000,
-  & Excellence^1000<br><br>Building Couragous Leaders
 
 # Exclude from processing.
 # The following items will not be processed, by default.
