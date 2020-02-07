@@ -58,7 +58,7 @@ listed_pages:
        url: /cabinet.html
  - name: Graduates
    type: dropdown
-   url: /#
+   url: 
    subpage:
      - name: Pig Dinner
        type: page

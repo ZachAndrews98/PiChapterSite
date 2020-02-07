@@ -15,7 +15,11 @@
           </li>
         {% else if p.type == "dropdown" %}
           <li class="luxbar-item dropdown {% if p.name == page.title or p.name == 'Home' and page.title == 'Pi Chapter of Phi Gamma Delta' %}active{% endif %}">
+            {% if p.url == none %}
+            <a>{{ p.name }}</a>
+            {% else %}
             <a href="{{ p.url }}">{{ p.name }}</a>
+            {% endif %}
             <ul>
             {% for sub in p.subpage %}
               <li class="luxbar-item {% if sub.name == page.title %}active{% endif %}">
