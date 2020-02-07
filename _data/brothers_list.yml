@@ -10,8 +10,8 @@
 Seniors:
 - name: Zachary Andrews
   class: 2020
-  major: major
-  minor: minor
+  major: Computer Science
+  minor: Economics
 
 - name: Matt Bauer
   class: 2020
@@ -25,28 +25,28 @@ Seniors:
 
 - name: Cayton Hornberger
   class: 2020
-  major: major
+  major: Physics
   minor: minor
 
 - name: Andrew Kirn
   class: 2020
-  major: major
-  minor: minor
+  major: Economics
+  minor: English
 
 - name: Jerfenson Meija
   class: 2020
-  major: major
-  minor: minor
+  major: Computer Science
+  minor: Economics
 
 - name: Devin Spitalny
   class: 2020
-  major: major
+  major: Computer Science
   minor: minor
 
 - name: Zachary Zoll
   class: 2020
-  major: major
-  minor: minor
+  major: Physics
+  minor: History
 
 Juniors:
 - name: Jakob Drozd
@@ -67,17 +67,17 @@ Juniors:
 Sophmores:
 - name: Alton Caylor
   class: 2022
-  major: major
+  major: Environmental Science
   minor: minor
 
 - name: Max Boshaw
   class: 2022
-  major: major
+  major: Physics
   minor: minor
 
 - name: Nathan Bruner
   class: 2022
-  major: major
+  major: Psycology
   minor: minor
 
 - name: Jose Chavez
@@ -97,7 +97,7 @@ Sophmores:
 
 - name: Caden Koscinski
   class: 2022
-  major: major
+  major: Computer Science
   minor: minor
 
 - name: Wesley Long
@@ -107,7 +107,7 @@ Sophmores:
 
 - name: Conner Masterlarz
   class: 2022
-  major: major
+  major: Economics
   minor: minor
 
 - name: Caleb Moon
@@ -122,7 +122,7 @@ Sophmores:
 
 - name: Danny Ullrich
   class: 2022
-  major: major
+  major: Computer Science
   minor: minor
 
 - name: Marcus Wolf
