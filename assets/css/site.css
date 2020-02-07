@@ -17,6 +17,15 @@ footer {
 }
 
 @media only screen and (min-width: 812px) {
+  #bannerimage {
+  width: 100%;
+  background-image: url("/assets/images/page_images/pig_dinner.jpg");
+  height: 290px;
+  /* background-color: purple; */
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
   img {
     height: 400px;
     width: auto;
@@ -89,7 +98,8 @@ footer {
     border-radius: 6px;
     background-color: #520975;
     font-size: 24px;
-    width: 100%
+    width: 100%;
+    margin: 10px 0px 100px 0px;
   }
   .donateButton:hover {
     background-color: #630092;
@@ -254,6 +264,7 @@ footer {
     background-color: #520975;
     font-size: 24px;
     width: 100%
+    margin-bottom: 10px;
   }
   .donateButton:hover {
     background-color: #630092;

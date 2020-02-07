@@ -56,9 +56,16 @@ listed_pages:
      - name: Cabinet
        type: page
        url: /cabinet.html
- - name: Donate
-   type: page
-   url: /donate.html
+ - name: Graduates
+   type: dropdown
+   url: /#
+   subpage:
+     - name: Pig Dinner
+       type: page
+       url: /pig_dinner.html
+     - name: Donate
+       type: page
+       url: /donate.html
  - name: Contact
    type: page
    url: /contact.html
