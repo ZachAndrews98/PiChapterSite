@@ -127,8 +127,8 @@ Sophmores:
 
 - name: Marcus Wolf
   class: 2022
-  major: major
-  minor: minor
+  major: Business
+  minor: Undecided
 
 - name: Aj Yarborough
   class: 2022
@@ -139,7 +139,7 @@ Sophmores:
 Freshmen:
 - name: Ryan Diprose
   class: 2023
-  major: major
+  major: History
   minor: minor
 
 - name: Ryan Sesler
@@ -149,5 +149,5 @@ Freshmen:
 
 - name: Luke Stephenson
   class: 2023
-  major: major
+  major: Physics
   minor: minor
