@@ -1,0 +1,16 @@
+Cabinet:
+  President:
+    name: Marcus Wolf
+    class: 2022
+  Treasurer:
+    name: Max Boshaw
+    class: 2022
+  Rec_Sec:
+    name: Caden Koscinski
+    class: 2022
+  Corr_Sec:
+    name: AJ Yarborough
+    class: 2022
+  Historian:
+    name: William Sutherland
+    class: 2021
