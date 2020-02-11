@@ -96,14 +96,16 @@ footer {
 
   .donateButton {
     border-radius: 6px;
-    background-color: #520975;
+    background-color: #543975;
     font-size: 24px;
     width: 100%;
     margin: 10px 0px 100px 0px;
+    color: #ffffff;
   }
   .donateButton:hover {
     background-color: #630092;
     color: #ffffff;
+    font-weight: bolder;
   }
 }
 
@@ -178,13 +180,15 @@ footer {
 
   .donateButton {
     border-radius: 6px;
-    background-color: #520975;
+    background-color: #543975;
     font-size: 24px;
-    width: 100%
+    width: 100%;
+    color: #ffffff;
   }
   .donateButton:hover {
     background-color: #630092;
     color: #ffffff;
+    font-weight: bolder;
   }
 }
 
@@ -261,14 +265,16 @@ footer {
 
   .donateButton {
     border-radius: 6px;
-    background-color: #520975;
+    background-color: #543975;
     font-size: 24px;
     width: 100%
     margin-bottom: 10px;
+    color: #ffffff;
   }
   .donateButton:hover {
     background-color: #630092;
     color: #ffffff;
+    font-weight: bolder;
   }
 }
 
