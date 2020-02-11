@@ -354,8 +354,9 @@ footer {
 }
 
 .luxbar-item:hover {
-  color: #000000;
+  /* color: #000000; */
   font-weight: bolder;
+  background-color: #630092;
 }
 
 .dropdown>ul .active{
@@ -363,8 +364,9 @@ footer {
 }
 
 .dropdown>ul .luxbar-item:hover {
-  color: #000000;
+  /* color: #000000; */
   font-weight: bolder;
+  background-color: #630092;
 }
 
 
