@@ -107,6 +107,11 @@ footer {
     color: #ffffff;
     font-weight: bolder;
   }
+
+  .house {
+    height:350px;
+    width:auto;
+  }
 }
 
 @media only screen and (min-width: 600px) and (max-width: 812px){
@@ -189,6 +194,11 @@ footer {
     background-color: #630092;
     color: #ffffff;
     font-weight: bolder;
+  }
+
+  .house {
+    height:250px;
+    width:auto;
   }
 }
 
@@ -275,6 +285,11 @@ footer {
     background-color: #630092;
     color: #ffffff;
     font-weight: bolder;
+  }
+
+  .house {
+    height:200px;
+    width:auto;
   }
 }
 
