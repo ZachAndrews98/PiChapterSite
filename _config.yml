@@ -21,16 +21,14 @@
 title: Allegheny Fiji
 sub_title: Pi Chapter of Phi Gamma Delta
 
-description: >- # this means to ignore newlines until "tagline:"
-  Allegheny College Phi Gamma Delta
+description: Allegheny College Fiji
 
 # tagline: Allegheny College Phi Gamma Delta
 
-baseurl: "" # the subpath of your site, e.g. /blog
+baseurl: "/" # the subpath of your site, e.g. /blog
 url: "https://alleghenyfiji.org" # the base hostname & protocol for your site, e.g. http://example.com
 
 email: fiji@allegheny.edu
-
 twitter_page: fiji_pi_chapter
 facebook_page: allegheny.fiji
 instagram_page: allegheny_fiji
@@ -54,7 +52,7 @@ listed_pages:
        url: /cabinet.html
  - name: Graduates
    type: dropdown
-   url:
+   url: /#
    subpage:
      - name: Pig Dinner
        type: page
@@ -82,8 +80,6 @@ Pig_Gig:
   - date: "Saturday March 28th, 2020"
     gig_time: "3:00 PM - 8:00PM"
     location: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2979.3611926473545!2d-80.12892324957828!3d41.69113778497157!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8832585f6d68870f%3A0xa9dfc771e68c1927!2sThe%20Country%20Club%20of%20Meadville!5e0!3m2!1sen!2sus!4v1581033651910!5m2!1sen!2sus"
-
-keywords: Phi Gamma Delta, Allegheny College, Fiji, Phi Gam
 
 plugins:
   - jekyll-seo-tag

@@ -7,6 +7,7 @@
   <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
   <link rel="shortcut icon" type="image/png" href="/favicon.png"/>
   <meta name="keywords" content="{{ page.tags }}"/>
+  <meta name="description" content="{% if page.description != None %}{{ page.description }} {% else %} {{ site.description }}{% endif %}"/>
   {% seo title=false%}
   <title>
     {{ page.title }} {% if site.title != page.title %} | {{ site.title }} {% endif %}
