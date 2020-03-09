@@ -68,7 +68,7 @@ Sophmores:
 - name: Alton Caylor
   class: 2022
   major: Environmental Science
-  minor: minor
+  minor: Undecided
 
 - name: Max Boshaw
   class: 2022
@@ -83,17 +83,17 @@ Sophmores:
 - name: Jose Chavez
   class: 2022
   major: Business
-  minor: minor
+  minor: Undecided
 
 - name: Zachary Ecker
   class: 2022
   major: Biology
-  minor: minor
+  minor: Undecided
 
-- name: Caden Hinckley
-  class: 2022
-  major: Computer Science
-  minor: minor
+# - name: Caden Hinckley
+#   class: 2022
+#   major: Computer Science
+#   minor: minor
 
 - name: Caden Koscinski
   class: 2022
@@ -140,7 +140,7 @@ Freshmen:
 - name: Ryan Diprose
   class: 2023
   major: History
-  minor: minor
+  minor: Undecided
 
 - name: Ryan Sesler
   class: 2023
