@@ -2,17 +2,19 @@
   <script src="/assets/js/typedjs/typed.min.js"></script>
   <script src="/assets/js/site.js"></script>
   <script src="https://kit.fontawesome.com/05f94537f5.js" crossorigin="anonymous"></script>
-  <div class="row">
-    <div>
-      <div class="column2" style="margin-top: 10px">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-sm" style="margin-top: 10px">
+      <!-- <div class="column2" style="margin-top: 10px"> -->
         <a href="mailto:{{ site.email }}" target="_blank"><i class="fas fa-envelope fa-2x"></i></a>
         <a href="https://www.facebook.com/{{ site.facebook_page }}/" target="_blank"><i class="fab fa-facebook fa-2x"></i></a>
         <a href="https://www.instagram.com/{{ site.instagram_page }}" target="_blank"><i class="fab fa-instagram fa-2x"></i></a>
         <a href="https://www.twitter.com/{{ site.twitter_page }}" target="_blank"><i class="fab fa-twitter fa-2x"></i></a>
       </div>
-    </div>
-    <div class="column2">
-      <p>&copy {{ site.sub_title }}. All Rights Reserved.</p>
+      <!-- <div class="column2"> -->
+      <div class="col-sm" style="margin-top: 10px">
+        <p>&copy {{ site.sub_title }}. All Rights Reserved.</p>
+      </div>
     </div>
   </div>
 </footer>

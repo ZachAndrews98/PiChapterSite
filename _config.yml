@@ -44,12 +44,11 @@ listed_pages:
    type: page
    url: /about.html
  - name: Brothers
-   type: dropdown
+   type: page
    url: /brothers.html
-   subpage:
-     - name: Cabinet
-       type: page
-       url: /cabinet.html
+ - name: Cabinet
+   type: page
+   url: /cabinet.html
  - name: Graduates
    type: dropdown
    url: /#
