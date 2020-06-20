@@ -8,47 +8,6 @@
 #   minor:
 
 Seniors:
-- name: Zachary Andrews
-  class: 2020
-  major: Computer Science
-  minor: Economics
-
-- name: Matt Bauer
-  class: 2020
-  major: Economics
-  minor: Global Health & Political Science
-
-- name: Jared Bobeck
-  class: 2020
-  major: Neuroscience
-  minor: History
-
-- name: Cayton Hornberger
-  class: 2020
-  major: Physics
-  minor: Energy and Society
-
-- name: Andrew Kirn
-  class: 2020
-  major: Economics
-  minor: English
-
-- name: Jerfenson Meija
-  class: 2020
-  major: Computer Science
-  minor: Economics
-
-- name: Devin Spitalny
-  class: 2020
-  major: Computer Science
-  minor: Economics
-
-- name: Zachary Zoll
-  class: 2020
-  major: Physics
-  minor: History
-
-Juniors:
 - name: Jakob Drozd
   class: 2021
   major: Environmental Science
@@ -64,7 +23,7 @@ Juniors:
   major: History
   minor: Energy and Society
 
-Sophmores:
+Juniors:
 - name: Alton Caylor
   class: 2022
   major: Environmental Science
@@ -130,8 +89,7 @@ Sophmores:
   major: Business
   minor: Philosophy & Psychology
 
-
-Freshmen:
+Sophmores:
 - name: Ryan Diprose
   class: 2023
   major: History
@@ -146,3 +104,6 @@ Freshmen:
   class: 2023
   major: Physics
   minor: Philosophy
+
+
+Freshmen:

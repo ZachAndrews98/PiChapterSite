@@ -16,15 +16,18 @@ footer {
   background: #520975;
 }
 
+.nav-item:hover {
+  font-weight: bolder;
+}
+
 @media only screen and (min-width: 812px) {
   #bannerimage {
-  width: 100%;
-  background-image: url("/assets/images/page_images/pig_dinner.jpg");
-  height: 290px;
-  /* background-color: purple; */
-  background-position: center;
-  background-repeat: no-repeat;
-}
+    width: 100%;
+    background-image: url("/assets/images/page_images/pig_dinner.jpg");
+    height: 290px;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
 
   img {
     height: 400px;
@@ -385,7 +388,6 @@ footer {
 }
 
 .dropdown>ul .luxbar-item:hover {
-  /* color: #000000; */
   font-weight: bolder;
   background-color: #630092;
 }
