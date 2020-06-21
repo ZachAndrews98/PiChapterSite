@@ -16,7 +16,16 @@ footer {
   background: #520975;
 }
 
+.nav-item {
+  color: rgba(255,255,255,0.8) !important;
+}
+
 .nav-item:hover {
+  font-weight: bolder;
+}
+
+.nav-item.active {
+  color: rgba(255,255,255,1) !important;
   font-weight: bolder;
 }
 
