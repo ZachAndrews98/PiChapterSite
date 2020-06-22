@@ -29,6 +29,10 @@ footer {
   font-weight: bolder;
 }
 
+.mobile {
+  float: left;
+}
+
 @media only screen and (min-width: 812px) {
   #bannerimage {
     width: 100%;
@@ -47,6 +51,11 @@ footer {
     font-size: 68px;
     color: #520975;
     text-shadow: -2px 0 white, 0 2px white, 2px 0 white, 0 -2px white;
+  }
+
+  .column {
+    text-align: center;
+    width: 100%;
   }
 
   .column2 {
@@ -136,6 +145,11 @@ footer {
     font-size: 48px;
     color: #520975;
     text-shadow: -2px 0 white, 0 2px white, 2px 0 white, 0 -2px white;
+  }
+
+  .column {
+    text-align: center;
+    width: 100%;
   }
 
   .column2 {
@@ -228,6 +242,11 @@ footer {
     font-size: 40px;
     color: #520975;
     text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white;
+  }
+
+  .column {
+    text-align: center;
+    width: 100%;
   }
 
   .column2 {
