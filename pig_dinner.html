@@ -20,11 +20,25 @@ tags: Frank Norris, Pig Dinner, Allegheny College, Phi Gamma Delta, Fiji, Allegh
     </a>
   </div>
   <div class="column2">
-    {% for info in site.Pig_Gig %}
-      <h3>{{ info.date }}</h3>
-      <h3>{{ info.gig_time }}</h3>
-      <iframe src="{{ info.location }}" width="auto" height="200" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
-    {% endfor %}
+      {% for info in site.data.site_info.Pig_dinner %}
+        <h3>
+          Date:
+          {% if info.date == none %}
+            To be announced
+          {% else %}
+            {{ info.date }}
+          {% endif %}
+        </h3>
+        <h3>
+          Time:
+          {% if info.time == none %}
+            To be announced
+          {% else %}
+            {{ info.time }}
+          {% endif %}
+        </h3>
+        <iframe src="{{ info.location }}" width="auto" height="200" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
+      {% endfor %}
   </div>
 </div>
 
