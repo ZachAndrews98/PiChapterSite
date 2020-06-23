@@ -34,8 +34,8 @@ misson_statement: >-
 
 # location shortened using bit.ly, normally uses full url from google maps
 Pig_dinner:
-- date: October 17th
-  time: 3:00 PM - 8:00 PM
-  location: https://bit.ly/2Ymt5eA
+- date:
+  time:
+  location: 
 
 Donation_link: https://www.legfi.com/app/fundraisers/phigam2020spring/963

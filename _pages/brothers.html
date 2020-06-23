@@ -8,11 +8,11 @@ permalink: /brothers
 <!-- 'Smart' layout broken up into year, may not always work properly -->
 
 <!-- Seniors -->
-{% assign length = site.data.brothers_list.Seniors | size %}
+{% assign length = site.data.brothers.Seniors | size %}
 {% if length != 0 %}
   <h2>Seniors</h2>
   {% assign cSize = "column4" %}
-  {% for brother in site.data.brothers_list.Seniors %}
+  {% for brother in site.data.brothers.Seniors %}
     {% assign check = forloop.index | modulo: 4 %}
     {% assign diff = length | minus: forloop.index %}
     {% if check == 1 %}
@@ -44,12 +44,12 @@ permalink: /brothers
 {% endif %}
 
 <!-- Juniors -->
-{% assign length = site.data.brothers_list.Juniors | size %}
+{% assign length = site.data.brothers.Juniors | size %}
 {% if length != 0 %}
   <br>
   <h2>Juniors</h2>
   {% assign cSize = "column4" %}
-  {% for brother in site.data.brothers_list.Juniors %}
+  {% for brother in site.data.brothers.Juniors %}
     {% assign check = forloop.index | modulo: 4 %}
     {% assign diff = length | minus: forloop.index %}
     {% if check == 1 %}
@@ -81,12 +81,12 @@ permalink: /brothers
 {% endif %}
 
 <!-- Sophmores -->
-{% assign length = site.data.brothers_list.Sophmores | size %}
+{% assign length = site.data.brothers.Sophmores | size %}
 {% if length != 0 %}
   <br>
   <h2>Sophmores</h2>
   {% assign cSize = "column4" %}
-  {% for brother in site.data.brothers_list.Sophmores %}
+  {% for brother in site.data.brothers.Sophmores %}
     {% assign check = forloop.index | modulo: 4 %}
     {% assign diff = length | minus: forloop.index %}
     {% if check == 1 %}
@@ -119,12 +119,12 @@ permalink: /brothers
 {% endif %}
 
 <!-- Freshmen -->
-{% assign length = site.data.brothers_list.Freshmen | size %}
+{% assign length = site.data.brothers.Freshmen | size %}
 {% if length != 0 %}
   <br>
   <h2>Freshmen</h2>
   {% assign cSize = "column4" %}
-  {% for brother in site.data.brothers_list.Freshmen %}
+  {% for brother in site.data.brothers.Freshmen %}
     {% assign check = forloop.index | modulo: 4 %}
     {% assign diff = length | minus: forloop.index %}
     {% if check == 1 %}
