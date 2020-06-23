@@ -36,53 +36,10 @@ instagram_page: allegheny_fiji
 # Build settings
 theme: minima
 
-listed_pages:
- - name: Home
-   type: page
-   url: /
- - name: About
-   type: page
-   url: /about.html
- - name: Brothers
-   type: dropdown
-   url: /brothers.html
-   subpage:
-     - name: Cabinet
-       type: page
-       url: /cabinet.html
- - name: Graduates
-   type: dropdown
-   url: /#
-   subpage:
-     - name: Pig Dinner
-       type: page
-       url: /pig_dinner.html
-     - name: Donate
-       type: page
-       url: /donate.html
- - name: Contact
-   type: page
-   url: /contact.html
-
-misson_statement: >-
-  We the brothers of the Pi Chapter of Phi Gamma Delta, exist to create a group
-  of extraordinary gentlemen through diversity, excellence, and love for oneself.
-  We aim to seek the highest standard of Friendship through diverse lifelong
-  bonds of brotherhood. We aim to achieve true Knowledge through scholarly
-  excellence. We aim to be the standard of Service for fraternities and
-  sororities on campus through our commitment to philanthropy and community
-  service. We aim to be the definition of Morality for knowing right from wrong
-  and treating others with the utmost respect and showing we are truly Fiji
-  gentlemen. We aim to achieve Excellence by upholding these four values and
-  will aim to always lead with love and compassion for oneself and for the world.
-
-Pig_Gig:
-  - date: "Saturday March 28th, 2020"
-    gig_time: "3:00 PM - 8:00PM"
-    location: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2979.3611926473545!2d-80.12892324957828!3d41.69113778497157!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8832585f6d68870f%3A0xa9dfc771e68c1927!2sThe%20Country%20Club%20of%20Meadville!5e0!3m2!1sen!2sus!4v1581033651910!5m2!1sen!2sus"
-
 plugins:
   - jekyll-seo-tag
+
+include: ['_pages']
 
 # Exclude from processing.
 # The following items will not be processed, by default.
