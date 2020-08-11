@@ -17,6 +17,7 @@ import Game from './pages/Game';
 import About from './pages/About';
 import Home from './pages/Home';
 import Admin from './pages/Admin';
+import Footer from './components/Footer';
 
 // ========================================
 
@@ -58,11 +59,12 @@ export default function App() {
           </Route>
         </Switch>
       </div>
+      <Footer />
     </Router>
   );
 }
 
 ReactDOM.render(
   <App />,
-  document.getElementById("test")
+  document.getElementById("root")
 );

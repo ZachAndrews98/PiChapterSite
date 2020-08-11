@@ -141,6 +141,8 @@ class BrotherList extends React.Component {
         <Form.Group>
           <Form.Row>
             <Button type="submit" onClick={this.handleDelete}>Delete Brother</Button>
+          </Form.Row>
+          <Form.Row>
             <Table striped bordered hover>
               <thead>
                 <tr>
@@ -176,6 +178,9 @@ class BrotherList extends React.Component {
                 )}
               </tbody>
             </Table>
+          </Form.Row>
+          <Form.Row>
+            <Button type="submit" onClick={this.handleDelete}>Delete Brother</Button>
           </Form.Row>
         </Form.Group>
 
@@ -240,7 +245,9 @@ class BrotherList extends React.Component {
               />
             </Col>
           </Form.Row>
-          <Button type="submit" onClick={this.handleAdd}>Add Brother</Button>
+          <Form.Row>
+            <Button type="submit" onClick={this.handleAdd}>Add Brother</Button>
+          </Form.Row>
         </Form.Group>
       </Form>
     )
