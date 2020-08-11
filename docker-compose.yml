@@ -1,0 +1,48 @@
+version: '3.8'
+services:
+  api:
+    build:
+      context: ./api/
+    command: /usr/app/node_modules/.bin/nodemon src/index.js
+    volumes:
+      - ./api/:/usr/app
+      - /usr/app/node_modules
+    ports:
+      - "8080:8080"
+    # env_file: ./api/.env # TODO - uncomment this to auto-load your .env file!
+    environment:
+      - NODE_ENV=production
+      - CHOKIDAR_USEPOLLING=true
+    container_name: compose_api
+    restart: always
+  client:
+    build:
+      context: ./client/
+    deploy:
+      mode: replicated
+      replicas: 6
+    command: npm start
+    volumes:
+      - ./client/:/usr/app
+      - /usr/app/node_modules
+    depends_on:
+      - api
+    ports:
+      - "3000:3000"
+    container_name: compose_client
+    restart: always
+  db:
+    image: mysql:5.7
+    # command: --default-authentication-plugin=mysql_native_password
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: toor
+      MYSQL_USER: zach
+      MYSQL_PASSWORD: ZachAndr2020#@
+      MYSQL_ROOT_HOST: "%"
+      MYSQL_DATABASE: brothers
+    volumes:
+      - './db/schema:/docker-entrypoint-initdb.d'
+      - './db/data:/var/lib/mysql'
+      - './db/setup:/var/lib/mysql-files/'
+    container_name: compose_db
