@@ -1,12 +1,267 @@
+/* General Website Styling */
+body {
+  margin: 0;
+  padding: 0;
+  background: #ffffff;
+  font-family: 'Roboto', sans-serif;
+}
+
+footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+  color: #ffffff;
+  background: #520975;
+}
+
+.bg-feej {
+  background-color: #543975;
+  color: rgb(255 255 255 / 0.8) !important;
+}
+
+.nav-link {
+  color: rgb(255 255 255 / 0.8) !important;
+}
+
+.navbar-brand {
+  color: rgb(255 255 255 / 0.8) !important;
+}
+
+.nav-link:hover {
+  font-weight: bolder;
+}
+
+.nav-link.active {
+  color: rgba(255,255,255,1) !important;
+  font-weight: bolder;
+}
+
+.mobile {
+  float: left;
+}
+
+@media only screen and (min-width: 812px) {
+  #bannerimage {
+    width: 100%;
+    background-image: url("/assets/images/page_images/pig_dinner.jpg");
+    height: 290px;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+  img {
+    height: 400px;
+    width: auto;
+  }
+
+  .title {
+    font-size: 68px;
+    color: #520975;
+    text-shadow: -2px 0 white, 0 2px white, 2px 0 white, 0 -2px white;
+  }
+
+  .content {
+    padding-bottom: 100px;
+    margin-left: 100px;
+    margin-right: 100px;
+  }
+
+  .headshot {
+    height: 200px;
+    width: auto;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .recaptcha {
+    text-align: center;
+    padding-bottom: 10px;
+  }
+
+  .donate {
+    height:375px;
+    width:auto;
+  }
+
+  .donateButton {
+    border-radius: 6px;
+    background-color: #543975;
+    font-size: 24px;
+    width: 100%;
+    margin: 10px 0px 100px 0px;
+    color: #ffffff;
+  }
+  .donateButton:hover {
+    background-color: #630092;
+    color: #ffffff;
+    font-weight: bolder;
+  }
+}
+
+@media only screen and (min-width: 600px) and (max-width: 812px){
+  img {
+    height: 400px;
+    width: auto;
+  }
+
+  .title {
+    font-size: 48px;
+    color: #520975;
+    text-shadow: -2px 0 white, 0 2px white, 2px 0 white, 0 -2px white;
+  }
+
+  .content {
+    padding-bottom: 100px;
+    margin-left: 100px;
+    margin-right: 100px;
+  }
+
+  .headshot {
+    height: 160px;
+    width: auto;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .recaptcha {
+    text-align: center;
+    padding-bottom: 10px;
+  }
+
+  .donate {
+    height:275px;
+    width:auto;
+  }
+
+  .donateButton {
+    border-radius: 6px;
+    background-color: #543975;
+    font-size: 24px;
+    width: 100%;
+    color: #ffffff;
+  }
+  .donateButton:hover {
+    background-color: #630092;
+    color: #ffffff;
+    font-weight: bolder;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  img {
+    height: 200px;
+    width: auto;
+  }
+
+  h2 {
+    font-size: 20px;
+  }
+
+  .title {
+    font-size: 40px;
+    color: #520975;
+    text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white;
+  }
+
+  .content {
+    padding-bottom: 100px;
+    margin-left: 50px;
+    margin-right: 50px;
+  }
+
+  .headshot {
+    height: 250px;
+    width: auto;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .recaptcha {
+    text-align: center;
+    padding-bottom: 10px;
+    transform:scale(0.77);
+    -webkit-transform:scale(0.77);
+    transform-origin:0 0;
+    -webkit-transform-origin:0 0;
+  }
+
+  .donate {
+    height:175px;
+    width:auto;
+  }
+
+  .donateButton {
+    border-radius: 6px;
+    background-color: #543975;
+    font-size: 24px;
+    width: 100%;
+    margin-bottom: 10px;
+    color: #ffffff;
+  }
+  .donateButton:hover {
+    background-color: #630092;
+    color: #ffffff;
+    font-weight: bolder;
+  }
+}
+
+.background {
+  height: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  background-attachment: fixed;
+}
+
+.buffer {
+  padding-top: 48px;
+}
+
+.shadow {
+  color: white;
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+  font-size: 30px;
+}
+
+/* Social Icons */
+.fas {
+  color: #ffffff;
+}
+
+.fas:hover {
+  opacity: 0.8;
+  color: #000000;
+  cursor: pointer;
+}
+
+.fab {
+  color: #ffffff;
+}
+
+.fab:hover {
+  opacity: 0.8;
+  color: #000000;
+  cursor: pointer;
+}
+
+/* Centered Name & TypeScript */
+.header-centered {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  text-align: center;
+  color: #000000;
+}
+
 .center {
   display: block;
   margin-left: auto;
   margin-right: auto;
   text-align: center;
-}
-
-.row:after {
-  content: "";
-  display: table;
-  clear: both;
 }

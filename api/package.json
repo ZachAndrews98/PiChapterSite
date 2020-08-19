@@ -10,6 +10,8 @@
   "author": "Peter Coles",
   "license": "MIT",
   "dependencies": {
+    "bcrypt": "^5.0.0",
+    "bcryptjs": "^2.4.3",
     "express": "^4.17.1",
     "mysql": "^2.18.1",
     "node-datetime": "^2.1.2"

@@ -7,6 +7,8 @@ import Col from 'react-bootstrap/Col';
 import Table from 'react-bootstrap/Table';
 import Button from 'react-bootstrap/Button';
 
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 class BrotherList extends React.Component {
   constructor(props) {
     super(props);
@@ -26,7 +28,6 @@ class BrotherList extends React.Component {
     this.handleChange = this.handleChange.bind(this);
     this.handleAddChange = this.handleAddChange.bind(this);
 
-    this.handleSubmit = this.handleSubmit.bind(this);
     this.handleDelete = this.handleDelete.bind(this);
     this.handleAdd = this.handleAdd.bind(this);
 
@@ -130,10 +131,6 @@ class BrotherList extends React.Component {
     this.getBrothers();
   }
 
-  handleSubmit(event) {
-    console.log(this.state.selected);
-    event.preventDefault();
-  }
 
   render() {
     return (
@@ -146,7 +143,7 @@ class BrotherList extends React.Component {
             <Table striped bordered hover>
               <thead>
                 <tr>
-                  <th></th>
+                  <th>Select</th>
                   <th>Last Name</th>
                   <th>First Name</th>
                   <th>Class Year</th>

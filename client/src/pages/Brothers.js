@@ -6,6 +6,8 @@ import Col from 'react-bootstrap/Col';
 
 import Brother from '../components/Brother';
 
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 export default class Brothers extends React.Component {
   constructor(props){
     super(props)
@@ -37,33 +39,106 @@ export default class Brothers extends React.Component {
     })
   }
 
+  makeRows(list, numPerRow) {
+    let rows = []
+    let row = []
+    for (let i=0, j=list.length; i<j; i+=numPerRow) {
+      row = list.slice(i,i+numPerRow);
+      rows.push(row)
+    }
+    return rows;
+  }
+
   render() {
+    const numPerRow = 4;
+    let seniorRows = this.makeRows(this.state.seniors, numPerRow)
+    let juniorRows = this.makeRows(this.state.juniors, numPerRow)
+    let sophmoreRows = this.makeRows(this.state.sophmores, numPerRow)
+    let freshmenRows = this.makeRows(this.state.freshmen, numPerRow)
     return(
-      <Container>
-        <Row>
-          <h2>Seniors</h2>
-          {this.state.seniors.map(
-            brother => <Col key={brother.first_name + " " + brother.last_name}><Brother info={brother} /></Col>
-          )}
-        </Row>
-        <Row>
-          <h2>Juniors</h2>
-          {this.state.juniors.map(
-            brother => <Col key={brother.first_name + " " + brother.last_name}><Brother info={brother} /></Col>
-          )}
-        </Row>
-        <Row>
-          <h2>Sophmores</h2>
-          {this.state.sophmores.map(
-            brother => <Col key={brother.first_name + " " + brother.last_name}><Brother info={brother} /></Col>
-          )}
-        </Row>
-        <Row>
-          <h2>Freshmen</h2>
-          {this.state.freshmen.map(
-            brother => <Col key={brother.first_name + " " + brother.last_name}><Brother info={brother} /></Col>
-          )}
-        </Row>
+      <Container style={{"padding-top": "40px"}, {"textAlign": "center"}}>
+        {seniorRows.length > 0 &&
+          <Row>
+            <Row>
+              <h2 style={{"textAlign": "center"}}>Seniors</h2>
+            </Row>
+            <Container>
+              {seniorRows.map(
+                row =>
+                <Row>
+                {row.map(
+                  brother =>
+                  <Col key={brother.first_name + " " + brother.last_name}>
+                    <Brother info={brother} />
+                  </Col>
+                )}
+                </Row>
+              )}
+            </Container>
+          </Row>
+        }
+        {juniorRows.length > 0 &&
+          <Row>
+            <Row>
+              <h2 style={{"textAlign": "center"}}>Juniors</h2>
+            </Row>
+            <Container>
+              <Row>
+              {juniorRows.map(
+                row =>
+                <Row>
+                {row.map(
+                  brother =>
+                  <Col key={brother.first_name + " " + brother.last_name}>
+                    <Brother info={brother} />
+                  </Col>
+                )}
+                </Row>
+              )}
+              </Row>
+            </Container>
+          </Row>
+        }
+        {sophmoreRows.length > 0 &&
+          <Row>
+            <Row>
+              <h2 style={{"textAlign": "center"}}>Sophmores</h2>
+            </Row>
+            <Container>
+              {sophmoreRows.map(
+                row =>
+                <Row>
+                {row.map(
+                  brother =>
+                  <Col key={brother.first_name + " " + brother.last_name}>
+                    <Brother info={brother} />
+                  </Col>
+                )}
+                </Row>
+              )}
+            </Container>
+          </Row>
+        }
+        {freshmenRows.length > 0 &&
+          <Row>
+            <Row>
+              <h2 style={{"textAlign": "center"}}>Freshmen</h2>
+            </Row>
+            <Container>
+              {freshmenRows.map(
+                row =>
+                <Row>
+                {row.map(
+                  brother =>
+                  <Col key={brother.first_name + " " + brother.last_name}>
+                    <Brother info={brother} />
+                  </Col>
+                )}
+                </Row>
+              )}
+            </Container>
+          </Row>
+        }
       </Container>
     )
   }

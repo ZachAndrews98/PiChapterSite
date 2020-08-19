@@ -1,0 +1,15 @@
+.Home-component {
+    /* The image used */
+    background-image: url("/images/background-images/chapterwjulie.jpg");
+
+    /* Full height */
+    height: 94%;
+    width: 100%;
+
+    padding-top: 56px;
+
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}

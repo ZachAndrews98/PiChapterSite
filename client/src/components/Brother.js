@@ -1,5 +1,7 @@
 import React from 'react'
 
+import '../css/component_css/BrotherCSS.css';
+
 export default class Brother extends React.Component {
   constructor(props) {
     super(props)
@@ -16,17 +18,16 @@ export default class Brother extends React.Component {
       <div style={{float: "left"}}>
         <ul>
           <div>
-            <p>Name: {this.state.first_name} {this.state.last_name}</p>
-            <ul>
-              <li key="year">Year: {this.state.year}</li>
-              <li key="major">Major: {this.state.major}</li>
-              <li key="minor">Minor: {this.state.minor}</li>
-            </ul>
             <img
               className="image"
               src={'/images/brothers/'+this.state.year+'/'+this.state.last_name.toLowerCase()+'.jpg'}
               alt={this.state.first_name+" "+this.state.last_name}
             />
+            <p>Name: {this.state.first_name} {this.state.last_name}</p>
+            <ul>
+              <li key="major">Major: {this.state.major}</li>
+              <li key="minor">Minor: {this.state.minor}</li>
+            </ul>
           </div>
         </ul>
       </div>

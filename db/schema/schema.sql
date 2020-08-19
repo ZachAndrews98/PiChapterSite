@@ -30,7 +30,7 @@ DROP TABLE IF EXISTS users;
 
 create table users (
 	username varchar(20),
-	password varchar(30),
+	password varchar(255),
 	email varchar(30),
 	permission varchar(5)
 );

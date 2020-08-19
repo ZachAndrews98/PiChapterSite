@@ -1,7 +1,8 @@
 import React from 'react';
 import Typed from 'typed.js';
 
-import '../css/component_css/TypedCSS.css'
+import '../css/component_css/TypedCSS.css';
+import '../css/site.css';
 
 export default class TypedComponent extends React.Component {
   // constructor(props) {
@@ -32,7 +33,7 @@ export default class TypedComponent extends React.Component {
  render() {
    return (
      <div style={this.props.style}>
-       <h2 style={{ whiteSpace: 'pre' }} ref={(el) => { this.el = el; }}/>
+       <h2 className="shadow" style={{ whiteSpace: 'pre' }} ref={(el) => { this.el = el; }}></h2>
      </div>
    );
  }
