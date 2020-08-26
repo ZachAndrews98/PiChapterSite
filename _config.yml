@@ -40,6 +40,7 @@ plugins:
   - jekyll-seo-tag
 
 include: ['_pages']
+exclude: ['db', 'api', 'client']
 
 # Exclude from processing.
 # The following items will not be processed, by default.
