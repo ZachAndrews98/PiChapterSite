@@ -1,0 +1,41 @@
+listed_pages:
+ - name: Home
+   type: page
+   url: /
+ - name: About
+   type: page
+   url: /about.html
+ - name: Brothers
+   type: page
+   url: /brothers.html
+ - name: Cabinet
+   type: page
+   url: /cabinet.html
+ - name: Pig Dinner
+   type: page
+   url: /pig_dinner.html
+ - name: Donate
+   type: page
+   url: /donate.html
+
+
+misson_statement: >-
+  We the brothers of the Pi Chapter of Phi Gamma Delta, exist to create a group
+  of extraordinary gentlemen through diversity, excellence, and love for oneself.
+  We aim to seek the highest standard of Friendship through diverse lifelong
+  bonds of brotherhood. We aim to achieve true Knowledge through scholarly
+  excellence. We aim to be the standard of Service for fraternities and
+  sororities on campus through our commitment to philanthropy and community
+  service. We aim to be the definition of Morality for knowing right from wrong
+  and treating others with the utmost respect and showing we are truly Fiji
+  gentlemen. We aim to achieve Excellence by upholding these four values and
+  will aim to always lead with love and compassion for oneself and for the world.
+
+
+# location shortened using bit.ly, normally uses full url from google maps
+Pig_dinner:
+- date:
+  time:
+  location: 
+
+Donation_link: https://www.legfi.com/app/fundraisers/phigam2020spring/963
