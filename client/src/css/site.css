@@ -1,7 +1,8 @@
 /* General Website Styling */
 body {
   margin: 0;
-  padding: 0;
+  padding-top: 56px;
+  padding-bottom: 40px;
   background: #ffffff;
   font-family: 'Roboto', sans-serif;
 }
@@ -21,19 +22,19 @@ footer {
   color: rgb(255 255 255 / 0.8) !important;
 }
 
-.nav-link {
+.feej-link {
   color: rgb(255 255 255 / 0.8) !important;
 }
 
-.navbar-brand {
+.feej-brand {
   color: rgb(255 255 255 / 0.8) !important;
 }
 
-.nav-link:hover {
+.feej-link:hover {
   font-weight: bolder;
 }
 
-.nav-link.active {
+.feej-link.active {
   color: rgba(255,255,255,1) !important;
   font-weight: bolder;
 }

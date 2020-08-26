@@ -1,4 +1,9 @@
 .Footer-component {
-  background-color: #520975;
+  background-color: #543975;
   height: 40px;
+  color: white;
+}
+
+.Footer-component .row {
+  text-align: center;
 }

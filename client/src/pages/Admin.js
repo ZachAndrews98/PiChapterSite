@@ -6,6 +6,9 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Table from 'react-bootstrap/Table';
 import Button from 'react-bootstrap/Button';
+import ButtonGroup from 'react-bootstrap/ButtonGroup'
+
+import Edit from './Edit';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 
@@ -13,8 +16,10 @@ class BrotherList extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      edit: false,
       brothers: [],
       selected: [],
+      selectedBrothers: [],
       addBrother: {
         last_name: '',
         first_name: '',
@@ -30,6 +35,8 @@ class BrotherList extends React.Component {
 
     this.handleDelete = this.handleDelete.bind(this);
     this.handleAdd = this.handleAdd.bind(this);
+    this.handleEdit = this.handleEdit.bind(this);
+    this.finishEdit = this.finishEdit.bind(this);
 
   }
 
@@ -67,18 +74,13 @@ class BrotherList extends React.Component {
 
   handleDelete(event) {
     event.preventDefault();
-    for (let item of this.state.selected) {
-      let last_name = item.split('-')[0]
-      let first_name = item.split('-')[1]
-      let year = item.split('-')[2]
-      fetch('/delete_brother', {
+    for (let id of this.state.selected) {
+      fetch('/brothers/delete', {
         method: 'delete',
         mode: 'cors',
         headers: {'Content-Type':'application/json'},
         body: JSON.stringify({
-          "last_name": last_name,
-          "first_name": first_name,
-          "year": year,
+          "id": id
         })
       })
       .then(response => response.json())
@@ -93,9 +95,9 @@ class BrotherList extends React.Component {
     this.getBrothers();
   }
 
-  handleAdd(event) {
+  async handleAdd(event) {
     event.preventDefault();
-    fetch('/add_brother', {
+    await fetch('brothers/add', {
      method: 'post',
      mode: 'cors',
      headers: {'Content-Type':'application/json'},
@@ -128,125 +130,154 @@ class BrotherList extends React.Component {
     }
     this.setState({addBrother: addBrother})
     console.log(this.state.addBrother)
+    await this.getBrothers();
+  }
+
+  handleEdit(event) {
+    event.preventDefault();
+    let selectedBrothers = []
+    for(let selected of this.state.selected) {
+      for(let brother of this.state.brothers) {
+        if(parseInt(selected) === parseInt(brother.id)) {
+          selectedBrothers.push(brother)
+        }
+      }
+    }
+    console.log(selectedBrothers)
+    if(selectedBrothers.length > 0) {
+      this.setState({selectedBrothers: selectedBrothers})
+      this.setState({edit: true})
+    }
+  }
+
+  finishEdit(event) {
+    event.preventDefault();
+    this.setState({selected: []});
+    this.setState({edit: false});
     this.getBrothers();
   }
 
 
-  render() {
-    return (
-      <Form>
-        <Form.Group>
-          <Form.Row>
+render() {
+  return (
+    <Container>
+      {this.state.edit &&
+        <Edit brothers={this.state.selectedBrothers} done={this.finishEdit}/>
+      }
+      {!this.state.edit &&
+        <Form>
+          <ButtonGroup>
+            <Button type="submit" onClick={this.handleAdd}>Add Brother</Button>
+            <Button type="submit" onClick={this.handleEdit}>Edit Brother</Button>
             <Button type="submit" onClick={this.handleDelete}>Delete Brother</Button>
-          </Form.Row>
-          <Form.Row>
-            <Table striped bordered hover>
-              <thead>
-                <tr>
-                  <th>Select</th>
-                  <th>Last Name</th>
-                  <th>First Name</th>
-                  <th>Class Year</th>
-                  <th>Major</th>
-                  <th>Minor</th>
-                  <th>Email</th>
-                  <th>Phone</th>
-                </tr>
-              </thead>
-              <tbody>
-                {this.state.brothers.map(
-                  brother =>
+          </ButtonGroup>
+          <Form.Group>
+            <Form.Row>
+              <Table striped bordered hover>
+                <thead>
+                  <tr>
+                    <th>Select</th>
+                    <th>Last Name</th>
+                    <th>First Name</th>
+                    <th>Class Year</th>
+                    <th>Major</th>
+                    <th>Minor</th>
+                    <th>Email</th>
+                    <th>Phone</th>
+                  </tr>
+                </thead>
+                <tbody>
                   <tr>
                     <td>
                       <Form.Check
                         type='checkbox'
-                        id={brother.last_name + "-" + brother.first_name + "-" + brother.year}
-                        onChange={this.handleChange}
+                        id="filler"
+                        disabled
                       />
                     </td>
-                    <td>{brother.last_name}</td>
-                    <td>{brother.first_name}</td>
-                    <td>{brother.year}</td>
-                    <td>{brother.major}</td>
-                    <td>{brother.minor}</td>
-                    <td>{brother.email}</td>
-                    <td>{brother.phone}</td>
+                    <td>
+                      <Form.Control
+                        id="last_name"
+                        placeholder="Last Name"
+                        value={this.state.addBrother["last_name"]}
+                        onChange={this.handleAddChange}
+                      />
+                    </td>
+                    <td>
+                      <Form.Control
+                        id="first_name"
+                        placeholder="First Name"
+                        value={this.state.addBrother["first_name"]}
+                        onChange={this.handleAddChange}
+                      />
+                    </td>
+                    <td>
+                      <Form.Control
+                        id="year"
+                        placeholder="Class Year"
+                        value={this.state.addBrother["year"]}
+                        onChange={this.handleAddChange}
+                      />
+                    </td>
+                    <td>
+                      <Form.Control
+                        id="major"
+                        placeholder="Major"
+                        value={this.state.addBrother["major"]}
+                        onChange={this.handleAddChange}
+                      />
+                    </td>
+                    <td>
+                      <Form.Control
+                        id="minor"
+                        placeholder="Minor"
+                        value={this.state.addBrother["minor"]}
+                        onChange={this.handleAddChange}
+                      />
+                    </td>
+                    <td>
+                      <Form.Control
+                        id="email"
+                        placeholder="Email"
+                        value={this.state.addBrother["email"]}
+                        onChange={this.handleAddChange}
+                      />
+                    </td>
+                    <td>
+                      <Form.Control
+                        id="phone"
+                        placeholder="Phone Number"
+                        value={this.state.addBrother["phone"]}
+                        onChange={this.handleAddChange}
+                      />
+                    </td>
                   </tr>
-                )}
-              </tbody>
-            </Table>
-          </Form.Row>
-          <Form.Row>
-            <Button type="submit" onClick={this.handleDelete}>Delete Brother</Button>
-          </Form.Row>
-        </Form.Group>
-
-        <Form.Group>
-          <Form.Row>
-            <Col>
-              <Form.Control
-                id="first_name"
-                placeholder="First Name"
-                value={this.state.addBrother["first_name"]}
-                onChange={this.handleAddChange}
-              />
-            </Col>
-            <Col>
-              <Form.Control
-                id="last_name"
-                placeholder="Last Name"
-                value={this.state.addBrother["last_name"]}
-                onChange={this.handleAddChange}
-              />
-            </Col>
-            <Col>
-              <Form.Control
-                id="year"
-                placeholder="Class Year"
-                value={this.state.addBrother["year"]}
-                onChange={this.handleAddChange}
-              />
-            </Col>
-          </Form.Row>
-          <Form.Row>
-            <Col>
-              <Form.Control
-                id="major"
-                placeholder="Major"
-                value={this.state.addBrother["major"]}
-                onChange={this.handleAddChange}
-              />
-            </Col>
-            <Col>
-              <Form.Control
-                id="minor"
-                placeholder="Minor"
-                value={this.state.addBrother["minor"]}
-                onChange={this.handleAddChange}
-              />
-            </Col>
-            <Col>
-              <Form.Control
-                id="email"
-                placeholder="Email"
-                value={this.state.addBrother["email"]}
-                onChange={this.handleAddChange}
-              />
-            </Col>
-            <Col>
-              <Form.Control
-                id="phone"
-                placeholder="Phone Number"
-                value={this.state.addBrother["phone"]}
-                onChange={this.handleAddChange}
-              />
-            </Col>
-          </Form.Row>
-          <Form.Row>
-            <Button type="submit" onClick={this.handleAdd}>Add Brother</Button>
-          </Form.Row>
-        </Form.Group>
-      </Form>
+                  {this.state.brothers.map(
+                    brother =>
+                    <tr>
+                      <td>
+                        <Form.Check
+                          type='checkbox'
+                          id={brother.id}
+                          onChange={this.handleChange}
+                        />
+                      </td>
+                      <td>{brother.last_name}</td>
+                      <td>{brother.first_name}</td>
+                      <td>{brother.year}</td>
+                      <td>{brother.major}</td>
+                      <td>{brother.minor}</td>
+                      <td>{brother.email}</td>
+                      <td>{brother.phone}</td>
+                    </tr>
+                  )}
+                </tbody>
+              </Table>
+            </Form.Row>
+          </Form.Group>
+        </Form>
+      }
+      </Container>
     )
   }
 }

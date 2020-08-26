@@ -68,7 +68,7 @@ export default class Brothers extends React.Component {
                 <Row>
                 {row.map(
                   brother =>
-                  <Col key={brother.first_name + " " + brother.last_name}>
+                  <Col key={brother.first_name + " " + brother.last_name} style={{textAlign: "center"}}>
                     <Brother info={brother} />
                   </Col>
                 )}

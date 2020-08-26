@@ -27,10 +27,9 @@ export default class Register extends React.Component {
     this.handleRegisterChange = this.handleRegisterChange.bind(this);
   }
 
-  handleRegister(event) {
-    console.log(this.state.register)
+  async handleRegister(event) {
     event.preventDefault();
-    fetch('/register', {
+    await fetch('/user/register', {
       method: 'post',
       mode: 'cors',
       headers: {'Content-Type':'application/json'},

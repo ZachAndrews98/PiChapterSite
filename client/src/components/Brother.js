@@ -23,11 +23,9 @@ export default class Brother extends React.Component {
               src={'/images/brothers/'+this.state.year+'/'+this.state.last_name.toLowerCase()+'.jpg'}
               alt={this.state.first_name+" "+this.state.last_name}
             />
-            <p>Name: {this.state.first_name} {this.state.last_name}</p>
-            <ul>
-              <li key="major">Major: {this.state.major}</li>
-              <li key="minor">Minor: {this.state.minor}</li>
-            </ul>
+            <h5>Name: {this.state.first_name} {this.state.last_name}</h5>
+            <p key="major">Major: {this.state.major}</p>
+            <p key="minor">Minor: {this.state.minor}</p>
           </div>
         </ul>
       </div>

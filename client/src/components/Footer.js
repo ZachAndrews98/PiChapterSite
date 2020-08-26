@@ -13,7 +13,7 @@ export default class Footer extends React.Component {
         <Container>
           <Row>
             <Col>
-              <span>Test</span>
+              <p>TEST</p>
             </Col>
           </Row>
         </Container>

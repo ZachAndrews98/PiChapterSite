@@ -13,7 +13,7 @@ export default class Login extends React.Component {
     super(props);
     this.state = {
       login: {
-        username: '',
+        email: '',
         password: '',
       }
     }
@@ -24,12 +24,12 @@ export default class Login extends React.Component {
   handleLogin(event) {
     event.preventDefault();
     console.log(this.state.login)
-    fetch('/login', {
+    fetch('/user/login', {
      method: 'post',
      mode: 'cors',
      headers: {'Content-Type':'application/json'},
      body: JSON.stringify({
-       "username": this.state.login.username,
+       "email": this.state.login.email,
        "password": this.state.login.password,
      })
     })
@@ -41,7 +41,7 @@ export default class Login extends React.Component {
       console.error('Error:', error);
     });
     let login = {
-      username: '',
+      email: '',
       password: '',
     }
     this.setState({login: login})
@@ -65,20 +65,12 @@ export default class Login extends React.Component {
           <Form>
           <Col>
             <Form.Control
-              id="username"
-              placeholder="Username"
-              value={this.state.login["usename"]}
-              onChange={this.handleLoginChange}
-            />
-          </Col>
-          {/*<Col>
-            <Form.Control
               id="email"
               placeholder="Email"
               value={this.state.login["email"]}
               onChange={this.handleLoginChange}
             />
-          </Col>*/}
+          </Col>
           <Col>
             <Form.Control
               id="password"
@@ -88,7 +80,7 @@ export default class Login extends React.Component {
             />
           </Col>
           <Col>
-            <Button type="submit" onClick={this.handleLogin}>Register</Button>
+            <Button type="submit" onClick={this.handleLogin}>Login</Button>
           </Col>
           </Form>
         </Row>
