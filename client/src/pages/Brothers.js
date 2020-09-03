@@ -7,6 +7,7 @@ import Col from 'react-bootstrap/Col';
 import Brother from '../components/Brother';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
+import '../css/component_css/BrotherCSS.css';
 
 export default class Brothers extends React.Component {
   constructor(props){
@@ -56,19 +57,19 @@ export default class Brothers extends React.Component {
     let sophmoreRows = this.makeRows(this.state.sophmores, numPerRow)
     let freshmenRows = this.makeRows(this.state.freshmen, numPerRow)
     return(
-      <Container style={{"padding-top": "40px"}, {"textAlign": "center"}}>
+      <Container className="brothers-container">
         {seniorRows.length > 0 &&
           <Row>
             <Row>
-              <h2 style={{"textAlign": "center"}}>Seniors</h2>
+              <h2>Seniors</h2>
             </Row>
-            <Container>
+            <Container fluid>
               {seniorRows.map(
                 row =>
                 <Row>
                 {row.map(
                   brother =>
-                  <Col key={brother.first_name + " " + brother.last_name} style={{textAlign: "center"}}>
+                  <Col key={brother.first_name + " " + brother.last_name}>
                     <Brother info={brother} />
                   </Col>
                 )}
@@ -80,10 +81,9 @@ export default class Brothers extends React.Component {
         {juniorRows.length > 0 &&
           <Row>
             <Row>
-              <h2 style={{"textAlign": "center"}}>Juniors</h2>
+              <h2>Juniors</h2>
             </Row>
-            <Container>
-              <Row>
+            <Container fluid>
               {juniorRows.map(
                 row =>
                 <Row>
@@ -95,16 +95,15 @@ export default class Brothers extends React.Component {
                 )}
                 </Row>
               )}
-              </Row>
             </Container>
           </Row>
         }
         {sophmoreRows.length > 0 &&
           <Row>
             <Row>
-              <h2 style={{"textAlign": "center"}}>Sophmores</h2>
+              <h2>Sophmores</h2>
             </Row>
-            <Container>
+            <Container fluid>
               {sophmoreRows.map(
                 row =>
                 <Row>
@@ -122,9 +121,9 @@ export default class Brothers extends React.Component {
         {freshmenRows.length > 0 &&
           <Row>
             <Row>
-              <h2 style={{"textAlign": "center"}}>Freshmen</h2>
+              <h2>Freshmen</h2>
             </Row>
-            <Container>
+            <Container fluid>
               {freshmenRows.map(
                 row =>
                 <Row>

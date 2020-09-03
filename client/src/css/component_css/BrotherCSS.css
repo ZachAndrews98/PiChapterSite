@@ -2,3 +2,16 @@
   height: 250px;
   width: auto;
 }
+
+.brother-info {
+  text-align: center;
+}
+
+ul.brother-info p{
+  margin: 2px;
+}
+
+.brothers-container {
+  padding-top: "40px";
+  text-align: "center";
+}

@@ -5,7 +5,7 @@ import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Button from 'react-bootstrap/Button';
-
+import ButtonGroup from 'react-bootstrap/ButtonGroup';
 import Tabs from 'react-bootstrap/Tabs'
 import Tab from 'react-bootstrap/Tab'
 
@@ -24,8 +24,8 @@ export default class Edit extends React.Component {
 
   async handleEdit(event) {
     event.preventDefault();
-    console.log(event.target.id)
     const id = event.target.id
+    const brother = this.state.selected.find(brother => parseInt(brother.id) === parseInt(id))
     let edit = {
       last_name: '',
       first_name: '',
@@ -33,7 +33,8 @@ export default class Edit extends React.Component {
       major: '',
       minor: '',
       email: '',
-      phone: ''
+      phone: '',
+      id: ''
     }
 
     for(let key of Object.keys(edit)) {
@@ -42,12 +43,11 @@ export default class Edit extends React.Component {
         if(value !== '')
           edit[key] = value
         else
-          edit[key] = this.state.selected.find(brother => parseInt(brother.id) === parseInt(id))[key]
+          edit[key] = brother[key]
       } else {
-        edit[key] = this.state.selected.find(brother => parseInt(brother.id) === parseInt(id))[key]
+        edit[key] = brother[key]
       }
     }
-    console.log(edit)
     await fetch('brothers/edit', {
      method: 'put',
      mode: 'cors',
@@ -60,7 +60,7 @@ export default class Edit extends React.Component {
        "minor": edit.minor,
        "email": edit.email,
        "phone": edit.phone,
-       "id": id
+       "id": edit.id
      })
     })
     .then(response => response.json())
@@ -70,10 +70,14 @@ export default class Edit extends React.Component {
     .catch((error) => {
       console.error('Error:', error);
     });
+    // console.log(this.state.selected)
+    let newSelection = this.state.selected;
+    newSelection[newSelection.indexOf(brother)] = edit;
+    this.setState({selected: newSelection})
+    this.clearCurrent()
   }
 
   handleEditChange(event) {
-    console.log(event.target.id)
     if (event.target.id !== null) {
       let current = this.state.current;
       current[event.target.id] = event.target.value;
@@ -82,7 +86,6 @@ export default class Edit extends React.Component {
   }
 
   clearCurrent(event) {
-    console.log(event)
     let current = {}
     this.setState({current: current});
   }
@@ -156,10 +159,10 @@ export default class Edit extends React.Component {
                   </Col>
                 </Form.Row>
                 <Form.Row>
-                  <Button type="submit" id={selection.id} onClick={this.handleEdit}>Save</Button>
-                </Form.Row>
-                <Form.Row>
-                  <Button type="submit" onClick={this.props.done}>Done</Button>
+                  <ButtonGroup>
+                    <Button type="submit" id={selection.id} onClick={this.handleEdit}>Save</Button>
+                    <Button type="submit" onClick={this.props.done}>Done</Button>
+                  </ButtonGroup>
                 </Form.Row>
               </Form.Group>
             </Form>

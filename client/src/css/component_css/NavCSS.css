@@ -1,0 +1,21 @@
+.bg-feej {
+  background-color: #543975;
+  color: rgb(255 255 255 / 0.8) !important;
+}
+
+.feej-link {
+  color: rgb(255 255 255 / 0.8) !important;
+}
+
+.feej-brand {
+  color: rgb(255 255 255) !important;
+}
+
+.feej-link:hover {
+  font-weight: bolder;
+}
+
+.feej-link.active {
+  color: rgba(255,255,255,1) !important;
+  font-weight: bolder;
+}

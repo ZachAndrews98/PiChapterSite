@@ -1,9 +1,22 @@
 .Footer-component {
   background-color: #543975;
-  height: 40px;
+  height: 55px;
   color: white;
 }
 
 .Footer-component .row {
   text-align: center;
+}
+
+.social {
+  margin-top: 10px;
+}
+
+.copyright {
+  margin-top: 15px;
+}
+
+a {
+  margin-right: 5px;
+  color: white;
 }

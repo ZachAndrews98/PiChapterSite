@@ -1,5 +1,7 @@
 import React from 'react'
 
+import {Img} from 'react-image'
+
 import '../css/component_css/BrotherCSS.css';
 
 export default class Brother extends React.Component {
@@ -15,18 +17,24 @@ export default class Brother extends React.Component {
   }
   render() {
     return (
-      <div style={{float: "left"}}>
-        <ul>
-          <div>
-            <img
-              className="image"
-              src={'/images/brothers/'+this.state.year+'/'+this.state.last_name.toLowerCase()+'.jpg'}
-              alt={this.state.first_name+" "+this.state.last_name}
-            />
-            <h5>Name: {this.state.first_name} {this.state.last_name}</h5>
-            <p key="major">Major: {this.state.major}</p>
-            <p key="minor">Minor: {this.state.minor}</p>
-          </div>
+      <div>
+        <ul class="brother-info">
+          {/*<img
+            className="image"
+            src={'/images/brothers/'+this.state.year+'/'+this.state.last_name.toLowerCase()+'.jpg'}
+            onError="src='/images/test.jpg'"
+            alt={this.state.first_name+" "+this.state.last_name}
+          />*/}
+          <Img
+            className="image"
+            src={[
+              '/images/brothers/'+this.state.year+'/'+this.state.last_name.toLowerCase()+'.jpg',
+              '/images/test.jpg'
+            ]}
+          />
+          <h5>{this.state.first_name} {this.state.last_name}</h5>
+          <p key="major"><strong>Major:</strong> {this.state.major}</p>
+          <p key="minor"><strong>Minor:</strong> {this.state.minor}</p>
         </ul>
       </div>
     )
