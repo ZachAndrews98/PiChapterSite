@@ -1,14 +1,19 @@
+.NavBar-Component {
+  /* height: 56px; */
+  /* margin-bottom: 15px; */
+}
+
 .bg-feej {
   background-color: #543975;
-  color: rgb(255 255 255 / 0.8) !important;
 }
 
 .feej-link {
-  color: rgb(255 255 255 / 0.8) !important;
+  color: rgb(255 255 255 / 0.7) !important;
 }
 
 .feej-brand {
   color: rgb(255 255 255) !important;
+  font-weight: bolder;
 }
 
 .feej-link:hover {
@@ -18,4 +23,9 @@
 .feej-link.active {
   color: rgba(255,255,255,1) !important;
   font-weight: bolder;
+}
+
+.crest {
+  height: auto;
+  width: 38px;
 }

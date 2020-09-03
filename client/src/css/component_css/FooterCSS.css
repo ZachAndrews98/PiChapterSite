@@ -1,22 +1,71 @@
 .Footer-component {
   background-color: #543975;
-  height: 55px;
   color: white;
-}
-
-.Footer-component .row {
-  text-align: center;
-}
-
-.social {
-  margin-top: 10px;
-}
-
-.copyright {
-  margin-top: 15px;
 }
 
 a {
-  margin-right: 5px;
-  color: white;
+  color: rgb(255 255 255 / 0.7) !important;
+}
+
+a:hover {
+  font-weight: bolder;
+  color: rgb(255 255 255 / 1) !important;
+}
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+  .Footer-component {
+    height: 55px;
+  }
+
+  .Footer-component .row {
+    text-align: center;
+  }
+
+  .social {
+    margin-top: 10px;
+  }
+
+  .copyright {
+    margin-top: 10px;
+  }
+
+  a {
+    margin-right: 5px;
+  }
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+  .Footer-component {
+    height: 55px;
+  }
+
+  .Footer-component .row {
+    text-align: center;
+  }
+
+  .social {
+    margin-top: 10px;
+  }
+
+  .copyright {
+    margin-top: 15px;
+  }
+
+  a {
+    margin-right: 5px;
+  }
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
 }

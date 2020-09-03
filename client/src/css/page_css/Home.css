@@ -1,10 +1,26 @@
+.Home-component {
+  /* The image used */
+  background-image: url("/images/background-images/chapterwjulie.jpg");
+  height: 100%;
+  width: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  text-align: center;
+}
+
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 600px) {
-
+  .Home-component {
+    padding-top: 30px;
+  }
 }
 
 /* Small devices (portrait tablets and large phones, 600px and up) */
 @media only screen and (min-width: 600px) {
+  .Home-component {
+    padding-top: 15px;
+  }
 }
 
 /* Medium devices (landscape tablets, 768px and up) */
@@ -13,22 +29,8 @@
 
 /* Large devices (laptops/desktops, 992px and up) */
 @media only screen and (min-width: 992px) {
-  .image {
-    height: 250px;
-    width: auto;
-  }
-
-  .brother-info {
-    text-align: center;
-  }
-
-  ul.brother-info p{
-    margin: 2px;
-  }
-
-  .brothers-container {
-    padding-top: 20px;
-    text-align: center;
+  .Home-component {
+    padding-top: 56px;
   }
 }
 
