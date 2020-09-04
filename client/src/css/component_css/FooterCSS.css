@@ -3,11 +3,11 @@
   color: white;
 }
 
-a {
+.Footer-component a {
   color: rgb(255 255 255 / 0.7) !important;
 }
 
-a:hover {
+.Footer-component a:hover {
   font-weight: bolder;
   color: rgb(255 255 255 / 1) !important;
 }
@@ -30,7 +30,7 @@ a:hover {
     margin-top: 10px;
   }
 
-  a {
+  .Footer-component a {
     margin-right: 5px;
   }
 }
@@ -61,7 +61,7 @@ a:hover {
     margin-top: 15px;
   }
 
-  a {
+  .Footer-component a {
     margin-right: 5px;
   }
 }

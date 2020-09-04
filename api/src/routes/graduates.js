@@ -16,13 +16,13 @@ router.get('/', (req, res) => {
   last_name = `last_name like '%${req.query.last_name}%'`
   let sql = undefined
   if (req.query.last_name && req.query.first_name) {
-    sql = `select * from brothers where ${last_name} and ${first_name};`;
+    sql = `select * from graduates where ${last_name} and ${first_name};`;
   } else if (req.query.last_name) {
-    sql = `select * from brothers where ${last_name};`;
+    sql = `select * from graduates where ${last_name};`;
   } else if (req.query.first_name) {
-    sql = `select * from brothers where ${first_name};`;
+    sql = `select * from graduates where ${first_name};`;
   } else {
-    sql = "select * from brothers;";
+    sql = "select * from graduates;";
   }
   if (sql !== undefined) {
     database.query(sql, (err, result) => {
@@ -37,7 +37,7 @@ router.get('/', (req, res) => {
 router.get('/:last_name/:first_name', (req, res) => {
   first_name = `first_name like '%${req.params.first_name.replace("'","")}%'`
   last_name = `last_name like '%${req.params.last_name}%'`
-  const sql = `select * from brothers where ${last_name} and ${first_name};`;
+  const sql = `select * from graduates where ${last_name} and ${first_name};`;
   database.query(sql, (err, result) => {
     res.send(result);
   });
@@ -54,7 +54,7 @@ router.put('/edit', (req, res) => {
     email: req.body.email,
     phone: req.body.phone
   }
-  const sql = `update brothers
+  const sql = `update graduates
   set last_name=?, first_name=?, year=?, major=?, minor=?, email=?, phone=?
   where id=?`
   database.query(sql,
@@ -99,7 +99,7 @@ router.post('/add', async (req, res) => {
   })
   .then(hash => {
 
-    const sql = "insert into brothers \
+    const sql = "insert into graduates \
     (last_name, first_name, year, major, minor, email, phone, password) \
     values (?,?,?,?,?,?,?,?)"
     database.query(sql,
@@ -120,7 +120,7 @@ router.post('/add', async (req, res) => {
 
 router.delete('/delete', (req, res) => {
   const id = req.body.id;
-  const sql = `delete from brothers where id=?`
+  const sql = `delete from graduates where id=?`
   database.query(sql, id,
     (err, result) => {
       if (err) {
@@ -132,14 +132,14 @@ router.delete('/delete', (req, res) => {
   });
 });
 
-// Transfer brother to graduates
+// Transfer graduate to brothers
 router.post('/transfer', (req, res) => {
-  database.query(`select * from brothers where id=?`, req.body.id,
+  database.query(`select * from graduates where id=?`, req.body.id,
   (err, result) => {
     if (err) {
       res.send({"success": false})
     }
-    let sql = "insert into graduates \
+    let sql = "insert into brothers \
     (last_name, first_name, year, major, minor, email, phone, password) \
     values (?,?,?,?,?,?,?,?)"
     database.query(sql,
@@ -154,7 +154,7 @@ router.post('/transfer', (req, res) => {
         }
     });
   });
-  sql = `delete from brothers where id=?`
+  sql = `delete from graduates where id=?`
   database.query(sql, req.body.id,
     (err, result) => {
       if (err) {

@@ -1,8 +1,6 @@
 import React from 'react';
 
 import Form from 'react-bootstrap/Form';
-import Container from 'react-bootstrap/Container';
-import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Button from 'react-bootstrap/Button';
 import ButtonGroup from 'react-bootstrap/ButtonGroup';
@@ -14,12 +12,14 @@ export default class Edit extends React.Component {
     super(props)
     this.state = {
       selected: this.props.brothers,
+      target: this.props.target,
       current: {},
     }
     console.log(this.state.selected)
     this.handleEditChange = this.handleEditChange.bind(this)
     this.handleEdit = this.handleEdit.bind(this)
     this.clearCurrent = this.clearCurrent.bind(this)
+    this.handleTransfer = this.handleTransfer.bind(this)
   }
 
   async handleEdit(event) {
@@ -48,7 +48,7 @@ export default class Edit extends React.Component {
         edit[key] = brother[key]
       }
     }
-    await fetch('brothers/edit', {
+    await fetch(`${this.state.target}/edit`, {
      method: 'put',
      mode: 'cors',
      headers: {'Content-Type':'application/json'},
@@ -84,6 +84,61 @@ export default class Edit extends React.Component {
       this.setState({current: current});
     }
   }
+
+  // async handleTransfer(event) {
+  //   const id = event.target.id
+  //   const brother = this.state.selected.find(brother => parseInt(brother.id) === parseInt(id))
+  //   let transfer = {
+  //     last_name: '',
+  //     first_name: '',
+  //     year: '',
+  //     major: '',
+  //     minor: '',
+  //     email: '',
+  //     phone: '',
+  //     id: '',
+  //     password: ''
+  //   }
+  //
+  //   for(let key of Object.keys(transfer)) {
+  //     if((event.target.id + "-" + key) in this.state.current) {
+  //       let value = this.state.current[id + "-" + key]
+  //       if(value !== '')
+  //         transfer[key] = value
+  //       else
+  //         transfer[key] = brother[key]
+  //     } else {
+  //       transfer[key] = brother[key]
+  //     }
+  //   }
+  //   await fetch(`${this.state.target}/transfer`, {
+  //    method: 'post',
+  //    mode: 'cors',
+  //    headers: {'Content-Type':'application/json'},
+  //    body: JSON.stringify({
+  //      "last_name": transfer.last_name,
+  //      "first_name": transfer.first_name,
+  //      "year": transfer.year,
+  //      "major": transfer.major,
+  //      "minor": transfer.minor,
+  //      "email": transfer.email,
+  //      "phone": transfer.phone,
+  //      "id": transfer.id,
+  //      "password": transfer.password
+  //    })
+  //   })
+  //   .then(response => response.json())
+  //   .then(data => {
+  //     console.log('Success:', data);
+  //   })
+  //   .catch((error) => {
+  //     console.error('Error:', error);
+  //   });
+  //   // console.log(this.state.selected)
+  //   let newSelection = this.state.selected;
+  //   this.setState({selected: newSelection.splice(newSelection.indexOf(brother), 1)})
+  //   this.clearCurrent()
+  // }
 
   clearCurrent(event) {
     let current = {}
@@ -162,6 +217,7 @@ export default class Edit extends React.Component {
                   <ButtonGroup>
                     <Button type="submit" id={selection.id} onClick={this.handleEdit}>Save</Button>
                     <Button type="submit" onClick={this.props.done}>Done</Button>
+                    <Button type="submit" id={selection.id} onClick={this.handleTransfer}>Transfer</Button>
                   </ButtonGroup>
                 </Form.Row>
               </Form.Group>

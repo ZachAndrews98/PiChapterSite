@@ -10,7 +10,8 @@ export default function NavBar() {
     <div className="NavBar-Component">
       <Navbar fixed="top" expand="lg" bg="feej" varient="navbar-feej">
         <Navbar.Brand className="feej-brand">
-          <img className="crest" src="/images/ChapterCoatWhite.png"/> Allegheny Fiji
+          <img className="crest" src="/images/ChapterCoatWhite.png" alt="Chapter Coat of Arms"/>
+          Allegheny Fiji
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
