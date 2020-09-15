@@ -25,7 +25,8 @@ export default class BrotherList extends React.Component {
         major: '',
         minor: '',
         email: '',
-        phone: ''
+        phone: '',
+        role: ''
       },
     }
     this.handleChange = this.handleChange.bind(this);
@@ -107,7 +108,8 @@ export default class BrotherList extends React.Component {
        "major": this.state.addBrother.major,
        "minor": this.state.addBrother.minor,
        "email": this.state.addBrother.email,
-       "phone": this.state.addBrother.phone
+       "phone": this.state.addBrother.phone,
+       "role": this.state.addBrother.role
      })
     })
     .then(response => response.json())
@@ -125,7 +127,8 @@ export default class BrotherList extends React.Component {
       major: '',
       minor: '',
       email: '',
-      phone: ''
+      phone: '',
+      role: ''
     }
     this.setState({addBrother: addBrother})
     console.log(this.state.addBrother)
@@ -207,6 +210,7 @@ render() {
                     <th>Minor</th>
                     <th>Email</th>
                     <th>Phone</th>
+                    <th>Role</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -274,6 +278,22 @@ render() {
                         onChange={this.handleAddChange}
                       />
                     </td>
+                    <td>
+                      <Form.Control
+                        as="select"
+                        id="role"
+                        value={this.state.addBrother["role"]}
+                        onChange={this.handleAddChange}
+                      >
+                        <option>Pledge</option>
+                        <option>Brother</option>
+                        <option>President</option>
+                        <option>Treasurer</option>
+                        <option>Recording</option>
+                        <option>Corresponding</option>
+                        <option>Historian</option>
+                      </Form.Control>
+                    </td>
                   </tr>
                   {this.state.brothers.map(
                     brother =>
@@ -292,6 +312,7 @@ render() {
                       <td>{brother.minor}</td>
                       <td>{brother.email}</td>
                       <td>{brother.phone}</td>
+                      <td>{brother.role}</td>
                     </tr>
                   )}
                 </tbody>

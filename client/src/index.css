@@ -1,5 +1,15 @@
-body, html {
+html {
   height: 100%;
   width: 100%;
   margin: 0px;
+}
+
+body {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding-top: 56px;
+  padding-bottom: 55px;
+  background: #ffffff;
+  font-family: 'Roboto', sans-serif;
 }

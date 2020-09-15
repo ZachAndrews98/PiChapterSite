@@ -16,7 +16,7 @@ export default function About(){
         </Col>
       </Row>
       <Row>
-        <h2>Mission Statement</h2>
+        <strong><h2>Mission Statement</h2></strong>
         <p>We the brothers of the Pi Chapter of Phi Gamma Delta, exist to create a group
   of extraordinary gentlemen through diversity, excellence, and love for oneself.
   We aim to seek the highest standard of Friendship through diverse lifelong
@@ -29,7 +29,7 @@ export default function About(){
   will aim to always lead with love and compassion for oneself and for the world.</p>
       </Row>
       <Row>
-        <h2>History</h2>
+        <strong><h2>History</h2></strong>
         <p>Founded on June 5th, 1860, the Pi Chapter of Phi Gamma Delta was the ninth
           chapter of Phi Gamma Delta to be founded. The chapter has had several notible
           brothers, like Brother Edwin Mattern class of 1890. The chapter remained in
@@ -40,7 +40,7 @@ export default function About(){
           mind upon and to build the most upstanding fraternity men as possible.</p>
       </Row>
       <Row>
-        <h2>Values</h2>
+        <strong><h2>Values</h2></strong>
         <p>The Fraternity has five core values. <strong>Friendship</strong>,
           <strong>Knowledge</strong>, <strong>Service</strong>, <strong>Morality</strong>,
           and <strong>Excellence</strong>. These values are the pillars that have allowed

@@ -19,7 +19,6 @@ export default class Edit extends React.Component {
     this.handleEditChange = this.handleEditChange.bind(this)
     this.handleEdit = this.handleEdit.bind(this)
     this.clearCurrent = this.clearCurrent.bind(this)
-    this.handleTransfer = this.handleTransfer.bind(this)
   }
 
   async handleEdit(event) {
@@ -34,6 +33,7 @@ export default class Edit extends React.Component {
       minor: '',
       email: '',
       phone: '',
+      role: '',
       id: ''
     }
 
@@ -60,6 +60,7 @@ export default class Edit extends React.Component {
        "minor": edit.minor,
        "email": edit.email,
        "phone": edit.phone,
+       "role": edit.role,
        "id": edit.id
      })
     })
@@ -70,7 +71,6 @@ export default class Edit extends React.Component {
     .catch((error) => {
       console.error('Error:', error);
     });
-    // console.log(this.state.selected)
     let newSelection = this.state.selected;
     newSelection[newSelection.indexOf(brother)] = edit;
     this.setState({selected: newSelection})
@@ -85,61 +85,6 @@ export default class Edit extends React.Component {
     }
   }
 
-  // async handleTransfer(event) {
-  //   const id = event.target.id
-  //   const brother = this.state.selected.find(brother => parseInt(brother.id) === parseInt(id))
-  //   let transfer = {
-  //     last_name: '',
-  //     first_name: '',
-  //     year: '',
-  //     major: '',
-  //     minor: '',
-  //     email: '',
-  //     phone: '',
-  //     id: '',
-  //     password: ''
-  //   }
-  //
-  //   for(let key of Object.keys(transfer)) {
-  //     if((event.target.id + "-" + key) in this.state.current) {
-  //       let value = this.state.current[id + "-" + key]
-  //       if(value !== '')
-  //         transfer[key] = value
-  //       else
-  //         transfer[key] = brother[key]
-  //     } else {
-  //       transfer[key] = brother[key]
-  //     }
-  //   }
-  //   await fetch(`${this.state.target}/transfer`, {
-  //    method: 'post',
-  //    mode: 'cors',
-  //    headers: {'Content-Type':'application/json'},
-  //    body: JSON.stringify({
-  //      "last_name": transfer.last_name,
-  //      "first_name": transfer.first_name,
-  //      "year": transfer.year,
-  //      "major": transfer.major,
-  //      "minor": transfer.minor,
-  //      "email": transfer.email,
-  //      "phone": transfer.phone,
-  //      "id": transfer.id,
-  //      "password": transfer.password
-  //    })
-  //   })
-  //   .then(response => response.json())
-  //   .then(data => {
-  //     console.log('Success:', data);
-  //   })
-  //   .catch((error) => {
-  //     console.error('Error:', error);
-  //   });
-  //   // console.log(this.state.selected)
-  //   let newSelection = this.state.selected;
-  //   this.setState({selected: newSelection.splice(newSelection.indexOf(brother), 1)})
-  //   this.clearCurrent()
-  // }
-
   clearCurrent(event) {
     let current = {}
     this.setState({current: current});
@@ -152,72 +97,92 @@ export default class Edit extends React.Component {
           selection =>
           <Tab eventKey={selection.id} title={selection.last_name}>
             <Form>
-              <Form.Group>
+              <Form.Group style={{"textAlign": "center"}}>
                 <Form.Row>
-                  <Col>
-                    <Form.Control
-                      id={selection.id+ "-first_name"}
-                      placeholder={selection.first_name}
-                      value={this.state.current.first_name}
-                      onChange={this.handleEditChange}
-                    />
-                  </Col>
-                  <Col>
-                    <Form.Control
-                      id={selection.id+ "-last_name"}
-                      placeholder={selection.last_name}
-                      value={this.state.current.last_name}
-                      onChange={this.handleEditChange}
-                    />
-                  </Col>
-                  <Col>
-                    <Form.Control
-                      id={selection.id+ "-year"}
-                      placeholder={selection.year}
-                      value={this.state.current.year}
-                      onChange={this.handleEditChange}
-                    />
-                  </Col>
+                  <Form.Label>First name</Form.Label>
+                  <Form.Control
+                    id={selection.id+ "-first_name"}
+                    placeholder={selection.first_name}
+                    value={this.state.current.first_name}
+                    onChange={this.handleEditChange}
+                  />
                 </Form.Row>
                 <Form.Row>
-                  <Col>
-                    <Form.Control
-                      id={selection.id+ "-major"}
-                      placeholder={selection.major}
-                      value={this.state.current.major}
-                      onChange={this.handleEditChange}
-                    />
-                  </Col>
-                  <Col>
-                    <Form.Control
-                      id={selection.id+ "-minor"}
-                      placeholder={selection.minor}
-                      value={this.state.current.minor}
-                      onChange={this.handleEditChange}
-                    />
-                  </Col>
-                  <Col>
-                    <Form.Control
-                      id={selection.id+ "-email"}
-                      placeholder={selection.email}
-                      value={this.state.current.email}
-                      onChange={this.handleEditChange}
-                    />
-                  </Col>
-                  <Col>
-                    <Form.Control
-                      id={selection.id+ "-phone"}
-                      placeholder={selection.phone}
-                      value={this.state.current.phone}
-                      onChange={this.handleEditChange}
-                    />
-                  </Col>
+                  <Form.Label>Last name</Form.Label>
+                  <Form.Control
+                    id={selection.id+ "-last_name"}
+                    placeholder={selection.last_name}
+                    value={this.state.current.last_name}
+                    onChange={this.handleEditChange}
+                  />
                 </Form.Row>
+                <Form.Row>
+                  <Form.Label>Year</Form.Label>
+                  <Form.Control
+                    id={selection.id+ "-year"}
+                    placeholder={selection.year}
+                    value={this.state.current.year}
+                    onChange={this.handleEditChange}
+                  />
+                </Form.Row>
+                <Form.Row>
+                  <Form.Label>Major</Form.Label>
+                  <Form.Control
+                    id={selection.id+ "-major"}
+                    placeholder={selection.major}
+                    value={this.state.current.major}
+                    onChange={this.handleEditChange}
+                  />
+                </Form.Row>
+                <Form.Row>
+                  <Form.Label>Minor</Form.Label>
+                  <Form.Control
+                    id={selection.id+ "-minor"}
+                    placeholder={selection.minor}
+                    value={this.state.current.minor}
+                    onChange={this.handleEditChange}
+                  />
+                </Form.Row>
+                <Form.Row>
+                  <Form.Label>Email</Form.Label>
+                  <Form.Control
+                    id={selection.id+ "-email"}
+                    placeholder={selection.email}
+                    value={this.state.current.email}
+                    onChange={this.handleEditChange}
+                  />
+                </Form.Row>
+                <Form.Row>
+                  <Form.Label>Phone</Form.Label>
+                  <Form.Control
+                    id={selection.id+ "-phone"}
+                    placeholder={selection.phone}
+                    value={this.state.current.phone}
+                    onChange={this.handleEditChange}
+                  />
+                </Form.Row>
+                <Form.Row>
+                  <Form.Label>Role</Form.Label>
+                  <Form.Control
+                    as="select"
+                    id={selection.id + "-role"}
+                    onChange={this.handleEditChange}
+                  >
+                    <option selected disabled>{selection.role}</option>
+                    <option>Pledge</option>
+                    <option>Brother</option>
+                    <option>President</option>
+                    <option>Treasurer</option>
+                    <option>Recording</option>
+                    <option>Corresponding</option>
+                    <option>Historian</option>
+                  </Form.Control>
+                </Form.Row>
+                <br/>
                 <Form.Row>
                   <ButtonGroup>
                     <Button type="submit" id={selection.id} onClick={this.handleEdit}>Save</Button>
                     <Button type="submit" onClick={this.props.done}>Done</Button>
-                    <Button type="submit" id={selection.id} onClick={this.handleTransfer}>Transfer</Button>
                   </ButtonGroup>
                 </Form.Row>
               </Form.Group>

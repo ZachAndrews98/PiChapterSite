@@ -1,13 +1,10 @@
 import React from 'react'
 
-import {Img} from 'react-image'
-
 import '../css/component_css/BrotherCSS.css';
 
-export default class Brother extends React.Component {
+export default class Graduate extends React.Component {
   constructor(props) {
     super(props)
-    console.log(props.info)
     this.state = {
       first_name: props.info.first_name,
       last_name: props.info.last_name,
@@ -19,20 +16,8 @@ export default class Brother extends React.Component {
   render() {
     return (
       <div class="brother-info">
-        {/*<img
-          className="image"
-          src={'/images/brothers/'+this.state.year+'/'+this.state.last_name.toLowerCase()+'.jpg'}
-          onError="src='/images/test.jpg'"
-          alt={this.state.first_name+" "+this.state.last_name}
-        />*/}
-        <Img
-          className="image"
-          src={[
-            '/images/brothers/'+this.state.year+'/'+this.state.last_name.toLowerCase()+'.jpg',
-            '/images/test.jpg'
-          ]}
-        />
         <h5>{this.state.first_name} {this.state.last_name}</h5>
+        <h6>Class of {this.state.year}</h6>
         <p key="major"><strong>Major:</strong> {this.state.major}</p>
         <p key="minor"><strong>Minor:</strong> {this.state.minor}</p>
       </div>

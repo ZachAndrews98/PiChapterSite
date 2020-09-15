@@ -71,7 +71,7 @@ router.put('/edit', (req, res) => {
     (err, result) => {
       if (err) {
         console.log(err)
-        res.send({"success": false})
+        res.status(500).send(err)
       }
       res.send({"success": true})
     });
@@ -110,7 +110,7 @@ router.post('/add', async (req, res) => {
       (err, result) => {
         if (err) {
           console.log(err)
-          res.send({"success": false})
+          res.status(500).send(err)
         }
         res.send({"success": true})
     });
@@ -124,7 +124,8 @@ router.delete('/delete', (req, res) => {
   database.query(sql, id,
     (err, result) => {
       if (err) {
-        res.send({"success": false})
+        console.log(err)
+        res.status(500).send(err)
       }
       if (result.affectedRows !== 0)
         res.send({"success": true})
@@ -140,17 +141,17 @@ router.post('/transfer', (req, res) => {
       res.send({"success": false})
     }
     let sql = "insert into brothers \
-    (last_name, first_name, year, major, minor, email, phone, password) \
-    values (?,?,?,?,?,?,?,?)"
+    (last_name, first_name, year, major, minor, email, phone, password, role) \
+    values (?,?,?,?,?,?,?,?,?)"
     database.query(sql,
       [
         result[0].last_name, result[0].first_name, result[0].year, result[0].major,
-        result[0].minor, result[0].email, result[0].phone, result[0].password
+        result[0].minor, result[0].email, result[0].phone, result[0].password, "Brother"
       ],
       (err, result) => {
         if (err) {
           console.log(err)
-          res.send({"success": false})
+          res.status(500).send(err)
         }
     });
   });
@@ -158,7 +159,8 @@ router.post('/transfer', (req, res) => {
   database.query(sql, req.body.id,
     (err, result) => {
       if (err) {
-        res.send({"success": false})
+        console.log(err)
+        res.status(500).send(err)
       }
       if (result.affectedRows !== 0)
         res.send({"success": true})

@@ -4,7 +4,7 @@ import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 
-import Brother from '../components/Brother';
+import Graduate from '../components/Graduate';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 
@@ -19,8 +19,8 @@ export default class Graduates extends React.Component {
   componentDidMount() {
     fetch('/graduates')
     .then(res => res.json())
-    .then((brothers) => {
-      this.setState({graduates: brothers})
+    .then((graduates) => {
+      this.setState({graduates: graduates})
     })
     .catch(console.log)
   }
@@ -42,17 +42,21 @@ export default class Graduates extends React.Component {
       <Container className="brothers-container">
         {gradRows.length > 0 &&
           <Row>
+          <Container>
             <Row>
-              <h2>Graduates</h2>
+              <Col className="class-year">
+                <h2>Graduates</h2>
+              </Col>
             </Row>
+          </Container>
             <Container fluid>
               {gradRows.map(
                 row =>
                 <Row>
                 {row.map(
-                  brother =>
-                  <Col key={brother.first_name + " " + brother.last_name}>
-                    <Brother info={brother} />
+                  graduate =>
+                  <Col key={graduate.first_name + " " + graduate.last_name}>
+                    <Graduate info={graduate} />
                   </Col>
                 )}
                 </Row>

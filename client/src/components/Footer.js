@@ -15,7 +15,7 @@ export default class Footer extends React.Component {
     return (
       <div className="Footer-component">
         <Container>
-          <Row>
+          <Row lg={2} md={2} sm={2} xs={1}>
             <Col className="social">
               {/*<a href="/contact">
                 <FontAwesomeIcon icon={faAddressCard} size="2x"/>

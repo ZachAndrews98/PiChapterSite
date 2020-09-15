@@ -26,11 +26,16 @@ router.get('/', (req, res) => {
   }
   if (sql !== undefined) {
     database.query(sql, (err, result) => {
-      res.header("Content-Type",'application/json');
-      res.send(JSON.stringify(result, null, 4));
+      if(err) {
+        console.log(err)
+        res.status(500).send(err)
+      } else {
+        res.header("Content-Type",'application/json');
+        res.status(200).send(JSON.stringify(result, null, 4));
+      }
     });
   } else {
-    res.send("No query supplied");
+    res.status(204).send("No query supplied");
   }
 });
 
@@ -39,11 +44,40 @@ router.get('/:last_name/:first_name', (req, res) => {
   last_name = `last_name like '%${req.params.last_name}%'`
   const sql = `select * from brothers where ${last_name} and ${first_name};`;
   database.query(sql, (err, result) => {
-    res.send(result);
+    if(err) {
+      console.log(err)
+      res.status(500).send(err)
+    } else {
+      res.header("Content-Type",'application/json');
+      res.status(200).send(JSON.stringify(result, null, 4));
+    }
+  });
+});
+
+router.get("/cabinet", (req, res) => {
+  let cabinet = {
+    president: {},
+    treasurer: {},
+    recording: {},
+    corresponding: {},
+    historian: {}
+  }
+  let sql = `select * from brothers where role=? or role=? or role=? or role=? or role=?`
+  database.query(sql, Object.keys(cabinet),
+    (err, result) => {
+      if (err) {
+        console.log(err)
+        res.status(500).send(err)
+      } else {
+        console.log(result)
+        res.header("Content-Type",'application/json');
+        res.status(200).send(JSON.stringify(result, null, 4));
+      }
   });
 });
 
 router.put('/edit', (req, res) => {
+  console.log(req.body)
   let user = {
     id: req.body.id,
     last_name: req.body.last_name,
@@ -52,10 +86,11 @@ router.put('/edit', (req, res) => {
     major: req.body.major,
     minor: req.body.minor,
     email: req.body.email,
-    phone: req.body.phone
+    phone: req.body.phone,
+    role: req.body.role
   }
   const sql = `update brothers
-  set last_name=?, first_name=?, year=?, major=?, minor=?, email=?, phone=?
+  set last_name=?, first_name=?, year=?, major=?, minor=?, email=?, phone=?, role=?
   where id=?`
   database.query(sql,
     [
@@ -66,14 +101,15 @@ router.put('/edit', (req, res) => {
       user.minor,
       user.email,
       user.phone,
+      user.role,
       user.id
     ],
     (err, result) => {
       if (err) {
         console.log(err)
-        res.send({"success": false})
+        res.status(500).send(err)
       }
-      res.send({"success": true})
+      res.status(200).send(result)
     });
 });
 
@@ -86,6 +122,7 @@ router.post('/add', async (req, res) => {
     minor: req.body.minor,
     email: req.body.email,
     phone: req.body.phone,
+    role: req.body.role,
     password: randomstring.generate({
       length: 12,
       charset: 'alphabetic'
@@ -98,21 +135,20 @@ router.post('/add', async (req, res) => {
     return bcrypt.hash(user.password, salt);
   })
   .then(hash => {
-
     const sql = "insert into brothers \
-    (last_name, first_name, year, major, minor, email, phone, password) \
-    values (?,?,?,?,?,?,?,?)"
+    (last_name, first_name, year, major, minor, email, phone, password, role) \
+    values (?,?,?,?,?,?,?,?,?)"
     database.query(sql,
       [
         user.last_name, user.first_name, user.year, user.major,
-        user.minor, user.email, user.phone, hash
+        user.minor, user.email, user.phone, hash, user.role
       ],
       (err, result) => {
         if (err) {
           console.log(err)
-          res.send({"success": false})
+          res.status(500).send(err)
         }
-        res.send({"success": true})
+        res.status(200).send(result)
     });
   })
   .catch(err => console.error(err.message));
@@ -124,11 +160,12 @@ router.delete('/delete', (req, res) => {
   database.query(sql, id,
     (err, result) => {
       if (err) {
-        res.send({"success": false})
+        console.log(err)
+        res.status(500).send(err)
       }
       if (result.affectedRows !== 0)
-        res.send({"success": true})
-      else res.send({"success": false})
+        res.status(200).send(result)
+      else res.status(404).send(result)
   });
 });
 
@@ -137,7 +174,8 @@ router.post('/transfer', (req, res) => {
   database.query(`select * from brothers where id=?`, req.body.id,
   (err, result) => {
     if (err) {
-      res.send({"success": false})
+      console.log(err)
+      res.status(500).send(err)
     }
     let sql = "insert into graduates \
     (last_name, first_name, year, major, minor, email, phone, password) \
@@ -150,7 +188,7 @@ router.post('/transfer', (req, res) => {
       (err, result) => {
         if (err) {
           console.log(err)
-          res.send({"success": false})
+          res.status(500).send(err)
         }
     });
   });
@@ -158,7 +196,8 @@ router.post('/transfer', (req, res) => {
   database.query(sql, req.body.id,
     (err, result) => {
       if (err) {
-        res.send({"success": false})
+        console.log(err)
+        res.status(500).send(err)
       }
       if (result.affectedRows !== 0)
         res.send({"success": true})

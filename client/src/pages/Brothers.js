@@ -60,11 +60,15 @@ export default class Brothers extends React.Component {
       <Container className="brothers-container">
         {seniorRows.length > 0 &&
           <Row>
-            <Row>
-              <h2>Seniors</h2>
-            </Row>
+            <Container>
+              <Row>
+                <Col className="class-year">
+                  <h2>Seniors</h2>
+                </Col>
+              </Row>
+            </Container>
             <Container fluid>
-              {seniorRows.map(
+              {/*{seniorRows.map(
                 row =>
                 <Row>
                 {row.map(
@@ -74,17 +78,29 @@ export default class Brothers extends React.Component {
                   </Col>
                 )}
                 </Row>
+              )}*/}
+              <Row xl={5} lg={4} md={3} sm={2} xs={1}>
+              {this.state.seniors.map(
+                brother =>
+                <Col lg={true} key={brother.first_name + " " + brother.last_name}>
+                  <Brother info={brother} />
+                </Col>
               )}
+              </Row>
             </Container>
           </Row>
         }
         {juniorRows.length > 0 &&
           <Row>
+          <Container>
             <Row>
-              <h2>Juniors</h2>
+              <Col className="class-year">
+                <h2>Juniors</h2>
+              </Col>
             </Row>
+          </Container>
             <Container fluid>
-              {juniorRows.map(
+              {/*{juniorRows.map(
                 row =>
                 <Row>
                 {row.map(
@@ -94,17 +110,29 @@ export default class Brothers extends React.Component {
                   </Col>
                 )}
                 </Row>
+              )}*/}
+              <Row xl={5} lg={4} md={3} sm={2} xs={1}>
+              {this.state.juniors.map(
+                brother =>
+                <Col lg={true} key={brother.first_name + " " + brother.last_name}>
+                  <Brother info={brother} />
+                </Col>
               )}
+              </Row>
             </Container>
           </Row>
         }
         {sophmoreRows.length > 0 &&
           <Row>
-            <Row>
-              <h2>Sophmores</h2>
-            </Row>
+            <Container>
+              <Row>
+                <Col className="class-year">
+                  <h2>Sophmores</h2>
+                </Col>
+              </Row>
+            </Container>
             <Container fluid>
-              {sophmoreRows.map(
+              {/*{sophmoreRows.map(
                 row =>
                 <Row>
                 {row.map(
@@ -114,15 +142,27 @@ export default class Brothers extends React.Component {
                   </Col>
                 )}
                 </Row>
+              )}*/}
+              <Row xl={5} lg={4} md={3} sm={2} xs={1}>
+              {this.state.sophmores.map(
+                brother =>
+                <Col lg={true} key={brother.first_name + " " + brother.last_name}>
+                  <Brother info={brother} />
+                </Col>
               )}
+              </Row>
             </Container>
           </Row>
         }
         {freshmenRows.length > 0 &&
           <Row>
-            <Row>
-              <h2>Freshmen</h2>
-            </Row>
+            <Container>
+              <Row>
+                <Col className="class-year">
+                  <h2>Freshmen</h2>
+                </Col>
+              </Row>
+            </Container>
             <Container fluid>
               {freshmenRows.map(
                 row =>

@@ -1,25 +1,4 @@
 /* General Website Styling */
-body {
-  margin: 0;
-  padding-top: 56px;
-  padding-bottom: 55px;
-  background: #ffffff;
-  font-family: 'Roboto', sans-serif;
-}
-
-footer {
-  position: fixed;
-  left: 0;
-  bottom: 0;
-  width: 100%;
-  text-align: center;
-  color: #ffffff;
-  background: #520975;
-}
-
-.mobile {
-  float: left;
-}
 
 @media only screen and (min-width: 812px) {
   #bannerimage {
@@ -30,10 +9,10 @@ footer {
     background-repeat: no-repeat;
   }
 
-  img {
+  /* img {
     height: 400px;
     width: auto;
-  }
+  } */
 
   .title {
     font-size: 68px;
@@ -81,10 +60,10 @@ footer {
 }
 
 @media only screen and (min-width: 600px) and (max-width: 812px){
-  img {
+  /* img {
     height: 400px;
     width: auto;
-  }
+  } */
 
   .title {
     font-size: 48px;
@@ -131,14 +110,14 @@ footer {
 }
 
 @media only screen and (max-width: 600px) {
-  img {
+  /* img {
     height: 200px;
     width: auto;
   }
 
   h2 {
     font-size: 20px;
-  }
+  } */
 
   .title {
     font-size: 40px;
@@ -187,60 +166,4 @@ footer {
     color: #ffffff;
     font-weight: bolder;
   }
-}
-
-.background {
-  height: 100%;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center center;
-  background-attachment: fixed;
-}
-
-.buffer {
-  padding-top: 48px;
-}
-
-.shadow {
-  color: white;
-  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
-  font-size: 30px;
-}
-
-/* Social Icons */
-.fas {
-  color: #ffffff;
-}
-
-.fas:hover {
-  opacity: 0.8;
-  color: #000000;
-  cursor: pointer;
-}
-
-.fab {
-  color: #ffffff;
-}
-
-.fab:hover {
-  opacity: 0.8;
-  color: #000000;
-  cursor: pointer;
-}
-
-/* Centered Name & TypeScript */
-.header-centered {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translateX(-50%) translateY(-50%);
-  text-align: center;
-  color: #000000;
-}
-
-.center {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  text-align: center;
 }

@@ -19,7 +19,9 @@ export default function NavBar() {
             <Nav.Link className="feej-link" href="/">Home</Nav.Link>
             <Nav.Link className="feej-link" href="/about">About</Nav.Link>
             <Nav.Link className="feej-link" href="/brothers">Brothers</Nav.Link>
+            <Nav.Link className="feej-link" href="/graduates">Graduates</Nav.Link>
             <Nav.Link className="feej-link" href="/admin">Admin</Nav.Link>
+
             {/*<Nav.Link className="feej-link" href="/login">Login</Nav.Link>
             <Nav.Link className="feej-link" href="/register">Register</Nav.Link>*/}
           </Nav>

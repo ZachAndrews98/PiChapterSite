@@ -17,6 +17,8 @@ import Home from './pages/Home';
 import Admin from './pages/Admin';
 import Login from './pages/Login';
 import Register from './pages/Register';
+import Graduates from './pages/Graduates';
+import Cabinet from './pages/Cabinet';
 
 import Footer from './components/Footer';
 import NavBar from './components/NavBar';
@@ -38,6 +40,9 @@ export default function App() {
         <Route exact path="/brothers">
           <Brothers />
         </Route>
+        <Route exact path="/graduates">
+          <Graduates />
+        </Route>
         <Route exact path="/about">
           <About />
         </Route>
@@ -47,8 +52,8 @@ export default function App() {
         <Route exact path="/login">
           <Login />
         </Route>
-        <Route exact path="/register">
-          <Register />
+        <Route exact path="/cabinet">
+          <Cabinet />
         </Route>
       </Switch>
       <Footer />

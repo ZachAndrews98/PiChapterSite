@@ -9,10 +9,25 @@
   text-align: center;
 }
 
+.header-centered {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  text-align: center;
+  color: #000000;
+}
+
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 600px) {
   .Home-component {
     padding-top: 30px;
+  }
+
+  .title {
+    font-size: 48px;
+    color: #520975;
+    text-shadow: -2px 0 white, 0 2px white, 2px 0 white, 0 -2px white;
   }
 }
 
@@ -20,6 +35,12 @@
 @media only screen and (min-width: 600px) {
   .Home-component {
     padding-top: 15px;
+  }
+
+  .title {
+    font-size: 48px;
+    color: #520975;
+    text-shadow: -2px 0 white, 0 2px white, 2px 0 white, 0 -2px white;
   }
 }
 
@@ -31,6 +52,12 @@
 @media only screen and (min-width: 992px) {
   .Home-component {
     padding-top: 56px;
+  }
+
+  .title {
+    font-size: 72px;
+    color: #520975;
+    text-shadow: -2px 0 white, 0 2px white, 2px 0 white, 0 -2px white;
   }
 }
 

@@ -11,8 +11,10 @@ create table brothers (
 	minor varchar(36),
 	email varchar(36),
 	phone varchar(10),
-	password varchar(255)
+	password varchar(255),
+	role varchar(15)
 );
+
 
 LOAD DATA INFILE '/var/lib/mysql-files/brothers.txt' INTO TABLE brothers;
 

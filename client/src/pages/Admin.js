@@ -7,6 +7,7 @@ import BrotherList from '../components/BrothersList';
 import GraduateList from '../components/GraduatesList';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
+import '../css/component_css/AdminCSS.css';
 
 export default class Admin extends React.Component{
   render() {
