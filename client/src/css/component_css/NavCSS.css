@@ -3,17 +3,22 @@
   /* margin-bottom: 15px; */
 }
 
+.feej-brand {
+  color: rgb(255 255 255) !important;
+  font-weight: bolder;
+}
+
+.crest {
+  height: auto;
+  width: 38px;
+}
+
 .bg-feej {
   background-color: #543975;
 }
 
 .feej-link {
   color: rgb(255 255 255 / 0.7) !important;
-}
-
-.feej-brand {
-  color: rgb(255 255 255) !important;
-  font-weight: bolder;
 }
 
 .feej-link:hover {
@@ -25,7 +30,27 @@
   font-weight: bolder;
 }
 
-.crest {
-  height: auto;
-  width: 38px;
+.feej-dropdown {
+  background-color: #543975;
+  color: rgb(255 255 255 / 0.7) !important;
+}
+
+.feej-dropdown:hover {
+  background-color: #543975;
+  font-weight: bolder;
+}
+
+.feej-dropdown.active {
+  background-color: #543975;
+  font-weight: bolder;
+}
+
+.dropdown-menu {
+  background-color: #543975;
+}
+
+#undergrad-dropdown, #graduate-dropdown {
+  text-align: left;
+  color: rgb(255 255 255 / 0.7) !important;
+  background-color: #543975;
 }

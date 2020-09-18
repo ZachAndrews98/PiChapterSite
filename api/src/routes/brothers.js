@@ -56,11 +56,11 @@ router.get('/:last_name/:first_name', (req, res) => {
 
 router.get("/cabinet", (req, res) => {
   let cabinet = {
-    president: {},
-    treasurer: {},
-    recording: {},
-    corresponding: {},
-    historian: {}
+    President: {},
+    Treasurer: {},
+    Recording: {},
+    Corresponding: {},
+    Historian: {}
   }
   let sql = `select * from brothers where role=? or role=? or role=? or role=? or role=?`
   database.query(sql, Object.keys(cabinet),
@@ -69,9 +69,11 @@ router.get("/cabinet", (req, res) => {
         console.log(err)
         res.status(500).send(err)
       } else {
-        console.log(result)
+        for(let role of Object.keys(cabinet)) {
+          cabinet[role] = result.find(element => element.role == role)
+        }
         res.header("Content-Type",'application/json');
-        res.status(200).send(JSON.stringify(result, null, 4));
+        res.status(200).send(JSON.stringify(cabinet, null, 4));
       }
   });
 });

@@ -7,7 +7,6 @@ import '../css/component_css/BrotherCSS.css';
 export default class Brother extends React.Component {
   constructor(props) {
     super(props)
-    console.log(props.info)
     this.state = {
       first_name: props.info.first_name,
       last_name: props.info.last_name,

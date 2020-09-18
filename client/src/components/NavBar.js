@@ -2,6 +2,7 @@ import React from 'react';
 
 import Navbar from 'react-bootstrap/Navbar';
 import Nav from 'react-bootstrap/Nav';
+import NavDropdown from 'react-bootstrap/NavDropdown';
 
 import '../css/component_css/NavCSS.css';
 
@@ -18,8 +19,16 @@ export default function NavBar() {
           <Nav justify fill activeKey={window.location.pathname} className="ml-auto">
             <Nav.Link className="feej-link" href="/">Home</Nav.Link>
             <Nav.Link className="feej-link" href="/about">About</Nav.Link>
-            <Nav.Link className="feej-link" href="/brothers">Brothers</Nav.Link>
-            <Nav.Link className="feej-link" href="/graduates">Graduates</Nav.Link>
+            <NavDropdown title="Undergraduates" id="undergrad-dropdown" className="feej-dropdown">
+              <NavDropdown.Item className="feej-dropdown" href="/brothers">Brothers</NavDropdown.Item>
+              <NavDropdown.Item className="feej-dropdown" href="/cabinet">Cabinet</NavDropdown.Item>
+            </NavDropdown>
+            <NavDropdown title="Graduates" id="graduate-dropdown" className="feej-dropdown">
+              <NavDropdown.Item className="feej-dropdown" href="/graduates">Graduate List</NavDropdown.Item>
+              <NavDropdown.Item className="feej-dropdown" href="#">Pig Dinner</NavDropdown.Item>
+              <NavDropdown.Item className="feej-dropdown" href="#">Donate</NavDropdown.Item>
+            </NavDropdown>
+            
             <Nav.Link className="feej-link" href="/admin">Admin</Nav.Link>
 
             {/*<Nav.Link className="feej-link" href="/login">Login</Nav.Link>
