@@ -93,6 +93,7 @@ export default class BrotherList extends React.Component {
     }
     this.setState({selected: []})
     this.getBrothers();
+    this.props.updateSize();
   }
 
   async handleAdd(event) {
@@ -133,6 +134,7 @@ export default class BrotherList extends React.Component {
     this.setState({addBrother: addBrother})
     console.log(this.state.addBrother)
     await this.getBrothers();
+    this.props.updateSize();
   }
 
   handleEdit(event) {
@@ -180,6 +182,7 @@ export default class BrotherList extends React.Component {
     }
     this.setState({selected: []})
     this.getBrothers();
+    this.props.updateSize();
   }
 
 

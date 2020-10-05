@@ -26,39 +26,42 @@ import NavBar from './components/NavBar';
 
 // ========================================
 
-export default function App() {
-  return (
-    <Router>
-      <NavBar/>
+export default class App extends React.Component{
 
-      {/* A <Switch> looks through its children <Route>s and
-          renders the first one that matches the current URL. */}
-      <Switch>
-        <Route exact path="/">
-          <Home />
-        </Route>
-        <Route exact path="/brothers">
-          <Brothers />
-        </Route>
-        <Route exact path="/graduates">
-          <Graduates />
-        </Route>
-        <Route exact path="/about">
-          <About />
-        </Route>
-        <Route exact path="/admin">
-          <Admin />
-        </Route>
-        <Route exact path="/login">
-          <Login />
-        </Route>
-        <Route exact path="/cabinet">
-          <Cabinet />
-        </Route>
-      </Switch>
-      <Footer />
-    </Router>
-  );
+  render() {
+    return (
+      <Router>
+        <NavBar/>
+
+        {/* A <Switch> looks through its children <Route>s and
+            renders the first one that matches the current URL. */}
+        <Switch>
+          <Route exact path="/">
+            <Home />
+          </Route>
+          <Route exact path="/brothers">
+            <Brothers />
+          </Route>
+          <Route exact path="/graduates">
+            <Graduates />
+          </Route>
+          <Route exact path="/about">
+            <About />
+          </Route>
+          <Route exact path="/admin">
+            <Admin />
+          </Route>
+          <Route exact path="/login">
+            <Login loggedIn={false} user={''} />
+          </Route>
+          <Route exact path="/cabinet">
+            <Cabinet />
+          </Route>
+        </Switch>
+        <Footer />
+      </Router>
+    );
+  }
 }
 
 ReactDOM.render(

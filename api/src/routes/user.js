@@ -47,26 +47,50 @@ router.post('/login', (req, res) => {
   let email = req.body.email
   let password = req.body.password
   const sql = `select * from brothers where email='${email}'`
-  console.log(sql)
   database.query(sql,
     (err, result) => {
       if (err) {
         console.log(err)
         res.send({"OK": false})
       }
-      console.log(result)
-      bcrypt.compare(password, result[0].password, (err, cmpre) => {
-        if (err) {
-          console.log(err)
-          res.status(500).send(err)
-        }
-        if (cmpre) {
-          res.send({"OK": 200})
-        } else {
-          res.send({"OK": false})
-        }
-      });
+      if(result[0].password !== "null") {
+        bcrypt.compare(password, result[0].password, (err, cmpre) => {
+          if (err) {
+            console.log(err)
+            res.status(500).send(err)
+          }
+          if (cmpre) {
+            res.status(200).send({"user": result[0]})
+          } else {
+            res.status(200).send({"user": null})
+          }
+        });
+      } else {
+        res.status(200).send({"user": result[0]})
+      }
     });
+});
+
+router.put('/update_password', async (req, res) => {
+  let new_password = req.query.new_pass;
+  let id = req.query.id;
+
+  await bcrypt
+  .genSalt(10)
+  .then(salt => {
+    return bcrypt.hash(user.password, salt);
+  })
+  .then(hash => {
+    const sql = `update brothers set password=? where id=?`;
+    database.query(sql, [hash, id], (err, result) => {
+      if (err) {
+        console.log(err)
+        res.status(500).send(err)
+      }
+      res.status(200).send(result)
+    });
+  })
+  .catch(err => console.error(err.message));
 });
 
 module.exports = router;

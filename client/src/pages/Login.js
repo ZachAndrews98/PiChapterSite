@@ -6,6 +6,8 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Button from 'react-bootstrap/Button';
 
+import User from '../components/User';
+
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 export default class Login extends React.Component {
@@ -15,10 +17,17 @@ export default class Login extends React.Component {
       login: {
         email: '',
         password: '',
-      }
+      },
+      user: '',
+      loggedIn: false,
     }
     this.handleLogin = this.handleLogin.bind(this);
     this.handleLoginChange = this.handleLoginChange.bind(this);
+  }
+
+  componentDidMount() {
+    this.setState({loggedIn: this.props.loggedIn})
+    this.setState({user: this.props.user})
   }
 
   handleLogin(event) {
@@ -35,16 +44,20 @@ export default class Login extends React.Component {
     })
     .then(response => response.json())
     .then(data => {
-      console.log('Success:', data);
+      if(data.user) {
+        console.log(this.state.login.email)
+        fetch(`/brothers?email=${this.state.login.email}`)
+        .then(res => res.json())
+        .then((brother) => {
+          this.setState({user: brother})
+          this.setState({loggedIn: true})
+        })
+        .catch(console.log)
+      }
     })
     .catch((error) => {
       console.error('Error:', error);
     });
-    let login = {
-      email: '',
-      password: '',
-    }
-    this.setState({login: login})
   }
 
   handleLoginChange(event) {
@@ -58,32 +71,39 @@ export default class Login extends React.Component {
   render() {
     return (
       <Container>
-        <Row>
-          <h1>Register</h1>
-        </Row>
-        <Row>
-          <Form>
-          <Col>
-            <Form.Control
-              id="email"
-              placeholder="Email"
-              value={this.state.login["email"]}
-              onChange={this.handleLoginChange}
-            />
-          </Col>
-          <Col>
-            <Form.Control
-              id="password"
-              placeholder="Password"
-              value={this.state.login["password"]}
-              onChange={this.handleLoginChange}
-            />
-          </Col>
-          <Col>
-            <Button type="submit" onClick={this.handleLogin}>Login</Button>
-          </Col>
-          </Form>
-        </Row>
+        {!this.state.loggedIn && (
+          <Container>
+            <Row>
+              <h1>Login</h1>
+            </Row>
+            <Row>
+              <Form>
+                <Col>
+                  <Form.Control
+                    id="email"
+                    placeholder="Email"
+                    value={this.state.login["email"]}
+                    onChange={this.handleLoginChange}
+                  />
+                </Col>
+                <Col>
+                  <Form.Control
+                    id="password"
+                    placeholder="Password"
+                    value={this.state.login["password"]}
+                    onChange={this.handleLoginChange}
+                  />
+                </Col>
+                <Col>
+                  <Button type="submit" onClick={this.handleLogin}>Login</Button>
+                </Col>
+              </Form>
+            </Row>
+          </Container>
+        )}
+        {this.state.loggedIn &&
+          <User info={this.state.user} />
+        }
       </Container>
     )
   }

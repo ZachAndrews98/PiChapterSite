@@ -12,31 +12,38 @@ const database = require('../database')
 // });
 
 router.get('/', (req, res) => {
-  first_name = `first_name like '%${req.query.first_name}%'`
-  last_name = `last_name like '%${req.query.last_name}%'`
-  let sql = undefined
-  if (req.query.last_name && req.query.first_name) {
-    sql = `select * from brothers where ${last_name} and ${first_name};`;
-  } else if (req.query.last_name) {
-    sql = `select * from brothers where ${last_name};`;
-  } else if (req.query.first_name) {
-    sql = `select * from brothers where ${first_name};`;
-  } else {
-    sql = "select * from brothers;";
+  queries = {
+    first_name: `first_name like '%${req.query.first_name}%' and `,
+    last_name: `last_name like '%${req.query.last_name}%' and `,
+    email: `email like '%${req.query.email}%' and `,
+    id: `id='${req.query.id}' and `,
+    role: `role='${req.query.role}' and `,
+    email: `email='${req.query.email}' and `,
+    major: `major='${req.query.major}' and `,
+    minor: `minor='${req.query.minor}' and `,
+    year: `year='${req.query.year}' and `
   }
-  if (sql !== undefined) {
-    database.query(sql, (err, result) => {
-      if(err) {
-        console.log(err)
-        res.status(500).send(err)
-      } else {
-        res.header("Content-Type",'application/json');
-        res.status(200).send(JSON.stringify(result, null, 4));
-      }
-    });
-  } else {
-    res.status(204).send("No query supplied");
+
+  let sql = "select * from brothers where ";
+  for(let category of Object.keys(queries)) {
+    if(req.query[category]) {
+      sql += queries[category]
+    }
   }
+  if(sql === "select * from brothers where ") {
+    sql = sql.slice(0, -7) + ";"
+  } else {
+    sql = sql.slice(0, -5) + ";"
+  }
+  database.query(sql, (err, result) => {
+    if(err) {
+      console.log(err)
+      res.status(500).send(err)
+    } else {
+      res.header("Content-Type",'application/json');
+      res.status(200).send(JSON.stringify(result, null, 4));
+    }
+  });
 });
 
 router.get('/:last_name/:first_name', (req, res) => {

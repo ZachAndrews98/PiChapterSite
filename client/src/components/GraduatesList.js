@@ -92,6 +92,7 @@ export default class GraduatesList extends React.Component {
     }
     this.setState({selected: []})
     this.getGraduates();
+    this.props.updateSize();
   }
 
   async handleAdd(event) {
@@ -130,6 +131,7 @@ export default class GraduatesList extends React.Component {
     this.setState({addGraduate: addGraduate})
     console.log(this.state.addGraduate)
     await this.getGraduates();
+    this.props.updateSize();
   }
 
   handleEdit(event) {
@@ -177,6 +179,7 @@ export default class GraduatesList extends React.Component {
     }
     this.setState({selected: []})
     this.getGraduates();
+    this.props.updateSize();
   }
 
 
