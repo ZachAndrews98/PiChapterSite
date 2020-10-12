@@ -25,10 +25,10 @@ export default function NavBar() {
             </NavDropdown>
             <NavDropdown title="Graduates" id="graduate-dropdown" className="feej-dropdown">
               <NavDropdown.Item className="feej-dropdown" href="/graduates">Graduate List</NavDropdown.Item>
-              <NavDropdown.Item className="feej-dropdown" href="#">Pig Dinner</NavDropdown.Item>
-              <NavDropdown.Item className="feej-dropdown" href="#">Donate</NavDropdown.Item>
+              <NavDropdown.Item className="feej-dropdown" href="/pig_dinner">Pig Dinner</NavDropdown.Item>
+              <NavDropdown.Item className="feej-dropdown" href="/donate">Donate</NavDropdown.Item>
             </NavDropdown>
-            
+
             <Nav.Link className="feej-link" href="/admin">Admin</Nav.Link>
 
             {/*<Nav.Link className="feej-link" href="/login">Login</Nav.Link>

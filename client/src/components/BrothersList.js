@@ -45,7 +45,7 @@ export default class BrotherList extends React.Component {
   }
 
   getBrothers() {
-    fetch('/brothers')
+    fetch('/brother')
     .then(res => res.json())
     .then((brothers) => {
       this.setState({brothers: brothers})
@@ -75,7 +75,7 @@ export default class BrotherList extends React.Component {
   handleDelete(event) {
     event.preventDefault();
     for (let id of this.state.selected) {
-      fetch('/brothers/delete', {
+      fetch('/brother/delete', {
         method: 'delete',
         mode: 'cors',
         headers: {'Content-Type':'application/json'},
@@ -98,7 +98,7 @@ export default class BrotherList extends React.Component {
 
   async handleAdd(event) {
     event.preventDefault();
-    await fetch('brothers/add', {
+    await fetch('brother/add', {
      method: 'post',
      mode: 'cors',
      headers: {'Content-Type':'application/json'},
@@ -164,7 +164,7 @@ export default class BrotherList extends React.Component {
   async handleTransfer(event) {
     // event.preventDefault();
     for (let id of this.state.selected) {
-      fetch('/brothers/transfer', {
+      fetch('/brother/transfer', {
         method: 'post',
         mode: 'cors',
         headers: {'Content-Type':'application/json'},
@@ -190,7 +190,7 @@ render() {
   return (
     <Container>
       {this.state.edit &&
-        <Edit brothers={this.state.selectedBrothers} done={this.finishEdit} target="brothers"/>
+        <Edit brothers={this.state.selectedBrothers} done={this.finishEdit} target="brother"/>
       }
       {!this.state.edit &&
         <Form>

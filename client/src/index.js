@@ -19,6 +19,8 @@ import Login from './pages/Login';
 import Register from './pages/Register';
 import Graduates from './pages/Graduates';
 import Cabinet from './pages/Cabinet';
+import Pig_Dinner from './pages/Pig_Dinner';
+import Donate from './pages/Donate';
 
 import Footer from './components/Footer';
 import NavBar from './components/NavBar';
@@ -56,6 +58,12 @@ export default class App extends React.Component{
           </Route>
           <Route exact path="/cabinet">
             <Cabinet />
+          </Route>
+          <Route exact path="/pig_dinner">
+            <Pig_Dinner />
+          </Route>
+          <Route exact path="/donate">
+            <Donate />
           </Route>
         </Switch>
         <Footer />

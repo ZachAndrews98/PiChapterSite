@@ -9,8 +9,8 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
 const database = require('./database')
-const brothers = require('./routes/brothers')
-const graduates = require('./routes/graduates')
+const brother = require('./routes/brother')
+const graduate = require('./routes/graduate')
 const user = require('./routes/user')
 
 const IP = "76.180.0.145"
@@ -22,9 +22,9 @@ function filter_query(query) {
   return ""
 }
 
-app.use('/brothers', brothers)
+app.use('/brother', brother)
 app.use('/user', user)
-app.use('/graduates', graduates)
+app.use('/graduate', graduate)
 
 app.get('/', (req, res) => {
   res.send(`Connected to API`);

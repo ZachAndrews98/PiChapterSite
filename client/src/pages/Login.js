@@ -44,7 +44,7 @@ export default class Login extends React.Component {
     .then(response => response.json())
     .then(data => {
       if(data.user) {
-        fetch(`/brothers?email=${this.state.login.email}`)
+        fetch(`/brother?email=${this.state.login.email}`)
         .then(res => res.json())
         .then((brother) => {
           this.setState({user: brother[0]})
@@ -69,7 +69,7 @@ export default class Login extends React.Component {
   render() {
     let renderUser;
     if(this.state.loggedIn) {
-      renderUser = <User info={this.state.user} target="brothers"/>;
+      renderUser = <User info={this.state.user} target="brother"/>;
     }
     return (
       <Container>

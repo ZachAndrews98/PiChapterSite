@@ -27,7 +27,7 @@ export default class Admin extends React.Component{
   }
 
   brothersSize() {
-    fetch('/brothers')
+    fetch('/brother')
     .then(res => res.json())
     .then((brothers) => {
       this.setState({totalBrothers: brothers.length})
@@ -36,7 +36,7 @@ export default class Admin extends React.Component{
   }
 
   graduatesSize() {
-    fetch('/graduates')
+    fetch('/graduate')
     .then(res => res.json())
     .then((graduates) => {
       this.setState({totalGraduates: graduates.length})

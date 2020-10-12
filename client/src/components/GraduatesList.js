@@ -44,7 +44,7 @@ export default class GraduatesList extends React.Component {
   }
 
   getGraduates() {
-    fetch('/graduates')
+    fetch('/graduate')
     .then(res => res.json())
     .then((graduates) => {
       this.setState({graduates: graduates})
@@ -74,7 +74,7 @@ export default class GraduatesList extends React.Component {
   handleDelete(event) {
     event.preventDefault();
     for (let id of this.state.selected) {
-      fetch('/graduates/delete', {
+      fetch('/graduate/delete', {
         method: 'delete',
         mode: 'cors',
         headers: {'Content-Type':'application/json'},
@@ -97,7 +97,7 @@ export default class GraduatesList extends React.Component {
 
   async handleAdd(event) {
     event.preventDefault();
-    await fetch('graduates/add', {
+    await fetch('graduate/add', {
      method: 'post',
      mode: 'cors',
      headers: {'Content-Type':'application/json'},
@@ -161,7 +161,7 @@ export default class GraduatesList extends React.Component {
   async handleTransfer(event) {
     // event.preventDefault();
     for (let id of this.state.selected) {
-      fetch('/graduates/transfer', {
+      fetch('/graduate/transfer', {
         method: 'post',
         mode: 'cors',
         headers: {'Content-Type':'application/json'},
@@ -187,7 +187,7 @@ render() {
   return (
     <Container>
       {this.state.edit &&
-        <Edit brothers={this.state.selectedGraduates} done={this.finishEdit} target="graduates" />
+        <Edit brothers={this.state.selectedGraduates} done={this.finishEdit} target="graduate" />
       }
       {!this.state.edit &&
         <Form>

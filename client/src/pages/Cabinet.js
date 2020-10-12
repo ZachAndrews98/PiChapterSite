@@ -21,7 +21,7 @@ export default class Cabinet extends React.Component {
   }
 
   get_cabinet() {
-    fetch('/brothers/cabinet')
+    fetch('/brother/cabinet')
     .then(res => res.json())
     .then((cabinet) => {
       this.setState({president: cabinet.President})
@@ -60,6 +60,8 @@ export default class Cabinet extends React.Component {
               <Brother info={this.state.recording} />
             )}
           </Col>
+        </Row>
+        <Row xl={2} lg={2} md={2} sm={1} xs={1}>
           <Col>
             <h2>Corresponding Secretary</h2>
             {this.state.corresponding && (

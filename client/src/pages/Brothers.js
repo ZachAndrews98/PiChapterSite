@@ -21,7 +21,7 @@ export default class Brothers extends React.Component {
   }
 
   componentDidMount() {
-    fetch('/brothers')
+    fetch('/brother')
     .then(res => res.json())
     .then((brothers) => {
       this.get_classes(brothers)

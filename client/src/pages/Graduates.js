@@ -17,7 +17,7 @@ export default class Graduates extends React.Component {
   }
 
   componentDidMount() {
-    fetch('/graduates')
+    fetch('/graduate')
     .then(res => res.json())
     .then((graduates) => {
       this.setState({graduates: graduates})
