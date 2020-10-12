@@ -47,14 +47,14 @@ export default class Admin extends React.Component{
   render() {
     return(
       <div className="Admin-Container">
-        <h3>Total Brothers: {this.state.totalBrothers}</h3>
-        <h3>Total Graduates: {this.state.totalGraduates}</h3>
         <Tabs defaultActiveKey="brothers" id="Admin-Control">
-          <Tab eventKey="brothers" title="Brothers" updateSize={this.brothersSize}>
-            <BrotherList />
+          <Tab eventKey="brothers" title="Brothers">
+            <h3>Total Brothers: {this.state.totalBrothers}</h3>
+            <BrotherList updateSize={this.brothersSize}/>
           </Tab>
-          <Tab eventKey="graduates" title="Graduates" updateSize={this.graduatesSize}>
-            <GraduateList />
+          <Tab eventKey="graduates" title="Graduates">
+            <h3>Total Graduates: {this.state.totalGraduates}</h3>
+            <GraduateList updateSize={this.graduatesSize}/>
           </Tab>
         </Tabs>
       </div>

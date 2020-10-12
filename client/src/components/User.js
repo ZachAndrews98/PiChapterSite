@@ -2,6 +2,7 @@ import React from 'react';
 
 import Form from 'react-bootstrap/Form';
 import Col from 'react-bootstrap/Col';
+import Row from 'react-bootstrap/Row';
 import Button from 'react-bootstrap/Button';
 import ButtonGroup from 'react-bootstrap/ButtonGroup';
 
@@ -107,7 +108,7 @@ export default class User extends React.Component {
     return(
       <Form className="User-Container">
         <Form.Group style={{"textAlign": "center"}}>
-          <Form.Row>
+          <Row xl={2} lg={2} md={2} sm={1} xs={1}>
             <Col>
               <Form.Label>First name</Form.Label>
               <Form.Control
@@ -124,8 +125,8 @@ export default class User extends React.Component {
                 onChange={this.handleEditChange}
               />
             </Col>
-          </Form.Row>
-          <Form.Row>
+          </Row>
+          <Row xl={2} lg={2} md={2} sm={1} xs={1}>
             <Col>
               <Form.Label>Year</Form.Label>
               <Form.Control
@@ -142,8 +143,8 @@ export default class User extends React.Component {
                 onChange={this.handleEditChange}
               />
             </Col>
-          </Form.Row>
-          <Form.Row>
+          </Row>
+          <Row xl={2} lg={2} md={2} sm={1} xs={1}>
             <Col>
               <Form.Label>Minor</Form.Label>
               <Form.Control
@@ -160,8 +161,8 @@ export default class User extends React.Component {
                 onChange={this.handleEditChange}
               />
             </Col>
-          </Form.Row>
-          <Form.Row>
+          </Row>
+          <Row xl={2} lg={2} md={2} sm={1} xs={1}>
             <Col>
               <Form.Label>Phone</Form.Label>
               <Form.Control
@@ -172,7 +173,7 @@ export default class User extends React.Component {
             </Col>
             {this.props.admin &&
               <Col>
-                <Form.Row>
+                <Row>
                   <Form.Label>Role</Form.Label>
                   <Form.Control
                     as="select"
@@ -188,13 +189,13 @@ export default class User extends React.Component {
                     <option>Corresponding</option>
                     <option>Historian</option>
                   </Form.Control>
-                </Form.Row>
+                </Row>
               </Col>
             }
-          </Form.Row>
+          </Row>
 
           {!this.props.admin &&
-            <Form.Row>
+            <Row xl={2} lg={2} md={2} sm={1} xs={1}>
               <Col>
                 <Form.Label>Update Password</Form.Label>
                 <Form.Control
@@ -213,15 +214,15 @@ export default class User extends React.Component {
                   type="password"
                 />
               </Col>
-            </Form.Row>
+            </Row>
           }
           <br/>
-          <Form.Row>
+          <Row>
             <ButtonGroup>
               <Button type="submit" id={this.state.user.id} onClick={this.handleEdit}>Save</Button>
               <Button type="submit" onClick={this.props.done}>Done</Button>
             </ButtonGroup>
-          </Form.Row>
+          </Row>
         </Form.Group>
       </Form>
     )

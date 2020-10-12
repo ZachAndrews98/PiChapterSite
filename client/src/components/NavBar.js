@@ -30,6 +30,7 @@ export default function NavBar() {
             </NavDropdown>
 
             <Nav.Link className="feej-link" href="/admin">Admin</Nav.Link>
+            <Nav.Link className="feej-link" href="/login">Login</Nav.Link>
 
             {/*<Nav.Link className="feej-link" href="/login">Login</Nav.Link>
             <Nav.Link className="feej-link" href="/register">Register</Nav.Link>*/}

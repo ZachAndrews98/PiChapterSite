@@ -118,7 +118,6 @@ export default class GraduatesList extends React.Component {
     .catch((error) => {
       console.error('Error:', error);
     });
-    console.log(this.state.addGraduate)
     let addGraduate = {
       last_name: '',
       first_name: '',
@@ -129,7 +128,6 @@ export default class GraduatesList extends React.Component {
       phone: ''
     }
     this.setState({addGraduate: addGraduate})
-    console.log(this.state.addGraduate)
     await this.getGraduates();
     this.props.updateSize();
   }
@@ -159,27 +157,30 @@ export default class GraduatesList extends React.Component {
   }
 
   async handleTransfer(event) {
-    // event.preventDefault();
-    for (let id of this.state.selected) {
-      fetch('/graduate/transfer', {
-        method: 'post',
-        mode: 'cors',
-        headers: {'Content-Type':'application/json'},
-        body: JSON.stringify({
-          "id": id
+    if(this.state.selected !== []) {
+      for (let id of this.state.selected) {
+        fetch('/graduate/transfer', {
+          method: 'post',
+          mode: 'cors',
+          headers: {'Content-Type':'application/json'},
+          body: JSON.stringify({
+            "id": id
+          })
         })
-      })
-      .then(response => response.json())
-      .then(data => {
-        console.log('Success:', data);
-      })
-      .catch((error) => {
-        console.error('Error:', error);
-      });
+        .then(response => response.json())
+        .then(data => {
+          console.log('Success:', data);
+        })
+        .catch((error) => {
+          console.error('Error:', error);
+        });
+      }
+      this.setState({selected: []})
+      this.getGraduates();
+      this.props.updateSize();
+    } else {
+      event.preventDefault();
     }
-    this.setState({selected: []})
-    this.getGraduates();
-    this.props.updateSize();
   }
 
 

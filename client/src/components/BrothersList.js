@@ -120,7 +120,6 @@ export default class BrotherList extends React.Component {
     .catch((error) => {
       console.error('Error:', error);
     });
-    console.log(this.state.addBrother)
     let addBrother = {
       last_name: '',
       first_name: '',
@@ -132,7 +131,6 @@ export default class BrotherList extends React.Component {
       role: ''
     }
     this.setState({addBrother: addBrother})
-    console.log(this.state.addBrother)
     await this.getBrothers();
     this.props.updateSize();
   }
@@ -217,7 +215,7 @@ render() {
                   </tr>
                 </thead>
                 <tbody>
-                  <tr>
+                  <tr key="add_brother">
                     <td>
                       <Form.Check
                         type='checkbox'
@@ -300,7 +298,7 @@ render() {
                   </tr>
                   {this.state.brothers.map(
                     brother =>
-                    <tr>
+                    <tr key={brother.last_name + "-" + brother.id}>
                       <td>
                         <Form.Check
                           type='checkbox'
