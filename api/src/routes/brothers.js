@@ -4,13 +4,6 @@ const bcrypt = require('bcryptjs');
 
 const database = require('../database')
 
-// router.get('/', (req, res) => {
-//   const sql = "select * from brothers;";
-//   database.query(sql, (err, result) => {
-//     res.send(result);
-//   });
-// });
-
 router.get('/', (req, res) => {
   queries = {
     first_name: `first_name like '%${req.query.first_name}%' and `,
@@ -86,7 +79,6 @@ router.get("/cabinet", (req, res) => {
 });
 
 router.put('/edit', (req, res) => {
-  console.log(req.body)
   let user = {
     id: req.body.id,
     last_name: req.body.last_name,
@@ -137,7 +129,6 @@ router.post('/add', async (req, res) => {
       charset: 'alphabetic'
     })
   }
-  console.log(user)
   await bcrypt
   .genSalt(10)
   .then(salt => {

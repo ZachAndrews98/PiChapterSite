@@ -72,13 +72,12 @@ router.post('/login', (req, res) => {
 });
 
 router.put('/update_password', async (req, res) => {
-  let new_password = req.query.new_pass;
-  let id = req.query.id;
-
+  let new_password = req.body.new_pass;
+  let id = req.body.id;
   await bcrypt
   .genSalt(10)
   .then(salt => {
-    return bcrypt.hash(user.password, salt);
+    return bcrypt.hash(new_password, salt);
   })
   .then(hash => {
     const sql = `update brothers set password=? where id=?`;

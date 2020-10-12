@@ -24,11 +24,44 @@ export default class User extends React.Component {
   componentDidMount() {
     // console.log(this.props)
     this.setState({user: this.props.info})
-    console.log(this.state.user)
+  }
+
+  async verify_password() {
+    let pass_issues = "";
+    if(this.state.password === this.state.confirm_password) {
+      if(this.state.password.length >= 8) {
+        await fetch('user/update_password', {
+          method: 'put',
+          mode: 'cors',
+          headers: {'Content-Type':'application/json'},
+          body: JSON.stringify({
+            "id": this.state.user.id,
+            "new_pass": this.state.password
+          })
+        })
+        .then(response => response.json())
+        .then(data => {
+          console.log('Success:', data);
+        })
+        .catch((error) => {
+          console.error('Error:', error);
+        });
+      } else {
+        pass_issues += "Password must be at least 8 characters long\n"
+      }
+    } else {
+      pass_issues += "Passwords do not match\n"
+    }
+    if(pass_issues !== "") {
+      alert("Password not updated.\nThe following issues occurred: \n" + pass_issues)
+    }
   }
 
   async handleEdit(event) {
     event.preventDefault();
+    if(this.state.password !== '' && this.state.confirm_password !== '') {
+      this.verify_password()
+    }
     await fetch(`${this.props.target}/edit`, {
      method: 'put',
      mode: 'cors',
@@ -166,16 +199,18 @@ export default class User extends React.Component {
                 <Form.Label>Update Password</Form.Label>
                 <Form.Control
                   id={"password"}
-                  value={this.state.user.minor}
+                  value={this.state.password}
                   onChange={this.handlePasswordChange}
+                  type="password"
                 />
               </Col>
               <Col>
                 <Form.Label>Confirm Password</Form.Label>
                 <Form.Control
                   id={"confirm_password"}
-                  value={this.state.user.email}
+                  value={this.state.confirm_password}
                   onChange={this.handlePasswordChange}
+                  type="password"
                 />
               </Col>
             </Form.Row>

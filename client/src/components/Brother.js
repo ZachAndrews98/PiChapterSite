@@ -17,7 +17,7 @@ export default class Brother extends React.Component {
   }
   render() {
     return (
-      <div class="brother-info">
+      <div className="brother-info">
         {/*<img
           className="image"
           src={'/images/brothers/'+this.state.year+'/'+this.state.last_name.toLowerCase()+'.jpg'}

@@ -32,7 +32,6 @@ export default class Login extends React.Component {
 
   handleLogin(event) {
     event.preventDefault();
-    console.log(this.state.login)
     fetch('/user/login', {
      method: 'post',
      mode: 'cors',
@@ -45,11 +44,10 @@ export default class Login extends React.Component {
     .then(response => response.json())
     .then(data => {
       if(data.user) {
-        console.log(this.state.login.email)
         fetch(`/brothers?email=${this.state.login.email}`)
         .then(res => res.json())
         .then((brother) => {
-          this.setState({user: brother})
+          this.setState({user: brother[0]})
           this.setState({loggedIn: true})
         })
         .catch(console.log)
@@ -69,6 +67,10 @@ export default class Login extends React.Component {
   }
 
   render() {
+    let renderUser;
+    if(this.state.loggedIn) {
+      renderUser = <User info={this.state.user} target="brothers"/>;
+    }
     return (
       <Container>
         {!this.state.loggedIn && (
@@ -92,6 +94,7 @@ export default class Login extends React.Component {
                     placeholder="Password"
                     value={this.state.login["password"]}
                     onChange={this.handleLoginChange}
+                    type="password"
                   />
                 </Col>
                 <Col>
@@ -101,9 +104,7 @@ export default class Login extends React.Component {
             </Row>
           </Container>
         )}
-        {this.state.loggedIn &&
-          <User info={this.state.user} />
-        }
+        {renderUser}
       </Container>
     )
   }
