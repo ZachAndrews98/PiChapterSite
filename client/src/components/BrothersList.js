@@ -98,41 +98,43 @@ export default class BrotherList extends React.Component {
 
   async handleAdd(event) {
     event.preventDefault();
-    await fetch('brother/add', {
-     method: 'post',
-     mode: 'cors',
-     headers: {'Content-Type':'application/json'},
-     body: JSON.stringify({
-       "last_name": this.state.addBrother.last_name,
-       "first_name": this.state.addBrother.first_name,
-       "year": this.state.addBrother.year,
-       "major": this.state.addBrother.major,
-       "minor": this.state.addBrother.minor,
-       "email": this.state.addBrother.email,
-       "phone": this.state.addBrother.phone,
-       "role": this.state.addBrother.role
-     })
-    })
-    .then(response => response.json())
-    .then(data => {
-      console.log('Success:', data);
-    })
-    .catch((error) => {
-      console.error('Error:', error);
-    });
-    let addBrother = {
-      last_name: '',
-      first_name: '',
-      year: '',
-      major: '',
-      minor: '',
-      email: '',
-      phone: '',
-      role: ''
+    //Add checks for if there is a brother to add (will have to do same in graduateList)
+    if(Object.keys(this.state.addBrother).every(key => this.state.addBrother[key] !== "")) {
+      await fetch('brother/add', {
+       method: 'post',
+       mode: 'cors',
+       headers: {'Content-Type':'application/json'},
+       body: JSON.stringify({
+         "last_name": this.state.addBrother.last_name,
+         "first_name": this.state.addBrother.first_name,
+         "year": this.state.addBrother.year,
+         "major": this.state.addBrother.major,
+         "minor": this.state.addBrother.minor,
+         "email": this.state.addBrother.email,
+         "phone": this.state.addBrother.phone,
+         "role": this.state.addBrother.role
+       })
+      })
+      .then(response => response.json())
+      .then(data => {
+        console.log('Success:', data);
+      })
+      .catch((error) => {
+        console.error('Error:', error);
+      });
+      let addBrother = {
+        last_name: '',
+        first_name: '',
+        year: '',
+        major: '',
+        minor: '',
+        email: '',
+        phone: '',
+        role: ''
+      }
+      this.setState({addBrother: addBrother})
+      await this.getBrothers();
     }
-    this.setState({addBrother: addBrother})
-    await this.getBrothers();
-    this.props.updateSize();
   }
 
   handleEdit(event) {
@@ -185,6 +187,7 @@ export default class BrotherList extends React.Component {
 
 
 render() {
+  this.props.updateSize();
   return (
     <Container>
       {this.state.edit &&

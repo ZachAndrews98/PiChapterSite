@@ -9,6 +9,7 @@ import Button from 'react-bootstrap/Button';
 import User from '../components/User';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
+import '../css/page_css/Login.css';
 
 export default class Login extends React.Component {
   constructor(props){
@@ -72,37 +73,41 @@ export default class Login extends React.Component {
       renderUser = <User info={this.state.user} target="brother"/>;
     }
     return (
-      <Container>
+      <Container className="Login-Component">
         {!this.state.loggedIn && (
-          <Container>
-            <Row>
-              <h1>Login</h1>
-            </Row>
-            <Row>
-              <Form>
+          <div className="Login-Padding">
+            <Container className="Login-Menu">
+              <Row className="justify-content-md-center">
                 <Col>
-                  <Form.Control
-                    id="email"
-                    placeholder="Email"
-                    value={this.state.login["email"]}
-                    onChange={this.handleLoginChange}
-                  />
+                  <h1>Login</h1>
                 </Col>
-                <Col>
-                  <Form.Control
-                    id="password"
-                    placeholder="Password"
-                    value={this.state.login["password"]}
-                    onChange={this.handleLoginChange}
-                    type="password"
-                  />
-                </Col>
-                <Col>
-                  <Button type="submit" onClick={this.handleLogin}>Login</Button>
-                </Col>
-              </Form>
-            </Row>
-          </Container>
+              </Row>
+              <Row className="justify-content-md-center">
+                <Form>
+                  <Col>
+                    <Form.Control
+                      id="email"
+                      placeholder="Email"
+                      value={this.state.login["email"]}
+                      onChange={this.handleLoginChange}
+                    />
+                  </Col>
+                  <Col>
+                    <Form.Control
+                      id="password"
+                      placeholder="Password"
+                      value={this.state.login["password"]}
+                      onChange={this.handleLoginChange}
+                      type="password"
+                    />
+                  </Col>
+                  <Col>
+                    <Button type="submit" onClick={this.handleLogin}>Login</Button>
+                  </Col>
+                </Form>
+              </Row>
+            </Container>
+          </div>
         )}
         {renderUser}
       </Container>

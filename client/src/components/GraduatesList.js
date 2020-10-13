@@ -97,39 +97,41 @@ export default class GraduatesList extends React.Component {
 
   async handleAdd(event) {
     event.preventDefault();
-    await fetch('graduate/add', {
-     method: 'post',
-     mode: 'cors',
-     headers: {'Content-Type':'application/json'},
-     body: JSON.stringify({
-       "last_name": this.state.addGraduate.last_name,
-       "first_name": this.state.addGraduate.first_name,
-       "year": this.state.addGraduate.year,
-       "major": this.state.addGraduate.major,
-       "minor": this.state.addGraduate.minor,
-       "email": this.state.addGraduate.email,
-       "phone": this.state.addGraduate.phone
-     })
-    })
-    .then(response => response.json())
-    .then(data => {
-      console.log('Success:', data);
-    })
-    .catch((error) => {
-      console.error('Error:', error);
-    });
-    let addGraduate = {
-      last_name: '',
-      first_name: '',
-      year: '',
-      major: '',
-      minor: '',
-      email: '',
-      phone: ''
+    if(Object.keys(this.state.addGraduate).every(key => this.state.addGraduate[key] !== "")) {
+      await fetch('graduate/add', {
+       method: 'post',
+       mode: 'cors',
+       headers: {'Content-Type':'application/json'},
+       body: JSON.stringify({
+         "last_name": this.state.addGraduate.last_name,
+         "first_name": this.state.addGraduate.first_name,
+         "year": this.state.addGraduate.year,
+         "major": this.state.addGraduate.major,
+         "minor": this.state.addGraduate.minor,
+         "email": this.state.addGraduate.email,
+         "phone": this.state.addGraduate.phone
+       })
+      })
+      .then(response => response.json())
+      .then(data => {
+        console.log('Success:', data);
+      })
+      .catch((error) => {
+        console.error('Error:', error);
+      });
+      let addGraduate = {
+        last_name: '',
+        first_name: '',
+        year: '',
+        major: '',
+        minor: '',
+        email: '',
+        phone: ''
+      }
+      this.setState({addGraduate: addGraduate})
+      await this.getGraduates();
+      this.props.updateSize();
     }
-    this.setState({addGraduate: addGraduate})
-    await this.getGraduates();
-    this.props.updateSize();
   }
 
   handleEdit(event) {

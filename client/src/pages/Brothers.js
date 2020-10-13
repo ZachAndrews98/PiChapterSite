@@ -68,18 +68,7 @@ export default class Brothers extends React.Component {
               </Row>
             </Container>
             <Container fluid>
-              {/*{seniorRows.map(
-                row =>
-                <Row>
-                {row.map(
-                  brother =>
-                  <Col key={brother.first_name + " " + brother.last_name}>
-                    <Brother info={brother} />
-                  </Col>
-                )}
-                </Row>
-              )}*/}
-              <Row xl={5} lg={4} md={3} sm={2} xs={1}>
+              <Row className="justify-content-md-center" xl={5} lg={4} md={3} sm={2} xs={1}>
               {this.state.seniors.map(
                 brother =>
                 <Col lg={true} key={brother.first_name + " " + brother.last_name}>
@@ -100,18 +89,7 @@ export default class Brothers extends React.Component {
             </Row>
           </Container>
             <Container fluid>
-              {/*{juniorRows.map(
-                row =>
-                <Row>
-                {row.map(
-                  brother =>
-                  <Col key={brother.first_name + " " + brother.last_name}>
-                    <Brother info={brother} />
-                  </Col>
-                )}
-                </Row>
-              )}*/}
-              <Row xl={5} lg={4} md={3} sm={2} xs={1}>
+              <Row className="justify-content-md-center" xl={5} lg={4} md={3} sm={2} xs={1}>
               {this.state.juniors.map(
                 brother =>
                 <Col lg={true} key={brother.first_name + " " + brother.last_name}>
@@ -132,18 +110,7 @@ export default class Brothers extends React.Component {
               </Row>
             </Container>
             <Container fluid>
-              {/*{sophmoreRows.map(
-                row =>
-                <Row>
-                {row.map(
-                  brother =>
-                  <Col key={brother.first_name + " " + brother.last_name}>
-                    <Brother info={brother} />
-                  </Col>
-                )}
-                </Row>
-              )}*/}
-              <Row xl={5} lg={4} md={3} sm={2} xs={1}>
+              <Row className="justify-content-md-center" xl={5} lg={4} md={3} sm={2} xs={1}>
               {this.state.sophmores.map(
                 brother =>
                 <Col lg={true} key={brother.first_name + " " + brother.last_name}>
@@ -164,17 +131,14 @@ export default class Brothers extends React.Component {
               </Row>
             </Container>
             <Container fluid>
-              {freshmenRows.map(
-                row =>
-                <Row>
-                {row.map(
-                  brother =>
-                  <Col key={brother.first_name + " " + brother.last_name}>
-                    <Brother info={brother} />
-                  </Col>
-                )}
-                </Row>
+              <Row className="justify-content-md-center" xl={5} lg={4} md={3} sm={2} xs={1}>
+              {this.state.freshmen.map(
+                brother =>
+                <Col lg={true} key={brother.first_name + " " + brother.last_name}>
+                  <Brother info={brother} />
+                </Col>
               )}
+              </Row>
             </Container>
           </Row>
         }

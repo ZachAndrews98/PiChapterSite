@@ -6,12 +6,46 @@ and also iPads specifically.
 
 .Admin-Container {
 	padding-top: 20px;
-	padding-left: 50px;
-	padding-right: 50px;
+}
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+	.Admin-Container {
+		padding-left: 15px;
+		padding-right: 15px;
+	}
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+	.Admin-Container {
+		padding-left: 20px;
+		padding-right: 20px;
+	}
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+	.Admin-Container {
+		padding-left: 25px;
+		padding-right: 25px;
+	}
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+	.Admin-Container {
+		padding-left: 50px;
+		padding-right: 50px;
+	}
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
 }
 
 
-@media only screen and (max-width: 760px),
+@media only screen and (max-width: 1024px),
 (min-device-width: 768px) and (max-device-width: 1024px)  {
 
 	/* Force table to not be like tables anymore */

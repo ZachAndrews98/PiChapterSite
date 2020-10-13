@@ -1,0 +1,65 @@
+
+.Login-Component {
+  height: 100%;
+  padding-top: 50px;
+}
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+  .Login-Padding {
+    padding-left: 50px;
+    padding-right: 50px;
+  }
+
+  .Login-Menu {
+    border: 2px solid black;
+    padding: 15px;
+    text-align: center;
+  }
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+  .Login-Padding {
+    padding-left: 100px;
+    padding-right: 100px;
+  }
+
+  .Login-Menu {
+    border: 2px solid black;
+    padding: 15px;
+    text-align: center;
+  }
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+  .Login-Padding {
+    padding-left: 200px;
+    padding-right: 200px;
+  }
+
+  .Login-Menu {
+    border: 2px solid black;
+    padding: 15px;
+    text-align: center;
+  }
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+  .Login-Padding {
+    padding-left: 200px;
+    padding-right: 200px;
+  }
+
+  .Login-Menu {
+    border: 2px solid black;
+    padding: 15px;
+    text-align: center;
+  }
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+}
