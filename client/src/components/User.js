@@ -108,7 +108,10 @@ export default class User extends React.Component {
     return(
       <Form className="User-Container">
         <Form.Group style={{"textAlign": "center"}}>
-          <Row xl={2} lg={2} md={2} sm={1} xs={1}>
+          <Row
+            className="justify-content-md-center"
+            xl={2} lg={2} md={2} sm={1} xs={1}
+          >
             <Col>
               <Form.Label>First name</Form.Label>
               <Form.Control
@@ -126,7 +129,10 @@ export default class User extends React.Component {
               />
             </Col>
           </Row>
-          <Row xl={2} lg={2} md={2} sm={1} xs={1}>
+          <Row
+            className="justify-content-md-center"
+            xl={2} lg={2} md={2} sm={1} xs={1}
+          >
             <Col>
               <Form.Label>Year</Form.Label>
               <Form.Control
@@ -144,7 +150,10 @@ export default class User extends React.Component {
               />
             </Col>
           </Row>
-          <Row xl={2} lg={2} md={2} sm={1} xs={1}>
+          <Row
+            className="justify-content-md-center"
+            xl={2} lg={2} md={2} sm={1} xs={1}
+          >
             <Col>
               <Form.Label>Minor</Form.Label>
               <Form.Control
@@ -162,7 +171,10 @@ export default class User extends React.Component {
               />
             </Col>
           </Row>
-          <Row xl={2} lg={2} md={2} sm={1} xs={1}>
+          <Row
+            className="justify-content-md-center"
+            xl={2} lg={2} md={2} sm={1} xs={1}
+          >
             <Col>
               <Form.Label>Phone</Form.Label>
               <Form.Control
@@ -195,7 +207,10 @@ export default class User extends React.Component {
           </Row>
 
           {!this.props.admin &&
-            <Row xl={2} lg={2} md={2} sm={1} xs={1}>
+            <Row
+              className="justify-content-md-center"
+              xl={2} lg={2} md={2} sm={1} xs={1}
+            >
               <Col>
                 <Form.Label>Update Password</Form.Label>
                 <Form.Control

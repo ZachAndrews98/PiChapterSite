@@ -10,6 +10,7 @@ import User from '../components/User';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../css/page_css/Login.css';
+import '../css/component_css/UserCSS.css';
 
 export default class Login extends React.Component {
   constructor(props){
@@ -69,11 +70,13 @@ export default class Login extends React.Component {
 
   render() {
     let renderUser;
+    let prefix = "Login"
     if(this.state.loggedIn) {
+      prefix = "User"
       renderUser = <User info={this.state.user} target="brother"/>;
     }
     return (
-      <Container className="Login-Component">
+      <Container className={prefix + "-Component"}>
         {!this.state.loggedIn && (
           <div className="Login-Padding">
             <Container className="Login-Menu">
