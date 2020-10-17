@@ -18,7 +18,7 @@ import Admin from './pages/Admin';
 import Register from './pages/Register';
 import Graduates from './pages/Graduates';
 import Cabinet from './pages/Cabinet';
-import Pig_Dinner from './pages/Pig_Dinner';
+import PigDinner from './pages/PigDinner';
 import Donate from './pages/Donate';
 import Login from './pages/Login';
 
@@ -32,11 +32,9 @@ export default class App extends React.Component{
 
   render() {
     return (
+      <div className="main-container">
       <Router>
         <NavBar/>
-
-        {/* A <Switch> looks through its children <Route>s and
-            renders the first one that matches the current URL. */}
         <Switch>
           <Route exact path="/">
             <Home />
@@ -54,13 +52,13 @@ export default class App extends React.Component{
             <Admin />
           </Route>
           <Route exact path="/login">
-            <Login loggedIn={false} user={''} />
+            <Login loggedIn={false} />
           </Route>
           <Route exact path="/cabinet">
             <Cabinet />
           </Route>
           <Route exact path="/pig_dinner">
-            <Pig_Dinner />
+            <PigDinner />
           </Route>
           <Route exact path="/donate">
             <Donate />
@@ -71,6 +69,7 @@ export default class App extends React.Component{
         </Switch>
         <Footer />
       </Router>
+      </div>
     );
   }
 }

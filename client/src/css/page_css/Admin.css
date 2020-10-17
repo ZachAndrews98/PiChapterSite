@@ -5,6 +5,7 @@ and also iPads specifically.
 */
 
 .Admin-Container {
+	min-height: 100vh;
 	padding-top: 20px;
 }
 

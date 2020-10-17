@@ -23,8 +23,8 @@
 
 .message {
   overflow-wrap: break-word;
+  height: 75px;
 }
-
 
 .shadow {
   color: white;

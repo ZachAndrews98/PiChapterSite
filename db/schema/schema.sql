@@ -31,3 +31,11 @@ create table graduates (
 	phone varchar(10),
 	password varchar(255)
 );
+
+
+create table events (
+	id int AUTO_INCREMENT PRIMARY KEY,
+	title varchar(20),
+	event_date date,
+	event_time time
+)

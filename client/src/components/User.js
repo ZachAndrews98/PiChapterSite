@@ -231,7 +231,6 @@ export default class User extends React.Component {
               </Col>
             </Row>
           }
-          <br/>
           <Row>
             <ButtonGroup>
               <Button type="submit" id={this.state.user.id} onClick={this.handleEdit}>Save</Button>

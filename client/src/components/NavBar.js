@@ -9,7 +9,7 @@ import '../css/component_css/NavCSS.css';
 export default function NavBar() {
   return (
     <div className="NavBar-Component">
-      <Navbar fixed="top" expand="lg" bg="feej" varient="navbar-feej">
+      <Navbar fixed="top" expand="lg" bg="feej" varient="feej">
         <Navbar.Brand className="feej-brand">
           <img className="crest" src="/images/ChapterCoatWhite.png" alt="Chapter Coat of Arms"/>
           Allegheny Fiji

@@ -1,5 +1,5 @@
 .NavBar-Component {
-  /* height: 56px; */
+  height: 56px;
   /* margin-bottom: 15px; */
 }
 
@@ -19,6 +19,10 @@
 
 .feej-link {
   color: rgb(255 255 255 / 0.7) !important;
+}
+
+.navbar-feej {
+  color: rgb(255 255 255 / 0.7);
 }
 
 .feej-link:hover {

@@ -12,6 +12,7 @@ const database = require('./database')
 const brother = require('./routes/brother')
 const graduate = require('./routes/graduate')
 const user = require('./routes/user')
+const event = require('./routes/event')
 
 const IP = "76.180.0.145"
 
@@ -25,6 +26,7 @@ function filter_query(query) {
 app.use('/brother', brother)
 app.use('/user', user)
 app.use('/graduate', graduate)
+app.use('/event', event)
 
 app.get('/', (req, res) => {
   res.send(`Connected to API`);

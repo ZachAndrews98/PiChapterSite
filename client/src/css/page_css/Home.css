@@ -1,8 +1,8 @@
 .Home-component {
   /* The image used */
   background-image: url("/images/background-images/chapterwjulie.jpg");
-  height: 100%;
-  width: 100%;
+  min-height: 100vh;
+  /* width: 100%; */
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -16,6 +16,21 @@
   transform: translateX(-50%) translateY(-50%);
   text-align: center;
   color: #000000;
+}
+
+.home-button {
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+.btn-feej {
+  background-color: #543975;
+  color: white;
+}
+
+.btn-feej:hover {
+  color: white;
+  font-weight: bolder;
 }
 
 /* Extra small devices (phones, 600px and down) */

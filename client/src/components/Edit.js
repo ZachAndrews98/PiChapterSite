@@ -11,7 +11,6 @@ export default class Edit extends React.Component {
     this.state = {
       selected: this.props.brothers,
       target: this.props.target,
-      current: {},
     }
   }
 
