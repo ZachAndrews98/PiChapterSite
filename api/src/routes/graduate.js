@@ -133,11 +133,11 @@ router.post('/transfer', (req, res) => {
       res.send({"success": false})
     }
     let sql = "insert into brothers \
-    (last_name, first_name, year, major, minor, email, phone, password, role) \
-    values (?,?,?,?,?,?,?,?,?)"
+    (id, last_name, first_name, year, major, minor, email, phone, password, role) \
+    values (?,?,?,?,?,?,?,?,?,?)"
     database.query(sql,
       [
-        result[0].last_name, result[0].first_name, result[0].year, result[0].major,
+        result[0].id, result[0].last_name, result[0].first_name, result[0].year, result[0].major,
         result[0].minor, result[0].email, result[0].phone, result[0].password, "Brother"
       ],
       (err, result) => {

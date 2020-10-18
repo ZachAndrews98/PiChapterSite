@@ -32,6 +32,7 @@ create table graduates (
 	password varchar(255)
 );
 
+LOAD DATA INFILE '/var/lib/mysql-files/graduates.txt' INTO TABLE graduates;
 
 create table events (
 	id int AUTO_INCREMENT PRIMARY KEY,

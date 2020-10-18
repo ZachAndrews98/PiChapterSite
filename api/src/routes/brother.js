@@ -171,38 +171,55 @@ router.delete('/delete', (req, res) => {
 
 // Transfer brother to graduates
 router.post('/transfer', (req, res) => {
+  let transfer = true;
   database.query(`select * from brothers where id=?`, req.body.id,
   (err, result) => {
     if (err) {
       console.log(err)
       res.status(500).send(err)
     }
-    let sql = "insert into graduates \
-    (last_name, first_name, year, major, minor, email, phone, password) \
-    values (?,?,?,?,?,?,?,?)"
-    database.query(sql,
-      [
-        result[0].last_name, result[0].first_name, result[0].year, result[0].major,
-        result[0].minor, result[0].email, result[0].phone, result[0].password
-      ],
+    database.query(`select * from graduates where id=?`, req.body.id,
+    (err, gradResult) => {
+      if (err) {
+        console.log(err)
+        res.status(500).send(err)
+      }
+      console.log(gradResult)
+      if (gradResult === []) {
+        let sql = "insert into graduates \
+        (id, last_name, first_name, year, major, minor, email, phone, password) \
+        values (?,?,?,?,?,?,?,?,?)"
+        database.query(sql,
+          [
+            result[0].id, result[0].last_name, result[0].first_name, result[0].year, result[0].major,
+            result[0].minor, result[0].email, result[0].phone, result[0].password
+          ],
+          (err, result) => {
+            if (err) {
+              console.log(err)
+              res.status(500).send(err)
+            }
+        });
+      } else {
+        transfer = false;
+      }
+    });
+  });
+  if (transfer) {
+    sql = `delete from brothers where id=?`
+    database.query(sql, req.body.id,
       (err, result) => {
         if (err) {
           console.log(err)
           res.status(500).send(err)
         }
+        if (result.affectedRows !== 0)
+          res.send({"success": true})
+        else res.send({"success": false})
     });
-  });
-  sql = `delete from brothers where id=?`
-  database.query(sql, req.body.id,
-    (err, result) => {
-      if (err) {
-        console.log(err)
-        res.status(500).send(err)
-      }
-      if (result.affectedRows !== 0)
-        res.send({"success": true})
-      else res.send({"success": false})
-  });
+  } else {
+    res.send({"success": false})
+  }
 });
 
 module.exports = router;

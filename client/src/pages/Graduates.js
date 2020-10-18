@@ -25,45 +25,20 @@ export default class Graduates extends React.Component {
     .catch(console.log)
   }
 
-  makeRows(list, numPerRow) {
-    let rows = []
-    let row = []
-    for (let i=0, j=list.length; i<j; i+=numPerRow) {
-      row = list.slice(i,i+numPerRow);
-      rows.push(row)
-    }
-    return rows;
-  }
-
   render() {
-    const numPerRow = 4;
-    let gradRows = this.makeRows(this.state.graduates, numPerRow)
     return(
       <Container className="brothers-container">
-        {gradRows.length > 0 &&
-          <Row>
-          <Container>
-            <Row>
-              <Col className="class-year">
-                <h2>Graduates</h2>
+        <Container fluid>
+          <Row className="justify-content-md-center" xl={5} lg={4} md={3} sm={2} xs={1}>
+            {this.state.graduates.map(
+              grad =>
+              <Col lg={true} key={grad.first_name + " " + grad.last_name}>
+                <Graduate info={grad} />
+                <br />
               </Col>
-            </Row>
-          </Container>
-            <Container fluid>
-              {gradRows.map(
-                row =>
-                <Row>
-                {row.map(
-                  graduate =>
-                  <Col key={graduate.first_name + " " + graduate.last_name}>
-                    <Graduate info={graduate} />
-                  </Col>
-                )}
-                </Row>
-              )}
-            </Container>
+            )}
           </Row>
-        }
+        </Container>
       </Container>
     )
   }
