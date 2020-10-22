@@ -49,7 +49,7 @@ export default class GraduatesList extends React.Component {
     .then((graduates) => {
       this.setState({graduates: graduates})
     })
-    .catch(console.log)
+    // .catch(console.log)
   }
 
   handleChange(event) {
@@ -169,13 +169,11 @@ export default class GraduatesList extends React.Component {
             "id": id
           })
         })
-        .then(response => response.json())
-        .then(data => {
-          console.log('Success:', data);
+        .then(response => {
+          if (response.status === 204) {
+            alert("Unable to transfer (partial transfer possible): member already exists")
+          }
         })
-        .catch((error) => {
-          console.error('Error:', error);
-        });
       }
       this.setState({selected: []})
       this.getGraduates();

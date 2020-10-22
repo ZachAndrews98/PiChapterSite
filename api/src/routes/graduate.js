@@ -84,13 +84,13 @@ router.post('/add', async (req, res) => {
       charset: 'alphabetic'
     })
   }
+  console.log(user.password)
   await bcrypt
   .genSalt(10)
   .then(salt => {
     return bcrypt.hash(user.password, salt);
   })
   .then(hash => {
-
     const sql = "insert into graduates \
     (last_name, first_name, year, major, minor, email, phone, password) \
     values (?,?,?,?,?,?,?,?)"
@@ -130,33 +130,46 @@ router.post('/transfer', (req, res) => {
   database.query(`select * from graduates where id=?`, req.body.id,
   (err, result) => {
     if (err) {
-      res.send({"success": false})
+      console.log(err)
+      res.status(500).send(err)
     }
-    let sql = "insert into brothers \
-    (id, last_name, first_name, year, major, minor, email, phone, password, role) \
-    values (?,?,?,?,?,?,?,?,?,?)"
-    database.query(sql,
-      [
-        result[0].id, result[0].last_name, result[0].first_name, result[0].year, result[0].major,
-        result[0].minor, result[0].email, result[0].phone, result[0].password, "Brother"
-      ],
-      (err, result) => {
-        if (err) {
-          console.log(err)
-          res.status(500).send(err)
-        }
-    });
-  });
-  sql = `delete from graduates where id=?`
-  database.query(sql, req.body.id,
-    (err, result) => {
+    database.query(`select * from brothers where id=?`, req.body.id,
+    (err, broResult) => {
       if (err) {
         console.log(err)
         res.status(500).send(err)
       }
-      if (result.affectedRows !== 0)
-        res.send({"success": true})
-      else res.send({"success": false})
+      if (Object.keys(broResult).length === 0) {
+        let sql = "insert into brothers \
+        (id, last_name, first_name, year, major, minor, email, phone, password, role) \
+        values (?,?,?,?,?,?,?,?,?,?)"
+        database.query(sql,
+          [
+            result[0].id, result[0].last_name, result[0].first_name, result[0].year, result[0].major,
+            result[0].minor, result[0].email, result[0].phone, result[0].password, "Brother"
+          ],
+          (err, result) => {
+            if (err) {
+              console.log(err)
+              res.status(500).send(err)
+            }
+        });
+
+        sql = `delete from graduates where id=?`
+        database.query(sql, req.body.id,
+          (err, result) => {
+            if (err) {
+              console.log(err)
+              res.status(500).send(err)
+            }
+            if (result.affectedRows !== 0)
+              res.status(201).send({"success": true})
+            else res.status(204).send({"success": false})
+        });
+      } else {
+        res.status(204).send({"success": false})
+      }
+    });
   });
 });
 

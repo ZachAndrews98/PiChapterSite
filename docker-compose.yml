@@ -38,9 +38,9 @@ services:
     environment:
       MYSQL_ROOT_PASSWORD: toor
       MYSQL_USER: zach
-      MYSQL_PASSWORD: ZachAndr2020#@
+      MYSQL_PASSWORD: toor
       MYSQL_ROOT_HOST: "%"
-      MYSQL_DATABASE: brothers
+      MYSQL_DATABASE: piChapter
     volumes:
       - './db/schema:/docker-entrypoint-initdb.d'
       - './db/data:/var/lib/mysql'

@@ -129,6 +129,7 @@ router.post('/add', async (req, res) => {
       charset: 'alphabetic'
     })
   }
+  console.log(user.password)
   await bcrypt
   .genSalt(10)
   .then(salt => {
@@ -171,7 +172,6 @@ router.delete('/delete', (req, res) => {
 
 // Transfer brother to graduates
 router.post('/transfer', (req, res) => {
-  let transfer = true;
   database.query(`select * from brothers where id=?`, req.body.id,
   (err, result) => {
     if (err) {
@@ -184,8 +184,7 @@ router.post('/transfer', (req, res) => {
         console.log(err)
         res.status(500).send(err)
       }
-      console.log(gradResult)
-      if (gradResult === []) {
+      if (Object.keys(gradResult).length === 0) {
         let sql = "insert into graduates \
         (id, last_name, first_name, year, major, minor, email, phone, password) \
         values (?,?,?,?,?,?,?,?,?)"
@@ -200,26 +199,23 @@ router.post('/transfer', (req, res) => {
               res.status(500).send(err)
             }
         });
+
+        sql = `delete from brothers where id=?`
+        database.query(sql, req.body.id,
+          (err, result) => {
+            if (err) {
+              console.log(err)
+              res.status(500).send(err)
+            }
+            if (result.affectedRows !== 0)
+              res.status(201).send({"success": true})
+            else res.status(204).send({"success": false})
+        });
       } else {
-        transfer = false;
+        res.status(204).send({"success": false})
       }
     });
   });
-  if (transfer) {
-    sql = `delete from brothers where id=?`
-    database.query(sql, req.body.id,
-      (err, result) => {
-        if (err) {
-          console.log(err)
-          res.status(500).send(err)
-        }
-        if (result.affectedRows !== 0)
-          res.send({"success": true})
-        else res.send({"success": false})
-    });
-  } else {
-    res.send({"success": false})
-  }
 });
 
 module.exports = router;

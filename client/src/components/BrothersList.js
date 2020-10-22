@@ -172,13 +172,12 @@ export default class BrotherList extends React.Component {
           "id": id
         })
       })
-      .then(response => response.json())
-      .then(data => {
-        console.log('Success:', data);
+      .then(response => {
+        if (response.status === 204) {
+          alert("Unable to transfer (partial transfer possible): member already exists")
+        }
       })
-      .catch((error) => {
-        console.error('Error:', error);
-      });
+
     }
     this.setState({selected: []})
     this.getBrothers();

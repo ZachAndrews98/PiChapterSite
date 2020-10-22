@@ -2,6 +2,8 @@ const database = require('../database')
 const router = require('express').Router()
 const bcrypt = require('bcryptjs')
 
+const admin = ["President", "Treasurer", "Recording", "Corresponding", "Historian"];
+
 function validate(user) {
   return true
 }
@@ -46,6 +48,8 @@ router.get('/', (req, res) => {
 router.post('/login', (req, res) => {
   let email = req.body.email
   let password = req.body.password
+  let perms = req.query.perms
+  let user;
   const sql = `select * from brothers where email='${email}'`
   database.query(sql,
     (err, result) => {
@@ -59,14 +63,39 @@ router.post('/login', (req, res) => {
             console.log(err)
             res.status(500).send(err)
           }
-          if (cmpre) {
-            res.status(200).send({"user": result[0]})
+          // if (cmpre) {
+          //   res.status(200).send({"loggedIn": true})
+          // } else {
+          //   res.status(401).send({"loggedIn": false})
+          // }
+          if(cmpre) {
+            if(perms === "admin" && cmpre) {
+              if(admin.includes(result[0].role)) {
+                res.status(200).send({"loggedIn": true})
+              } else {
+                res.status(401).send({"loggedIn": false})
+              }
+            } else if(perms === "undefined" && cmpre) {
+              res.status(200).send({"loggedIn": true})
+            }
           } else {
-            res.status(200).send({"user": null})
+            res.status(401).send({"loggedIn": false})
           }
         });
       } else {
-        res.status(200).send({"user": result[0]})
+        if(perms === "admin") {
+          if(admin.includes(result[0].role)) {
+            res.status(200).send({"loggedIn": true})
+          } else {
+            res.status(401).send({"loggedIn": false})
+          }
+        } else if(perms === "undefined") {
+          if(result[0].password === password) {
+            res.status(200).send({"loggedIn": true})
+          } else {
+            res.status(401).send({"loggedIn": false})
+          }
+        }
       }
     });
 });

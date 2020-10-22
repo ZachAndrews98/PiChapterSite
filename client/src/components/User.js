@@ -12,7 +12,7 @@ export default class User extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      user: {},
+      user: null,
       password: '',
       confirm_password: '',
     }
@@ -23,8 +23,18 @@ export default class User extends React.Component {
   }
 
   componentDidMount() {
-    // console.log(this.props)
-    this.setState({user: this.props.info})
+    if(this.props.info !== undefined)
+      this.setState({user: this.props.info})
+    else if(this.props.userEmail !== ''){
+      fetch(`/brother?email=${this.props.userEmail}`)
+      .then(res => res.json())
+      .then((brother) => {
+        this.setState({user: brother[0]})
+      })
+      .catch(console.log)
+    } else {
+      this.setState({user: ''})
+    }
   }
 
   async verify_password() {
@@ -105,87 +115,87 @@ export default class User extends React.Component {
   }
 
   render() {
-    return(
-      <Form className="User-Container">
-        <Form.Group style={{"textAlign": "center"}}>
-          <Row
-            className="justify-content-md-center"
-            xl={2} lg={2} md={2} sm={1} xs={1}
-          >
-            <Col>
-              <Form.Label>First name</Form.Label>
-              <Form.Control
-                id={"first_name"}
-                value={this.state.user.first_name}
-                onChange={this.handleEditChange}
-              />
-            </Col>
-            <Col>
-              <Form.Label>Last name</Form.Label>
-              <Form.Control
-                id={"last_name"}
-                value={this.state.user.last_name}
-                onChange={this.handleEditChange}
-              />
-            </Col>
-          </Row>
-          <Row
-            className="justify-content-md-center"
-            xl={2} lg={2} md={2} sm={1} xs={1}
-          >
-            <Col>
-              <Form.Label>Year</Form.Label>
-              <Form.Control
-                id={"year"}
-                value={this.state.user.year}
-                onChange={this.handleEditChange}
-              />
-            </Col>
-            <Col>
-              <Form.Label>Major</Form.Label>
-              <Form.Control
-                id={"major"}
-                value={this.state.user.major}
-                onChange={this.handleEditChange}
-              />
-            </Col>
-          </Row>
-          <Row
-            className="justify-content-md-center"
-            xl={2} lg={2} md={2} sm={1} xs={1}
-          >
-            <Col>
-              <Form.Label>Minor</Form.Label>
-              <Form.Control
-                id={"minor"}
-                value={this.state.user.minor}
-                onChange={this.handleEditChange}
-              />
-            </Col>
-            <Col>
-              <Form.Label>Email</Form.Label>
-              <Form.Control
-                id={"email"}
-                value={this.state.user.email}
-                onChange={this.handleEditChange}
-              />
-            </Col>
-          </Row>
-          <Row
-            className="justify-content-md-center"
-            xl={2} lg={2} md={2} sm={1} xs={1}
-          >
-            <Col>
-              <Form.Label>Phone</Form.Label>
-              <Form.Control
-                id={"phone"}
-                value={this.state.user.phone}
-                onChange={this.handleEditChange}
-              />
-            </Col>
-            {this.props.admin &&
+    if(this.state.user !== null) {
+      return(
+        <Form className="User-Container">
+          <Form.Group style={{"textAlign": "center"}}>
+            <Row
+              className="justify-content-md-center"
+              xl={2} lg={2} md={2} sm={1} xs={1}
+            >
               <Col>
-                <Row>
+                <Form.Label>First name</Form.Label>
+                <Form.Control
+                  id={"first_name"}
+                  value={this.state.user.first_name}
+                  onChange={this.handleEditChange}
+                />
+              </Col>
+              <Col>
+                <Form.Label>Last name</Form.Label>
+                <Form.Control
+                  id={"last_name"}
+                  value={this.state.user.last_name}
+                  onChange={this.handleEditChange}
+                />
+              </Col>
+            </Row>
+            <Row
+              className="justify-content-md-center"
+              xl={2} lg={2} md={2} sm={1} xs={1}
+            >
+              <Col>
+                <Form.Label>Year</Form.Label>
+                <Form.Control
+                  id={"year"}
+                  value={this.state.user.year}
+                  onChange={this.handleEditChange}
+                />
+              </Col>
+              <Col>
+                <Form.Label>Major</Form.Label>
+                <Form.Control
+                  id={"major"}
+                  value={this.state.user.major}
+                  onChange={this.handleEditChange}
+                />
+              </Col>
+            </Row>
+            <Row
+              className="justify-content-md-center"
+              xl={2} lg={2} md={2} sm={1} xs={1}
+            >
+              <Col>
+                <Form.Label>Minor</Form.Label>
+                <Form.Control
+                  id={"minor"}
+                  value={this.state.user.minor}
+                  onChange={this.handleEditChange}
+                />
+              </Col>
+              <Col>
+                <Form.Label>Email</Form.Label>
+                <Form.Control
+                  id={"email"}
+                  value={this.state.user.email}
+                  onChange={this.handleEditChange}
+                />
+              </Col>
+            </Row>
+            <Row
+              className="justify-content-md-center"
+              xl={2} lg={2} md={2} sm={1} xs={1}
+            >
+              <Col>
+                <Form.Label>Phone</Form.Label>
+                <Form.Control
+                  id={"phone"}
+                  value={this.state.user.phone}
+                  onChange={this.handleEditChange}
+                />
+              </Col>
+              {this.props.admin &&
+                <Col>
                   <Form.Label>Role</Form.Label>
                   <Form.Control
                     as="select"
@@ -201,44 +211,46 @@ export default class User extends React.Component {
                     <option>Corresponding</option>
                     <option>Historian</option>
                   </Form.Control>
-                </Row>
-              </Col>
-            }
-          </Row>
-
-          {!this.props.admin &&
-            <Row
-              className="justify-content-md-center"
-              xl={2} lg={2} md={2} sm={1} xs={1}
-            >
-              <Col>
-                <Form.Label>Update Password</Form.Label>
-                <Form.Control
-                  id={"password"}
-                  value={this.state.password}
-                  onChange={this.handlePasswordChange}
-                  type="password"
-                />
-              </Col>
-              <Col>
-                <Form.Label>Confirm Password</Form.Label>
-                <Form.Control
-                  id={"confirm_password"}
-                  value={this.state.confirm_password}
-                  onChange={this.handlePasswordChange}
-                  type="password"
-                />
-              </Col>
+                </Col>
+              }
             </Row>
-          }
-          <Row>
-            <ButtonGroup>
-              <Button type="submit" id={this.state.user.id} onClick={this.handleEdit}>Save</Button>
-              <Button type="submit" onClick={this.props.done}>Done</Button>
-            </ButtonGroup>
-          </Row>
-        </Form.Group>
-      </Form>
-    )
+
+            {!this.props.admin &&
+              <Row
+                className="justify-content-md-center"
+                xl={2} lg={2} md={2} sm={1} xs={1}
+              >
+                <Col>
+                  <Form.Label>Update Password</Form.Label>
+                  <Form.Control
+                    id={"password"}
+                    value={this.state.password}
+                    onChange={this.handlePasswordChange}
+                    type="password"
+                  />
+                </Col>
+                <Col>
+                  <Form.Label>Confirm Password</Form.Label>
+                  <Form.Control
+                    id={"confirm_password"}
+                    value={this.state.confirm_password}
+                    onChange={this.handlePasswordChange}
+                    type="password"
+                  />
+                </Col>
+              </Row>
+            }
+            <Row>
+              <ButtonGroup>
+                <Button type="submit" id={this.state.user.id} onClick={this.handleEdit}>Save</Button>
+                <Button type="submit" onClick={this.props.done}>Done</Button>
+              </ButtonGroup>
+            </Row>
+          </Form.Group>
+        </Form>
+      )
+    } else {
+      return(<h1>Loading</h1>)
+    }
   }
 }

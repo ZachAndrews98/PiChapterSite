@@ -6,6 +6,7 @@ import Tab from 'react-bootstrap/Tab'
 import BrotherList from '../components/BrothersList';
 import GraduateList from '../components/GraduatesList';
 import EventList from '../components/EventList';
+import LoginMenu from '../components/LoginMenu';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../css/page_css/Admin.css';
@@ -48,19 +49,21 @@ export default class Admin extends React.Component{
   render() {
     return(
       <div className="Admin-Container">
-        <Tabs defaultActiveKey="brothers" id="Admin-Control">
-          <Tab eventKey="brothers" title="Brothers List">
-            <h3>Total Brothers: {this.state.totalBrothers}</h3>
-            <BrotherList updateSize={this.brothersSize}/>
-          </Tab>
-          <Tab eventKey="graduates" title="Graduates List">
-            <h3>Total Graduates: {this.state.totalGraduates}</h3>
-            <GraduateList updateSize={this.graduatesSize}/>
-          </Tab>
-          <Tab eventKey="events" title="Events List">
-            <EventList/>
-          </Tab>
-        </Tabs>
+        <LoginMenu perms={"admin"} prefix="Admin">
+          <Tabs defaultActiveKey="brothers" id="Admin-Control">
+            <Tab eventKey="brothers" title="Brothers List">
+              <h3>Total Brothers: {this.state.totalBrothers}</h3>
+              <BrotherList updateSize={this.brothersSize}/>
+            </Tab>
+            <Tab eventKey="graduates" title="Graduates List">
+              <h3>Total Graduates: {this.state.totalGraduates}</h3>
+              <GraduateList updateSize={this.graduatesSize}/>
+            </Tab>
+            <Tab eventKey="events" title="Events List">
+              <EventList/>
+            </Tab>
+          </Tabs>
+        </LoginMenu>
       </div>
     )
   }

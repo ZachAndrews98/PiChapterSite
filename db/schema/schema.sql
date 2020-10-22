@@ -1,4 +1,4 @@
-use brothers;
+use piChapter;
 
 DROP TABLE IF EXISTS brothers;
 
@@ -32,11 +32,11 @@ create table graduates (
 	password varchar(255)
 );
 
-LOAD DATA INFILE '/var/lib/mysql-files/graduates.txt' INTO TABLE graduates;
+-- LOAD DATA INFILE '/var/lib/mysql-files/graduates.txt' INTO TABLE graduates;
 
 create table events (
 	id int AUTO_INCREMENT PRIMARY KEY,
 	title varchar(20),
 	event_date date,
 	event_time time
-)
+);
