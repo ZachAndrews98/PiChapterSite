@@ -1,21 +1,16 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-
 import {
   BrowserRouter as Router,
   Switch,
   Route
 } from "react-router-dom";
 
-import 'bootstrap/dist/css/bootstrap.min.css';
-import './css/site.css';
-import './index.css';
-
 import Brothers from './pages/Brothers';
 import About from './pages/About';
 import Home from './pages/Home';
 import Admin from './pages/Admin';
-import Register from './pages/Register';
+// import Register from './pages/Register';
 import Graduates from './pages/Graduates';
 import Cabinet from './pages/Cabinet';
 import PigDinner from './pages/PigDinner';
@@ -24,6 +19,10 @@ import Login from './pages/Login';
 
 import Footer from './components/Footer';
 import NavBar from './components/NavBar';
+
+import 'bootstrap/dist/css/bootstrap.min.css';
+import './css/site.css';
+import './index.css';
 
 
 // ========================================
@@ -52,7 +51,7 @@ export default class App extends React.Component{
             <Admin />
           </Route>
           <Route exact path="/login">
-            <Login loggedIn={false} />
+            <Login />
           </Route>
           <Route exact path="/cabinet">
             <Cabinet />

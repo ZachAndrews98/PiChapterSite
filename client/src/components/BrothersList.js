@@ -45,7 +45,7 @@ export default class BrotherList extends React.Component {
   }
 
   getBrothers() {
-    fetch('/brother')
+    fetch('/api/brother')
     .then(res => res.json())
     .then((brothers) => {
       this.setState({brothers: brothers})
@@ -75,7 +75,7 @@ export default class BrotherList extends React.Component {
   handleDelete(event) {
     event.preventDefault();
     for (let id of this.state.selected) {
-      fetch('/brother/delete', {
+      fetch('/api/brother/delete', {
         method: 'delete',
         mode: 'cors',
         headers: {'Content-Type':'application/json'},
@@ -100,7 +100,7 @@ export default class BrotherList extends React.Component {
     event.preventDefault();
     //Add checks for if there is a brother to add (will have to do same in graduateList)
     if(Object.keys(this.state.addBrother).every(key => this.state.addBrother[key] !== "")) {
-      await fetch('brother/add', {
+      await fetch('api/brother/add', {
        method: 'post',
        mode: 'cors',
        headers: {'Content-Type':'application/json'},
@@ -164,7 +164,7 @@ export default class BrotherList extends React.Component {
   async handleTransfer(event) {
     // event.preventDefault();
     for (let id of this.state.selected) {
-      fetch('/brother/transfer', {
+      fetch('/api/brother/transfer', {
         method: 'post',
         mode: 'cors',
         headers: {'Content-Type':'application/json'},

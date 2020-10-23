@@ -29,11 +29,8 @@ export default function NavBar() {
               <NavDropdown.Item className="feej-dropdown" href="/donate">Donate</NavDropdown.Item>
             </NavDropdown>
 
-            <Nav.Link className="feej-link" href="/admin">Admin</Nav.Link>
+            {/*<Nav.Link className="feej-link" href="/admin">Admin</Nav.Link>*/}
             <Nav.Link className="feej-link" href="/login">Login</Nav.Link>
-
-            {/*<Nav.Link className="feej-link" href="/login">Login</Nav.Link>
-            <Nav.Link className="feej-link" href="/register">Register</Nav.Link>*/}
           </Nav>
         </Navbar.Collapse>
       </Navbar>

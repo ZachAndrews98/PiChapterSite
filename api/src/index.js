@@ -1,47 +1,18 @@
 const express = require('express');
-const path = require('path');
-const mysql = require('mysql');
 const dateTime = require('node-datetime');
-const bcrypt = require('bcryptjs');
 
 const app = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
-const database = require('./database')
-const brother = require('./routes/brother')
-const graduate = require('./routes/graduate')
-const user = require('./routes/user')
-const event = require('./routes/event')
+app.use('/api/brother', require('./routes/brother'))
+app.use('/api/graduate', require('./routes/graduate'))
+app.use('/api/user', require('./routes/user'))
+app.use('/api/event', require('./routes/event'))
 
-const IP = "76.180.0.145"
 
-function filter_query(query) {
-  if (query !== undefined) {
-    return query.replace("'", "").replace("'", "").replace("`", "").replace("`", "")
-  }
-  return ""
-}
-
-app.use('/brother', brother)
-app.use('/user', user)
-app.use('/graduate', graduate)
-app.use('/event', event)
-
-app.get('/', (req, res) => {
+app.get('/api', (req, res) => {
   res.send(`Connected to API`);
-});
-
-
-
-app.get('/ip', (req, res) => {
-  res.send(`IP: ${IP}`);
-});
-
-app.get('/users', (req, res) => {
-  database.query('select * from users', (err, result) => {
-    res.send(result);
-  });
 });
 
 app.get('/grad_year', (req, res) => {

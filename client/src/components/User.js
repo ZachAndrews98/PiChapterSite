@@ -26,7 +26,7 @@ export default class User extends React.Component {
     if(this.props.info !== undefined)
       this.setState({user: this.props.info})
     else if(this.props.userEmail !== ''){
-      fetch(`/brother?email=${this.props.userEmail}`)
+      fetch(`/api/brother?email=${this.props.userEmail}`)
       .then(res => res.json())
       .then((brother) => {
         this.setState({user: brother[0]})
@@ -41,7 +41,7 @@ export default class User extends React.Component {
     let pass_issues = "";
     if(this.state.password === this.state.confirm_password) {
       if(this.state.password.length >= 8) {
-        await fetch('user/update_password', {
+        await fetch('/api/user/update_password', {
           method: 'put',
           mode: 'cors',
           headers: {'Content-Type':'application/json'},
@@ -73,7 +73,7 @@ export default class User extends React.Component {
     if(this.state.password !== '' && this.state.confirm_password !== '') {
       this.verify_password()
     }
-    await fetch(`${this.props.target}/edit`, {
+    await fetch(`/api/${this.props.target}/edit`, {
      method: 'put',
      mode: 'cors',
      headers: {'Content-Type':'application/json'},
