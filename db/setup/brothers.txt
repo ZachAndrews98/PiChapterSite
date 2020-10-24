@@ -16,4 +16,4 @@
 16	Yarborough	Aj	2022	Business	Philosophy & Psychology	yarborougha@allegheny.edu	0000000000	null	Corresponding
 17	Diprose	Ryan	2023	History	Undecided	diproser@allegheny.edu	0000000000	null	Brother
 18	Sesler	Ryan	2023	Biology	Music Performance	seslerr@allegheny.edu	0000000000	null	Brother
-19	Stephenson	Luke	2023	Physics	Philosophy	stephensonl@allegheny.edu	0000000000	null	Brother
+19	Stephenson	Luke	2023	Physics	Philosophy	stephensonl@allegheny.edu	7162242884	null	Brother

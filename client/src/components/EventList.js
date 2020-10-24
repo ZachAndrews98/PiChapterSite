@@ -32,7 +32,7 @@ export default class EventList extends React.Component {
   }
 
   getEvents() {
-    fetch('/api/event')
+    fetch('/event')
     .then(res => res.json())
     .then((events) => {
       this.setState({events: events})
@@ -63,7 +63,7 @@ export default class EventList extends React.Component {
     event.preventDefault();
     //Add checks for if there is a brother to add (will have to do same in graduateList)
     if(Object.keys(this.state.addEvent).every(key => this.state.addEvent[key] !== "")) {
-      await fetch('/api/event/add', {
+      await fetch('/event/add', {
        method: 'post',
        mode: 'cors',
        headers: {'Content-Type':'application/json'},
@@ -93,7 +93,7 @@ export default class EventList extends React.Component {
   handleDelete(event) {
     event.preventDefault();
     for (let id of this.state.selected) {
-      fetch('/api/event/delete', {
+      fetch('/event/delete', {
         method: 'delete',
         mode: 'cors',
         headers: {'Content-Type':'application/json'},

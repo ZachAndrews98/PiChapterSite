@@ -45,7 +45,7 @@ router.put('/edit', (req, res) => {
     major: req.body.major,
     minor: req.body.minor,
     email: req.body.email,
-    phone: req.body.phone
+    phone: req.body.phone.replace('(','').replace(')','').replace('-','')
   }
   const sql = `update graduates
   set last_name=?, first_name=?, year=?, major=?, minor=?, email=?, phone=?
@@ -78,7 +78,7 @@ router.post('/add', async (req, res) => {
     major: req.body.major,
     minor: req.body.minor,
     email: req.body.email,
-    phone: req.body.phone,
+    phone: req.body.phone.replace('(','').replace(')','').replace('-',''),
     password: randomstring.generate({
       length: 12,
       charset: 'alphabetic'

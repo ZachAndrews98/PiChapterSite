@@ -21,7 +21,7 @@ export default class Brothers extends React.Component {
   }
 
   componentDidMount() {
-    fetch('/api/brother')
+    fetch('/brother')
     .then(res => res.json())
     .then((brothers) => {
       this.get_classes(brothers)
@@ -30,7 +30,7 @@ export default class Brothers extends React.Component {
   }
 
   get_classes(brothers) {
-    fetch('/api/grad_year')
+    fetch('/grad_year')
     .then(res => res.json())
     .then((year) => {
       this.setState({seniors: brothers.filter(brother => brother.year === parseInt(year))})

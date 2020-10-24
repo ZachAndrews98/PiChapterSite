@@ -31,7 +31,7 @@ export default class LoginMenu extends React.Component {
 
   async handleLogin(event) {
     event.preventDefault();
-    await fetch(`/api/user/login?perms=${this.props.perms}`, {
+    await fetch(`/user/login?perms=${this.props.perms}`, {
      method: 'post',
      mode: 'cors',
      headers: {'Content-Type':'application/json'},

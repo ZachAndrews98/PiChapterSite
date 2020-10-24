@@ -10,6 +10,8 @@ services:
     # env_file: ./api/.env # TODO - uncomment this to auto-load your .env file!
     container_name: production_api
     restart: always
+    networks:
+      - backend
   client:
     build:
       context: ./client/
@@ -22,6 +24,8 @@ services:
       - "80:80"
     container_name: production_client
     restart: always
+    networks:
+      - backend
   db:
     image: mysql:5.7
     # command: --default-authentication-plugin=mysql_native_password
@@ -37,3 +41,7 @@ services:
       - './db/data:/var/lib/mysql'
       - './db/setup:/var/lib/mysql-files/'
     container_name: production_db
+    networks:
+      - backend
+networks:
+  backend:

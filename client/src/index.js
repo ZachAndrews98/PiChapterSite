@@ -32,42 +32,42 @@ export default class App extends React.Component{
   render() {
     return (
       <div className="main-container">
-      <Router>
-        <NavBar/>
-        <Switch>
-          <Route exact path="/">
-            <Home />
-          </Route>
-          <Route exact path="/brothers">
-            <Brothers />
-          </Route>
-          <Route exact path="/graduates">
-            <Graduates />
-          </Route>
-          <Route exact path="/about">
-            <About />
-          </Route>
-          <Route exact path="/admin">
-            <Admin />
-          </Route>
-          <Route exact path="/login">
-            <Login />
-          </Route>
-          <Route exact path="/cabinet">
-            <Cabinet />
-          </Route>
-          <Route exact path="/pig_dinner">
-            <PigDinner />
-          </Route>
-          <Route exact path="/donate">
-            <Donate />
-          </Route>
-          <Route exact path="/login">
-            <Login />
-          </Route>
-        </Switch>
-        <Footer />
-      </Router>
+        <Router>
+          <NavBar />
+          <Switch>
+            <Route exact path="/">
+              <Home />
+            </Route>
+            <Route exact path="/brothers">
+              <Brothers />
+            </Route>
+            <Route exact path="/graduates">
+              <Graduates />
+            </Route>
+            <Route exact path="/about">
+              <About />
+            </Route>
+            <Route exact path="/admin">
+              <Admin />
+            </Route>
+            <Route exact path="/login">
+              <Login />
+            </Route>
+            <Route exact path="/cabinet">
+              <Cabinet />
+            </Route>
+            <Route exact path="/pig_dinner">
+              <PigDinner />
+            </Route>
+            <Route exact path="/donate">
+              <Donate />
+            </Route>
+            <Route exact path="/login">
+              <Login />
+            </Route>
+          </Switch>
+          <Footer />
+        </Router>
       </div>
     );
   }

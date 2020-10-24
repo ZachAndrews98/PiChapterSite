@@ -87,7 +87,7 @@ router.put('/edit', (req, res) => {
     major: req.body.major,
     minor: req.body.minor,
     email: req.body.email,
-    phone: req.body.phone,
+    phone: req.body.phone.replace('(','').replace(')','').replace('-',''),
     role: req.body.role
   }
   const sql = `update brothers
@@ -122,7 +122,7 @@ router.post('/add', async (req, res) => {
     major: req.body.major,
     minor: req.body.minor,
     email: req.body.email,
-    phone: req.body.phone,
+    phone: req.body.phone.replace('(','').replace(')','').replace('-',''),
     role: req.body.role,
     password: randomstring.generate({
       length: 12,

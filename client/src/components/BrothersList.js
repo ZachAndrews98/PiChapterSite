@@ -45,7 +45,7 @@ export default class BrotherList extends React.Component {
   }
 
   getBrothers() {
-    fetch('/api/brother')
+    fetch('/brother')
     .then(res => res.json())
     .then((brothers) => {
       this.setState({brothers: brothers})
@@ -75,7 +75,7 @@ export default class BrotherList extends React.Component {
   handleDelete(event) {
     event.preventDefault();
     for (let id of this.state.selected) {
-      fetch('/api/brother/delete', {
+      fetch('/brother/delete', {
         method: 'delete',
         mode: 'cors',
         headers: {'Content-Type':'application/json'},
@@ -164,7 +164,7 @@ export default class BrotherList extends React.Component {
   async handleTransfer(event) {
     // event.preventDefault();
     for (let id of this.state.selected) {
-      fetch('/api/brother/transfer', {
+      fetch('/brother/transfer', {
         method: 'post',
         mode: 'cors',
         headers: {'Content-Type':'application/json'},
