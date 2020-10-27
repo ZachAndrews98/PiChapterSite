@@ -21,7 +21,7 @@ export default class Cabinet extends React.Component {
   }
 
   get_cabinet() {
-    fetch('/brother/cabinet')
+    fetch('/api/brother/cabinet')
     .then(res => res.json())
     .then((cabinet) => {
       this.setState({president: cabinet.President})

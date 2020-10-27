@@ -20,9 +20,6 @@ services:
     build:
       context: ./client/
     image: pichapterclient:dev
-    deploy:
-      mode: replicated
-      replicas: 6
     command: npm start
     volumes:
       - ./client/:/usr/app

@@ -13,7 +13,7 @@ export default class PigDinner extends React.Component {
   }
 
   componentDidMount() {
-    fetch('/event?title=Pig_Dinner')
+    fetch('/api/event?title=Pig_Dinner')
     .then(res => res.json())
     .then((info) => {
       console.log(info)

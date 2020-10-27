@@ -5,17 +5,17 @@ const app = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
-app.use('/brother', require('./routes/brother'))
-app.use('/graduate', require('./routes/graduate'))
-app.use('/user', require('./routes/user'))
-app.use('/event', require('./routes/event'))
+app.use('/api/brother', require('./routes/brother'))
+app.use('/api/graduate', require('./routes/graduate'))
+app.use('/api/user', require('./routes/user'))
+app.use('/api/event', require('./routes/event'))
 
 
-app.get('', (req, res) => {
+app.get('/api', (req, res) => {
   res.send(`Connected to API`);
 });
 
-app.get('/grad_year', (req, res) => {
+app.get('/api/grad_year', (req, res) => {
   let class_year = dateTime.create().format('Y')
   const current_month = dateTime.create().format('m')
   const cutoff = dateTime.create('06').format('m')
