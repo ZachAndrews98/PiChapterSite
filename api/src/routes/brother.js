@@ -5,6 +5,7 @@ const bcrypt = require('bcryptjs');
 const database = require('../database')
 
 router.get('/', (req, res) => {
+  console.log(req.query)
   queries = {
     first_name: `first_name like '%${req.query.first_name}%' and `,
     last_name: `last_name like '%${req.query.last_name}%' and `,
@@ -15,6 +16,10 @@ router.get('/', (req, res) => {
     major: `major='${req.query.major}' and `,
     minor: `minor='${req.query.minor}' and `,
     year: `year='${req.query.year}' and `
+  }
+
+  if(req.query.role.includes('!')) {
+    queries.role = `role!='${req.query.role.replace('!','')}' and `
   }
 
   let sql = "select * from brothers where ";
@@ -171,51 +176,22 @@ router.delete('/delete', (req, res) => {
 });
 
 // Transfer brother to graduates
-router.post('/transfer', (req, res) => {
-  database.query(`select * from brothers where id=?`, req.body.id,
-  (err, result) => {
-    if (err) {
-      console.log(err)
-      res.status(500).send(err)
-    }
-    database.query(`select * from graduates where id=?`, req.body.id,
-    (err, gradResult) => {
+router.put('/transfer', (req, res) => {
+  const sql = `update brothers
+  set role=?
+  where id=?`
+  database.query(sql,
+    [
+      "Graduate",
+      req.body.id
+    ],
+    (err, result) => {
       if (err) {
         console.log(err)
         res.status(500).send(err)
       }
-      if (Object.keys(gradResult).length === 0) {
-        let sql = "insert into graduates \
-        (id, last_name, first_name, year, major, minor, email, phone, password) \
-        values (?,?,?,?,?,?,?,?,?)"
-        database.query(sql,
-          [
-            result[0].id, result[0].last_name, result[0].first_name, result[0].year, result[0].major,
-            result[0].minor, result[0].email, result[0].phone, result[0].password
-          ],
-          (err, result) => {
-            if (err) {
-              console.log(err)
-              res.status(500).send(err)
-            }
-        });
-
-        sql = `delete from brothers where id=?`
-        database.query(sql, req.body.id,
-          (err, result) => {
-            if (err) {
-              console.log(err)
-              res.status(500).send(err)
-            }
-            if (result.affectedRows !== 0)
-              res.status(201).send({"success": true})
-            else res.status(204).send({"success": false})
-        });
-      } else {
-        res.status(204).send({"success": false})
-      }
+      res.status(200).send(result)
     });
-  });
 });
 
 module.exports = router;

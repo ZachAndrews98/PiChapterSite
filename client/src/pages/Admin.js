@@ -7,6 +7,7 @@ import BrotherList from '../components/BrothersList';
 import GraduateList from '../components/GraduatesList';
 import EventList from '../components/EventList';
 import LoginMenu from '../components/LoginMenu';
+import Export from '../components/Export';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../css/page_css/Admin.css';
@@ -61,6 +62,9 @@ export default class Admin extends React.Component{
             </Tab>
             <Tab eventKey="events" title="Events List">
               <EventList/>
+            </Tab>
+            <Tab eventKey="export" title="Export Data">
+              <Export/>
             </Tab>
           </Tabs>
         </LoginMenu>

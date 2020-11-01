@@ -44,7 +44,7 @@ export default class GraduatesList extends React.Component {
   }
 
   getGraduates() {
-    fetch('/api/graduate')
+    fetch('/api/brother?role=Graduate')
     .then(res => res.json())
     .then((graduates) => {
       this.setState({graduates: graduates})
@@ -109,7 +109,8 @@ export default class GraduatesList extends React.Component {
          "major": this.state.addGraduate.major,
          "minor": this.state.addGraduate.minor,
          "email": this.state.addGraduate.email,
-         "phone": this.state.addGraduate.phone
+         "phone": this.state.addGraduate.phone,
+         "role": "Graduate"
        })
       })
       .then(response => response.json())

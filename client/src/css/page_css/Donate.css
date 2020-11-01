@@ -1,4 +1,4 @@
-.PigDinner-Component {
+.Donate-Component {
   min-height: 100vh;
   padding-top: 20px;
   text-align: center;
@@ -14,12 +14,12 @@
 
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 600px) {
-  .PigDinner-Component {
+  .Donate-Component {
     padding-left: 20px;
     padding-right: 20px;
   }
 
-  .PigDinner-Component .image{
+  .Donate-Component .image{
     height: 110px;
     width: auto;
   }

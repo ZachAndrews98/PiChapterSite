@@ -6,6 +6,8 @@ import Row from 'react-bootstrap/Row';
 import Button from 'react-bootstrap/Button';
 import ButtonGroup from 'react-bootstrap/ButtonGroup';
 
+import {Img} from 'react-image'
+
 import '../css/component_css/UserCSS.css';
 
 export default class User extends React.Component {
@@ -240,6 +242,44 @@ export default class User extends React.Component {
                 </Col>
               </Row>
             }
+            {/*<Row>
+              <Col>
+                <Row className="justify-content-md-center">
+                  <Col>
+                    <h3>Current Photo</h3>
+                  </Col>
+                </Row>
+                <Row>
+                  <Col>
+                    <Img
+                      className="image"
+                      src={[
+                        '/images/brothers/'+this.state.user.year+'/'+this.state.user.last_name.toLowerCase()+'.jpg',
+                        '/images/test.jpg'
+                      ]}
+                    />
+                  </Col>
+                </Row>
+              </Col>
+              <Col>
+              <Row className="justify-content-md-center">
+                <Col>
+                  <h3>New Photo</h3>
+                </Col>
+              </Row>
+              <Row>
+                <Col>
+                  <Img
+                    className="image"
+                    src={[
+                      '/images/brothers/'+this.state.user.year+'/'+this.state.user.last_name.toLowerCase()+'.jpg',
+                      '/images/test.jpg'
+                    ]}
+                  />
+                </Col>
+              </Row>
+              </Col>
+            </Row>*/}
             <Row>
               <ButtonGroup>
                 <Button type="submit" id={this.state.user.id} onClick={this.handleEdit}>Save</Button>

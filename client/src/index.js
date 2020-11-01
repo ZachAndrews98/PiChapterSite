@@ -16,6 +16,7 @@ import Cabinet from './pages/Cabinet';
 import PigDinner from './pages/PigDinner';
 import Donate from './pages/Donate';
 import Login from './pages/Login';
+import NotFound from './pages/NotFound';
 
 import Footer from './components/Footer';
 import NavBar from './components/NavBar';
@@ -64,6 +65,9 @@ export default class App extends React.Component{
             </Route>
             <Route exact path="/login">
               <Login />
+            </Route>
+            <Route path="*">
+              <NotFound />
             </Route>
           </Switch>
           <Footer />
