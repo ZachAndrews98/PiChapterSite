@@ -12,7 +12,6 @@ export default class Export extends React.Component {
     this.state = {
       graduateData: [],
       brotherData: [],
-      list: null
     }
   }
 
@@ -62,7 +61,7 @@ export default class Export extends React.Component {
         </Row>
         <Row>
           <CSVLink
-            data={broData.concat(gradData)}
+            data={gradData.concat(broData)}
             filename={"full_list.csv"}
           >
             Download Full List
