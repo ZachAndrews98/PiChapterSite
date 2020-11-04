@@ -31,6 +31,7 @@ export default class User extends React.Component {
       fetch(`/api/brother?email=${this.props.userEmail}`)
       .then(res => res.json())
       .then((brother) => {
+        console.log(brother)
         this.setState({user: brother[0]})
       })
       .catch(console.log)

@@ -44,7 +44,7 @@ export default class GraduatesList extends React.Component {
   }
 
   getGraduates() {
-    fetch('/api/brother?role=Graduate')
+    fetch('/api/brother?grad=true')
     .then(res => res.json())
     .then((graduates) => {
       this.setState({graduates: graduates})
@@ -74,7 +74,7 @@ export default class GraduatesList extends React.Component {
   handleDelete(event) {
     event.preventDefault();
     for (let id of this.state.selected) {
-      fetch('/api/graduate/delete', {
+      fetch('/api/brother/delete', {
         method: 'delete',
         mode: 'cors',
         headers: {'Content-Type':'application/json'},
@@ -98,7 +98,7 @@ export default class GraduatesList extends React.Component {
   async handleAdd(event) {
     event.preventDefault();
     if(Object.keys(this.state.addGraduate).every(key => this.state.addGraduate[key] !== "")) {
-      await fetch('/api/graduate/add', {
+      await fetch('/api/brother/add', {
        method: 'post',
        mode: 'cors',
        headers: {'Content-Type':'application/json'},
@@ -162,8 +162,8 @@ export default class GraduatesList extends React.Component {
   async handleTransfer(event) {
     if(this.state.selected !== []) {
       for (let id of this.state.selected) {
-        fetch('/api/graduate/transfer', {
-          method: 'post',
+        fetch('/api/brother/transfer?grad=true', {
+          method: 'put',
           mode: 'cors',
           headers: {'Content-Type':'application/json'},
           body: JSON.stringify({

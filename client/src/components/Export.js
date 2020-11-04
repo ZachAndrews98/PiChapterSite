@@ -17,7 +17,7 @@ export default class Export extends React.Component {
   }
 
   componentDidMount() {
-    fetch(`/api/brother/`)
+    fetch(`/api/brother?grad=false`)
     .then(res => res.json())
     .then((data) => {
       let entries = []
@@ -27,7 +27,7 @@ export default class Export extends React.Component {
       this.setState({brotherData: entries})
     })
 
-    fetch(`/api/graduate/`)
+    fetch(`/api/brother?grad=true`)
     .then(res => res.json())
     .then((data) => {
       let entries = []

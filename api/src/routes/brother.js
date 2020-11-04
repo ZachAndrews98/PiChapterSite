@@ -5,33 +5,30 @@ const bcrypt = require('bcryptjs');
 const database = require('../database')
 
 router.get('/', (req, res) => {
-  console.log(req.query)
-  queries = {
-    first_name: `first_name like '%${req.query.first_name}%' and `,
-    last_name: `last_name like '%${req.query.last_name}%' and `,
-    email: `email like '%${req.query.email}%' and `,
-    id: `id='${req.query.id}' and `,
-    role: `role='${req.query.role}' and `,
-    email: `email='${req.query.email}' and `,
-    major: `major='${req.query.major}' and `,
-    minor: `minor='${req.query.minor}' and `,
-    year: `year='${req.query.year}' and `
-  }
-
-  if(req.query.role.includes('!')) {
-    queries.role = `role!='${req.query.role.replace('!','')}' and `
-  }
-
-  let sql = "select * from brothers where ";
-  for(let category of Object.keys(queries)) {
-    if(req.query[category]) {
-      sql += queries[category]
-    }
-  }
-  if(sql === "select * from brothers where ") {
-    sql = sql.slice(0, -7) + ";"
+  let grad;
+  if(req.query.grad === 'true') {
+    grad = "where role='Graduate'"
+  } else if(req.query.grad === 'false'){
+    grad = "where role!='Graduate'"
   } else {
-    sql = sql.slice(0, -5) + ";"
+    grad = ""
+  }
+  let sql = `select * from brothers ${grad}`;
+  queries = {
+    first_name: `first_name like '%${req.query.first_name}%'`,
+    last_name: `last_name like '%${req.query.last_name}%'`,
+    email: `email like '%${req.query.email}%'`,
+    id: `id='${req.query.id}'`,
+    role: `role='${req.query.role}'`,
+    email: `email='${req.query.email}'`,
+    major: `major='${req.query.major}'`,
+    minor: `minor='${req.query.minor}'`,
+    year: `year='${req.query.year}'`
+  }
+  if(Object.values(req.query).length > 0 && req.query.grad === undefined) {
+    sql += ' where ' + Object.values(queries).filter(Q => !Q.includes('undefined')).join(' and ') + ";"
+  } else {
+    sql += ";"
   }
   database.query(sql, (err, result) => {
     if(err) {
@@ -84,6 +81,17 @@ router.get("/cabinet", (req, res) => {
 });
 
 router.put('/edit', (req, res) => {
+  let grad;
+  if(req.query.grad === 'true') {
+    grad = "where role='Graduate'"
+  } else if(req.query.grad === 'false'){
+    grad = "where role!='Graduate'"
+  } else {
+    grad = ""
+  }
+  let sql = `update brothers
+  set last_name=?, first_name=?, year=?, major=?, minor=?, email=?, phone=?, role=?
+  ${grad} where id=?`;
   let user = {
     id: req.body.id,
     last_name: req.body.last_name,
@@ -95,9 +103,7 @@ router.put('/edit', (req, res) => {
     phone: req.body.phone.replace('(','').replace(')','').replace('-',''),
     role: req.body.role
   }
-  const sql = `update brothers
-  set last_name=?, first_name=?, year=?, major=?, minor=?, email=?, phone=?, role=?
-  where id=?`
+  console.log(sql)
   database.query(sql,
     [
       user.last_name,
@@ -177,19 +183,21 @@ router.delete('/delete', (req, res) => {
 
 // Transfer brother to graduates
 router.put('/transfer', (req, res) => {
-  const sql = `update brothers
-  set role=?
-  where id=?`
-  database.query(sql,
-    [
-      "Graduate",
-      req.body.id
-    ],
+  let role;
+  if(req.query.grad === 'true') {
+    role = `'Brother'`
+  } else if(req.query.grad === 'false'){
+    role = `'Graduate'`
+  } else {
+    role = ""
+  }
+  database.query(`update brothers set role=${role} where id=?`, req.body.id,
     (err, result) => {
       if (err) {
         console.log(err)
         res.status(500).send(err)
       }
+      console.log(result)
       res.status(200).send(result)
     });
 });

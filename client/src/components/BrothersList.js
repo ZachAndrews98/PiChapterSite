@@ -45,7 +45,7 @@ export default class BrotherList extends React.Component {
   }
 
   getBrothers() {
-    fetch('/api/brother')
+    fetch('/api/brother?grad=false')
     .then(res => res.json())
     .then((brothers) => {
       this.setState({brothers: brothers})
@@ -164,8 +164,8 @@ export default class BrotherList extends React.Component {
   async handleTransfer(event) {
     // event.preventDefault();
     for (let id of this.state.selected) {
-      fetch('/api/brother/transfer', {
-        method: 'post',
+      fetch('/api/brother/transfer?grad=false', {
+        method: 'put',
         mode: 'cors',
         headers: {'Content-Type':'application/json'},
         body: JSON.stringify({
