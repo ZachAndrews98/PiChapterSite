@@ -60,6 +60,14 @@ export default class Export extends React.Component {
             Download Graduate List
           </CSVLink>
         </Row>
+        <Row>
+          <CSVLink
+            data={broData.concat(gradData)}
+            filename={"full_list.csv"}
+          >
+            Download Full List
+          </CSVLink>
+        </Row>
       </Container>
     )
   }
