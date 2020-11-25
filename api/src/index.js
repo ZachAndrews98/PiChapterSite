@@ -6,7 +6,6 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
 app.use('/api/brother', require('./routes/brother'))
-app.use('/api/graduate', require('./routes/graduate'))
 app.use('/api/user', require('./routes/user'))
 app.use('/api/event', require('./routes/event'))
 

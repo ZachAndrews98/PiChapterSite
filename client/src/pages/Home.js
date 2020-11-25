@@ -28,7 +28,7 @@ export default class Home extends React.Component {
             />
           </Col>
         </Row>
-        <Row className="justify-content-md-center">
+        {/*<Row className="justify-content-md-center">
           <Col>
             <Button
               href="/about" className="home-button"
@@ -36,13 +36,12 @@ export default class Home extends React.Component {
             > About Us
             </Button>
             <Button
-              href="/about" className="home-button"
+              href="/#" className="home-button"
               size="lg" variant="feej"
             > Contact Us
             </Button>
           </Col>
-
-        </Row>
+        </Row>*/}
       </div>
     )
   }

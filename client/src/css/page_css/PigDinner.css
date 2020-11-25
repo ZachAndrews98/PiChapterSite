@@ -17,26 +17,55 @@
   .PigDinner-Component {
     padding-left: 20px;
     padding-right: 20px;
+    padding-bottom: 20px;
   }
 
   .PigDinner-Component .image{
-    height: 110px;
+    height: 105px;
     width: auto;
   }
 }
 
 /* Small devices (portrait tablets and large phones, 600px and up) */
 @media only screen and (min-width: 600px) {
+  .PigDinner-Component {
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 20px;
+  }
 
+  .PigDinner-Component .image{
+    height: 160px;
+    width: auto;
+  }
 }
 
 /* Medium devices (landscape tablets, 768px and up) */
 @media only screen and (min-width: 768px) {
+  .PigDinner-Component {
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 20px;
+  }
+
+  .PigDinner-Component .image{
+    height: 160px;
+    width: auto;
+  }
 }
 
 /* Large devices (laptops/desktops, 992px and up) */
 @media only screen and (min-width: 992px) {
+  .PigDinner-Component {
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 20px;
+  }
 
+  .PigDinner-Component .image{
+    height: 250px;
+    width: auto;
+  }
 }
 
 /* Extra large devices (large laptops and desktops, 1200px and up) */
