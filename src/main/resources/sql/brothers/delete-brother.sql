@@ -1,0 +1,1 @@
+DELETE FROM brothers WHERE brother_id=:#brotherId;
