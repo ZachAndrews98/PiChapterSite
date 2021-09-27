@@ -1,0 +1,41 @@
+spring:
+  main:
+    banner-mode: off
+  application:
+    name: chapter
+  datasource:
+    url:  jdbc:mariadb://prod-mariadb.prod-mariadb.svc.cluster.local:3306/MS3BusinessContacts
+    username: ENC(uhKcMNdk6XdrgEKGSg1K1GK4o8OxJgfo)
+    password: ENC(YdBNmvWJ6feOACCzx5KKtqkEFTviZcEMWf57VxE5jNU=)
+    driver-class-name: org.mariadb.jdbc.Driver
+    hikari:
+      maxLifetime: 900000
+      minimumIdle: 3
+      maximumPoolSize: 10
+
+
+camel:
+  springboot:
+    name: chapter
+    use-mdc-logging: true
+  rest:
+    port: 9000
+    context-path: /api/certification-sys
+management:
+  endpoint:
+    camelroutes:
+      enabled: true
+      read-only: true
+    health:
+      enabled: true
+      probes:
+        enabled: true
+  endpoints:
+    web:
+      exposure:
+        include: info,health,camelroutes,metrics
+  health:
+    livenessstate:
+      enabled: true
+    readinessstate:
+      enabled: true

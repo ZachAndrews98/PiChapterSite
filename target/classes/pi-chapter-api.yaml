@@ -1,0 +1,228 @@
+---
+openapi: 3.0.0
+info:
+  title: Simple Inventory API
+  description: This is a simple API
+  contact:
+    email: you@your-company.com
+  license:
+    name: Apache 2.0
+    url: http://www.apache.org/licenses/LICENSE-2.0.html
+  version: 1.0.0
+servers:
+- url: https://virtserver.swaggerhub.com/zachandrews98/PiChapter/1.0.0
+  description: SwaggerHub API Auto Mocking
+tags:
+- name: Brothers
+  description: Brothers CRUD Operations
+- name: Roles
+  description: Roles CRUD Operations
+paths:
+  /brothers:
+    get:
+      tags:
+      - Brothers
+      description: Get all brothers
+      responses:
+        "200":
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Brothers'
+    post:
+      tags:
+      - Brothers
+      description: Create new brother
+      responses:
+        "201":
+          $ref: '#/components/requestBodies/Brother'
+  /brothers/{brotherId}:
+    get:
+      tags:
+      - Brothers
+      description: Get brother by Id
+      parameters:
+      - name: brotherId
+        in: path
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: integer
+      responses:
+        "200":
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Brother'
+    delete:
+      tags:
+      - Brothers
+      description: Delete brother by Id
+      parameters:
+      - name: brotherId
+        in: path
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: integer
+      responses:
+        "204":
+          description: Success
+    patch:
+      tags:
+      - Brothers
+      description: Update brother by Id
+      parameters:
+      - name: brotherId
+        in: path
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: integer
+      requestBody:
+        $ref: '#/components/requestBodies/Brother'
+      responses:
+        "204":
+          description: Success
+  /role:
+    get:
+      tags:
+      - Roles
+      description: Get all Roles
+      responses:
+        "200":
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Roles'
+    post:
+      tags:
+      - Roles
+      description: Create new Role
+      responses:
+        "201":
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/requestBodies/Role'
+  /role/{roleId}:
+    get:
+      tags:
+      - Roles
+      description: Get a Role by Id
+      parameters:
+      - name: roleId
+        in: path
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: integer
+      responses:
+        "200":
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Role'
+    delete:
+      tags:
+      - Roles
+      description: Delete a Role by Id
+      parameters:
+      - name: roleId
+        in: path
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: integer
+      responses:
+        "204":
+          description: Success
+components:
+  schemas:
+    Brother:
+      properties:
+        id:
+          type: integer
+        firstName:
+          type: string
+        lastName:
+          type: string
+        email:
+          type: string
+        phone:
+          type: string
+        gradYear:
+          type: string
+        major:
+          type: string
+        minor:
+          type: string
+        status:
+          type: string
+        roleId:
+          type: integer
+      description: Brother object
+    Brothers:
+      type: array
+      description: Array of Brothers
+      items:
+        $ref: '#/components/schemas/Brother'
+    Role:
+      properties:
+        id:
+          type: integer
+        name:
+          type: string
+      description: Role object
+    Roles:
+      type: array
+      description: Array of Roles
+      items:
+        $ref: '#/components/schemas/Role'
+  requestBodies:
+    Brother:
+      description: Brother request body
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              firstName:
+                type: string
+              lastName:
+                type: string
+              email:
+                type: string
+              phone:
+                type: string
+              gradYear:
+                type: string
+              major:
+                type: string
+              minor:
+                type: string
+              status:
+                type: string
+              roleId:
+                type: integer
+      required: true
+    Role:
+      description: Role request body
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              name:
+                type: string
+      required: true
