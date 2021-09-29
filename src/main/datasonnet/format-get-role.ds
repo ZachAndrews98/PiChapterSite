@@ -6,6 +6,8 @@ input payload application/java
 
 ds.map(payload, function(item)
     {
-        "name": item.name
+        "id": item.role_id,
+        "name": item.name,
+        "rank": item.role_rank
     }
 )[0]

@@ -4,17 +4,6 @@ output application/json
 input payload application/json
 */
 
-local wildOrValue(param) =
-    if(cml.header(param) != null) then
-        "%" + cml.header(param) + "%"
-    else
-        "%";
-
 {
-    "firstName": wildOrValue("firstName"),
-    "lastName": wildOrValue("lastName"),
-    "gradYear": wildOrValue("gradYear"),
-    "major": wildOrValue("major"),
-    "minor": wildOrValue("minor"),
-    "role": wildOrValue("role")
+    test: cml.header('firstName')
 }

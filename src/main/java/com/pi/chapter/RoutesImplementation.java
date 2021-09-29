@@ -2,13 +2,9 @@ package com.pi.chapter;
 
 import com.datasonnet.document.MediaTypes;
 import org.apache.camel.Exchange;
-import org.apache.camel.LoggingLevel;
 import org.apache.camel.component.netty.http.NettyHttpOperationFailedException;
-import org.eclipse.jetty.http.HttpStatus;
 import org.springframework.stereotype.Component;
 
-import java.sql.SQLException;
-import java.util.List;
 
 /**
  * The RoutesImplementation class holds implementations for the end points configured in RoutesGenerated.
@@ -30,7 +26,8 @@ public class RoutesImplementation extends BaseRestRouteBuilder {
         // TODO: Replace stubs for each endpoint with real implementation.  Implementation defaults to a simple response with operation Id.
         from(direct("get-brothers"))
                 .routeId("direct:get-brothers")
-                .to(direct("setup-query-params"))
+//                .setProperty("firstName", simple("${header.firstName}"))
+//                .to(direct("setup-query-params"))
                 .to(sql("classpath:/sql/brothers/get-brothers.sql"))
                 .transform(datasonnetEx("resource:classpath:/format-get-brothers.ds", String.class)
                         .bodyMediaType(MediaTypes.APPLICATION_JAVA)
@@ -125,20 +122,20 @@ public class RoutesImplementation extends BaseRestRouteBuilder {
                 .setProperty("roleId", datasonnetEx("payload.roleId", Integer.class))
         ;
 
-        from(direct("setup-query-params"))
-                .transform(datasonnetEx("resource:classpath:/setup-query-params.ds"))
-                .setProperty("firstName", datasonnetEx("payload.firstName", String.class))
-                .setProperty("lastName", datasonnetEx("payload.lastName", String.class))
-                .setProperty("gradYear", datasonnetEx("payload.gradYear", String.class))
-                .setProperty("major", datasonnetEx("payload.major", String.class))
-                .setProperty("minor", datasonnetEx("payload.minor", String.class))
+//        from(direct("setup-query-params"))
+//                .transform(datasonnetEx("resource:classpath:/setup-query-params.ds"))
+//                .setProperty("firstName", datasonnetEx("payload.firstName", String.class))
+//                .setProperty("lastName", datasonnetEx("payload.lastName", String.class))
+//                .setProperty("gradYear", datasonnetEx("payload.gradYear", String.class))
+//                .setProperty("major", datasonnetEx("payload.major", String.class))
+//                .setProperty("minor", datasonnetEx("payload.minor", String.class))
 //                .setProperty("rank", datasonnetEx("payload.rank", String.class))
-                .setProperty("role", datasonnetEx("payload.role", String.class))
-                .choice()
-                    .when(datasonnetEx("payload.role != '%'"))
-                        .to(sql("SELECT role_id FROM roles WHERE name LIKE :#${exchangeProperty.role}"))
-                .end()
-                .setProperty("roleId", datasonnetEx("payload[0]"))
-        ;
+//                .setProperty("role", datasonnetEx("payload.role", String.class))
+//                .choice()
+//                    .when(datasonnetEx("payload.role != '%'"))
+//                        .to(sql("SELECT role_id FROM roles WHERE name LIKE :#${exchangeProperty.role}"))
+//                .end()
+//                .setProperty("roleId", datasonnetEx("payload[0]"))
+//        ;
     }
 }

@@ -9,6 +9,7 @@
       <sourceFolder url="file://$MODULE_DIR$/src/main/java" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/src/main/resources" type="java-resource" />
       <sourceFolder url="file://$MODULE_DIR$/src/test/java" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/src/main/datasonnet" type="java-resource" />
       <excludeFolder url="file://$MODULE_DIR$/target" />
     </content>
     <orderEntry type="inheritedJdk" />
@@ -20,6 +21,8 @@
     <orderEntry type="library" name="Maven: jakarta.annotation:jakarta.annotation-api:1.3.5" level="project" />
     <orderEntry type="library" name="Maven: org.yaml:snakeyaml:1.26" level="project" />
     <orderEntry type="library" name="Maven: org.springframework.boot:spring-boot-starter-json:2.3.2.RELEASE" level="project" />
+    <orderEntry type="library" name="Maven: com.fasterxml.jackson.core:jackson-databind:2.11.1" level="project" />
+    <orderEntry type="library" name="Maven: com.fasterxml.jackson.core:jackson-annotations:2.11.1" level="project" />
     <orderEntry type="library" name="Maven: com.fasterxml.jackson.datatype:jackson-datatype-jdk8:2.11.1" level="project" />
     <orderEntry type="library" name="Maven: com.fasterxml.jackson.datatype:jackson-datatype-jsr310:2.11.1" level="project" />
     <orderEntry type="library" name="Maven: com.fasterxml.jackson.module:jackson-module-parameter-names:2.11.1" level="project" />
@@ -77,6 +80,34 @@
     <orderEntry type="library" name="Maven: org.apache.camel:camel-api:3.7.1" level="project" />
     <orderEntry type="library" name="Maven: org.apache.camel:camel-management-api:3.7.1" level="project" />
     <orderEntry type="library" name="Maven: org.apache.camel:camel-util:3.7.1" level="project" />
+    <orderEntry type="library" name="Maven: com.datasonnet:datasonnet-mapper:2.1.2" level="project" />
+    <orderEntry type="library" name="Maven: com.lihaoyi:sjsonnet_2.13:0.2.6" level="project" />
+    <orderEntry type="library" name="Maven: com.lihaoyi:fastparse_2.13:2.3.0" level="project" />
+    <orderEntry type="library" name="Maven: com.lihaoyi:sourcecode_2.13:0.2.1" level="project" />
+    <orderEntry type="library" name="Maven: com.lihaoyi:geny_2.13:0.6.0" level="project" />
+    <orderEntry type="library" name="Maven: com.lihaoyi:pprint_2.13:0.5.9" level="project" />
+    <orderEntry type="library" name="Maven: com.lihaoyi:fansi_2.13:0.2.9" level="project" />
+    <orderEntry type="library" name="Maven: com.lihaoyi:ujson_2.13:1.2.0" level="project" />
+    <orderEntry type="library" name="Maven: com.lihaoyi:upickle-core_2.13:1.2.0" level="project" />
+    <orderEntry type="library" name="Maven: com.lihaoyi:scalatags_2.13:0.9.1" level="project" />
+    <orderEntry type="library" name="Maven: org.scala-lang.modules:scala-collection-compat_2.13:2.1.4" level="project" />
+    <orderEntry type="library" name="Maven: com.lihaoyi:os-lib_2.13:0.7.1" level="project" />
+    <orderEntry type="library" name="Maven: com.github.scopt:scopt_2.13:3.7.1" level="project" />
+    <orderEntry type="library" name="Maven: org.jetbrains:annotations:13.0" level="project" />
+    <orderEntry type="library" name="Maven: com.fasterxml.jackson.core:jackson-core:2.11.1" level="project" />
+    <orderEntry type="library" name="Maven: com.fasterxml.jackson.dataformat:jackson-dataformat-csv:2.11.1" level="project" />
+    <orderEntry type="library" name="Maven: com.fasterxml.jackson.dataformat:jackson-dataformat-properties:2.11.1" level="project" />
+    <orderEntry type="library" name="Maven: org.bouncycastle:bcpg-jdk15on:1.66" level="project" />
+    <orderEntry type="library" name="Maven: org.bouncycastle:bcprov-ext-jdk15on:1.66" level="project" />
+    <orderEntry type="library" name="Maven: org.bouncycastle:bcprov-jdk15on:1.66" level="project" />
+    <orderEntry type="library" name="Maven: org.bouncycastle:bcpkix-jdk15on:1.66" level="project" />
+    <orderEntry type="library" name="Maven: com.google.re2j:re2j:1.4" level="project" />
+    <orderEntry type="library" name="Maven: info.picocli:picocli:4.5.1" level="project" />
+    <orderEntry type="library" name="Maven: org.glassfish.jaxb:jaxb-runtime:2.3.3" level="project" />
+    <orderEntry type="library" name="Maven: org.glassfish.jaxb:txw2:2.3.3" level="project" />
+    <orderEntry type="library" name="Maven: com.sun.istack:istack-commons-runtime:3.0.11" level="project" />
+    <orderEntry type="library" scope="RUNTIME" name="Maven: com.sun.activation:jakarta.activation:1.2.2" level="project" />
+    <orderEntry type="library" name="Maven: javax.activation:activation:1.1.1" level="project" />
     <orderEntry type="library" name="Maven: commons-io:commons-io:2.8.0" level="project" />
     <orderEntry type="library" name="Maven: io.github.classgraph:classgraph:4.8.52" level="project" />
     <orderEntry type="library" name="Maven: org.apache.camel:camel-http:3.7.1" level="project" />
@@ -221,35 +252,5 @@
     <orderEntry type="library" name="Maven: commons-pool:commons-pool:1.6" level="project" />
     <orderEntry type="library" name="Maven: io.netty:netty-codec-http:4.1.51.Final" level="project" />
     <orderEntry type="library" name="Maven: org.apache.camel:camel-http-base:3.7.1" level="project" />
-    <orderEntry type="library" name="Maven: com.datasonnet:datasonnet-mapper:2.1.2" level="project" />
-    <orderEntry type="library" name="Maven: com.lihaoyi:sjsonnet_2.13:0.2.6" level="project" />
-    <orderEntry type="library" name="Maven: com.lihaoyi:fastparse_2.13:2.3.0" level="project" />
-    <orderEntry type="library" name="Maven: com.lihaoyi:sourcecode_2.13:0.2.1" level="project" />
-    <orderEntry type="library" name="Maven: com.lihaoyi:geny_2.13:0.6.0" level="project" />
-    <orderEntry type="library" name="Maven: com.lihaoyi:pprint_2.13:0.5.9" level="project" />
-    <orderEntry type="library" name="Maven: com.lihaoyi:fansi_2.13:0.2.9" level="project" />
-    <orderEntry type="library" name="Maven: com.lihaoyi:ujson_2.13:1.2.0" level="project" />
-    <orderEntry type="library" name="Maven: com.lihaoyi:upickle-core_2.13:1.2.0" level="project" />
-    <orderEntry type="library" name="Maven: com.lihaoyi:scalatags_2.13:0.9.1" level="project" />
-    <orderEntry type="library" name="Maven: org.scala-lang.modules:scala-collection-compat_2.13:2.1.4" level="project" />
-    <orderEntry type="library" name="Maven: com.lihaoyi:os-lib_2.13:0.7.1" level="project" />
-    <orderEntry type="library" name="Maven: com.github.scopt:scopt_2.13:3.7.1" level="project" />
-    <orderEntry type="library" name="Maven: org.jetbrains:annotations:13.0" level="project" />
-    <orderEntry type="library" name="Maven: com.fasterxml.jackson.core:jackson-core:2.11.1" level="project" />
-    <orderEntry type="library" name="Maven: com.fasterxml.jackson.core:jackson-databind:2.11.1" level="project" />
-    <orderEntry type="library" name="Maven: com.fasterxml.jackson.core:jackson-annotations:2.11.1" level="project" />
-    <orderEntry type="library" name="Maven: com.fasterxml.jackson.dataformat:jackson-dataformat-csv:2.11.1" level="project" />
-    <orderEntry type="library" name="Maven: com.fasterxml.jackson.dataformat:jackson-dataformat-properties:2.11.1" level="project" />
-    <orderEntry type="library" name="Maven: org.bouncycastle:bcpg-jdk15on:1.66" level="project" />
-    <orderEntry type="library" name="Maven: org.bouncycastle:bcprov-ext-jdk15on:1.66" level="project" />
-    <orderEntry type="library" name="Maven: org.bouncycastle:bcprov-jdk15on:1.66" level="project" />
-    <orderEntry type="library" name="Maven: org.bouncycastle:bcpkix-jdk15on:1.66" level="project" />
-    <orderEntry type="library" name="Maven: com.google.re2j:re2j:1.4" level="project" />
-    <orderEntry type="library" name="Maven: info.picocli:picocli:4.5.1" level="project" />
-    <orderEntry type="library" name="Maven: org.glassfish.jaxb:jaxb-runtime:2.3.3" level="project" />
-    <orderEntry type="library" name="Maven: org.glassfish.jaxb:txw2:2.3.3" level="project" />
-    <orderEntry type="library" name="Maven: com.sun.istack:istack-commons-runtime:3.0.11" level="project" />
-    <orderEntry type="library" scope="RUNTIME" name="Maven: com.sun.activation:jakarta.activation:1.2.2" level="project" />
-    <orderEntry type="library" name="Maven: javax.activation:activation:1.1.1" level="project" />
   </component>
 </module>
