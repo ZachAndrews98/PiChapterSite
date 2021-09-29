@@ -1,0 +1,81 @@
+.Home-component {
+  /* The image used */
+  background-image: url("/images/background-images/chapterwjulie.jpg");
+  min-height: 100vh;
+  /* width: 100%; */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  text-align: center;
+}
+
+.header-centered {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  text-align: center;
+  color: #000000;
+}
+
+.home-button {
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+.btn-feej {
+  background-color: #543975;
+  color: white;
+}
+
+.btn-feej:hover {
+  color: white;
+  font-weight: bolder;
+}
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+  .Home-component {
+    padding-top: 30px;
+  }
+
+  .title {
+    font-size: 48px;
+    color: #520975;
+    text-shadow: -2px 0 white, 0 2px white, 2px 0 white, 0 -2px white;
+  }
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+  .Home-component {
+    padding-top: 15px;
+  }
+
+  .title {
+    font-size: 48px;
+    color: #520975;
+    text-shadow: -2px 0 white, 0 2px white, 2px 0 white, 0 -2px white;
+  }
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+  .Home-component {
+    padding-top: 56px;
+  }
+
+  .title {
+    font-size: 72px;
+    color: #520975;
+    text-shadow: -2px 0 white, 0 2px white, 2px 0 white, 0 -2px white;
+  }
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+}

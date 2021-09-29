@@ -1,0 +1,37 @@
+/* html {
+  height: 100vh;
+  width: 100%;
+  margin: 0px;
+}
+
+body {
+  height: 100vh;
+  width: 100%;
+  margin: 0;
+  padding-top: 56px;
+  padding-bottom: 55px;
+  background: #ffffff;
+  font-family: 'Roboto', sans-serif;
+} */
+
+* {
+ box-sizing: border-box;
+}
+*:before,
+*:after {
+ box-sizing: border-box;
+}
+html,
+body {
+ height: 100%;
+ position: relative;
+ margin: 0;
+}
+.main-container {
+ min-height: 100vh; /* will cover the 100% of viewport */
+ overflow: hidden;
+ display: block;
+ position: relative;
+ /* padding-top: 56px; */
+ /* padding-bottom: 55px; height of your footer */
+}

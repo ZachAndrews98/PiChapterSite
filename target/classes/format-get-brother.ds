@@ -11,12 +11,12 @@ ds.map(payload, function(item)
         "lastName": item.last_name,
         "contact": {
             "email": item.email,
-            "phone": item.phone,
+            "phone": item.phone
         },
         "academics": {
             "gradYear": item.grad_year,
             "major": item.major,
-            "minor": item.minor,
+            "minor": item.minor
         },
         "role": {
             "name": item.role_name,
