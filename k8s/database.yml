@@ -1,14 +1,40 @@
 apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: db-pv
+spec:
+  capacity:
+    storage: 5G
+  accessModes:
+    - ReadWriteOnce
+  persistentVolumeReclaimPolicy: Retain
+  hostPath: 
+    path: /home/zach/Desktop/db-storage
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: db-pvc
+spec:
+  resources:
+    requests:
+      storage: 5G
+  volumeMode: Filesystem
+  accessModes:
+    - ReadWriteOnce
+---
+apiVersion: v1
 kind: Service
 metadata:
   name: db-svc
 spec:
   selector:
     app: mysql-db
-  clusterIP: None
+  type: NodePort
   ports:
   - port: 3306
     name: db-port
+    nodePort: 30336
 ---
 apiVersion: apps/v1
 kind: StatefulSet
@@ -19,7 +45,7 @@ spec:
     matchLabels:
       app: mysql-db
   serviceName: db-svc
-  replicas: 2
+  replicas: 1
   template:
     metadata:
       labels:
@@ -37,17 +63,13 @@ spec:
               value: zach
             - name: MYSQL_PASSWORD
               value: toor
-          ports:
-            - containerPort: 3306
-              name: mysql-db
+          # ports:
+          #   - containerPort: 3306
+          #     name: mysql-db
           volumeMounts:
             - name: db-pvc
               mountPath: /var/lib/mysql
-  volumeClaimTemplates:
-    - metadata:
-        name: db-pvc
-      spec:
-        accessModes: [ "ReadWriteOnce" ]
-        resources:
-          requests:
-            storage: 50Mi
+      volumes:
+      - name: db-pvc
+        persistentVolumeClaim:
+          claimName: db-pvc

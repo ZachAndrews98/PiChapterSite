@@ -16,6 +16,9 @@ services:
       - CHOKIDAR_USEPOLLING=true
     container_name: compose_api
     restart: always
+    networks:
+      - frontend
+      - backend
   client:
     build:
       context: ./client/
@@ -30,6 +33,8 @@ services:
       - "3000:3000"
     container_name: compose_client
     restart: always
+    networks:
+      - frontend
   db:
     image: mysql:5.7
     # command: --default-authentication-plugin=mysql_native_password
@@ -45,3 +50,19 @@ services:
       - './db/data:/var/lib/mysql'
       - './db/setup:/var/lib/mysql-files/'
     container_name: compose_db
+    networks:
+      - backend
+  nginx:
+    image: nginx:latest
+    ports:
+      - 80:80
+    volumes:
+      - './nginx/:/etc/nginx/conf.d/'
+    networks:
+      - frontend
+networks:
+  frontend:
+    driver: bridge
+  backend:
+    driver: bridge
+

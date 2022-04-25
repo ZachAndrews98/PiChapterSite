@@ -1,0 +1,67 @@
+# apiVersion: v1
+# kind: PersistentVolume
+# metadata:
+#   name: client-pv
+# spec:
+#   capacity:
+#     storage: 5G
+#   accessModes:
+#     - ReadWriteOnce
+#   persistentVolumeReclaimPolicy: Retain
+#   hostPath: 
+#     path: /home/zach/Personal/PiChapterSite/client/build/images
+# ---
+# apiVersion: v1
+# kind: PersistentVolumeClaim
+# metadata:
+#   name: client-pvc
+# spec:
+#   resources:
+#     requests:
+#       storage: 5G
+#   volumeMode: Filesystem
+#   accessModes:
+#     - ReadWriteOnce
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: client-svc
+spec:
+  selector:
+    app: client-deploy
+  ports:
+  - port: 80
+    targetPort: 80
+    nodePort: 30080
+  type: NodePort
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: client-deploy
+spec:
+  selector:
+    matchLabels:
+      app: client-deploy
+  template:
+    metadata:
+      labels:
+        app: client-deploy
+    spec:
+      containers:
+        - name: client-deploy
+          image: pichapterclient:production
+          imagePullPolicy: Never
+          resources:
+            limits:
+              memory: "128Mi"
+              cpu: "500m"
+          # volumeMounts:
+          # - name: images
+          #   mountPath: /usr/share/nginx/html/images/
+      # volumes:
+      # - name: images
+      #   persistentVolumeClaim:
+      #     claimName: client-pvc
+        
