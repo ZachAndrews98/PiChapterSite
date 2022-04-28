@@ -36,30 +36,33 @@ services:
     networks:
       - frontend
   db:
-    image: mysql:5.7
+    # image: mysql:5.7
+    image: testdb:latest
+    ports:
+      - 3306:3306
     # command: --default-authentication-plugin=mysql_native_password
     restart: always
-    environment:
-      MYSQL_ROOT_PASSWORD: toor
-      MYSQL_USER: zach
-      MYSQL_PASSWORD: toor
-      MYSQL_ROOT_HOST: "%"
-      MYSQL_DATABASE: piChapter
+    # environment:
+    #   MYSQL_ROOT_PASSWORD: toor
+    #   MYSQL_USER: zach
+    #   MYSQL_PASSWORD: toor
+    #   MYSQL_ROOT_HOST: "%"
+    #   MYSQL_DATABASE: piChapter
     volumes:
-      - './db/schema:/docker-entrypoint-initdb.d'
+      # - './db/schema:/docker-entrypoint-initdb.d'
       - './db/data:/var/lib/mysql'
-      - './db/setup:/var/lib/mysql-files/'
+      # - './db/setup:/var/lib/mysql-files/'
     container_name: compose_db
     networks:
       - backend
-  nginx:
-    image: nginx:latest
-    ports:
-      - 80:80
-    volumes:
-      - './nginx/:/etc/nginx/conf.d/'
-    networks:
-      - frontend
+  # nginx:
+  #   image: nginx:latest
+  #   ports:
+  #     - 80:80
+  #   volumes:
+  #     - './nginx/:/etc/nginx/conf.d/'
+  #   networks:
+  #     - frontend
 networks:
   frontend:
     driver: bridge

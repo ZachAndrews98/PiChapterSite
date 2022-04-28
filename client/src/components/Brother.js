@@ -12,7 +12,7 @@ export default class Brother extends React.Component {
       last_name: props.info.last_name,
       major: props.info.major,
       minor: props.info.minor,
-      year: props.info.year,
+      grad_year: props.info.grad_year,
     }
   }
   render() {
@@ -27,7 +27,7 @@ export default class Brother extends React.Component {
         <Img
           className="image"
           src={[
-            '/images/brothers/'+this.state.year+'/'+this.state.last_name.toLowerCase()+'.jpg',
+            '/images/brothers/'+this.state.grad_year+'/'+this.state.last_name.toLowerCase()+'.jpg',
             '/images/test.jpg'
           ]}
         />

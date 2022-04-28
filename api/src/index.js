@@ -5,9 +5,11 @@ const app = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
-app.use('/api/brother', require('./routes/brother'))
-app.use('/api/user', require('./routes/user'))
-app.use('/api/event', require('./routes/event'))
+app.use('/api/brothers', require('./routes/brothers'))
+app.use('/api/executives', require('./routes/executives'))
+app.use('/api/roles', require('./routes/roles'))
+app.use('/api/users', require('./routes/user'))
+app.use('/api/events', require('./routes/event'))
 
 
 app.get('/api', (req, res) => {

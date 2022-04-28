@@ -21,9 +21,10 @@ export default class Brothers extends React.Component {
   }
 
   componentDidMount() {
-    fetch('/api/brother?grad=false')
+    fetch('/api/brothers?grads=false')
     .then(res => res.json())
     .then((brothers) => {
+      console.log(brothers)
       this.get_classes(brothers)
     })
     .catch(console.log)
@@ -33,10 +34,11 @@ export default class Brothers extends React.Component {
     fetch('/api/grad_year')
     .then(res => res.json())
     .then((year) => {
-      this.setState({seniors: brothers.filter(brother => brother.year === parseInt(year))})
-      this.setState({juniors: brothers.filter(brother => brother.year === parseInt(year) + 1)})
-      this.setState({sophmores: brothers.filter(brother => brother.year === parseInt(year) + 2)})
-      this.setState({freshmen: brothers.filter(brother => brother.year === parseInt(year) + 3)})
+      console.log(brothers.filter(brother => parseInt(brother.grad_year) === parseInt(year) + 3))
+      this.setState({seniors: brothers.filter(brother => parseInt(brother.grad_year) === parseInt(year))})
+      this.setState({juniors: brothers.filter(brother => parseInt(brother.grad_year) === parseInt(year) + 1)})
+      this.setState({sophmores: brothers.filter(brother => parseInt(brother.grad_year) === parseInt(year) + 2)})
+      this.setState({freshmen: brothers.filter(brother => parseInt(brother.grad_year) === parseInt(year) + 3)})
     })
   }
 

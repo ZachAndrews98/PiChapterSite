@@ -20,15 +20,17 @@ export default class Cabinet extends React.Component {
     }
   }
 
-  get_cabinet() {
-    fetch('/api/brother/cabinet')
+  async get_cabinet() {
+    await fetch('/api/executives')
     .then(res => res.json())
     .then((cabinet) => {
-      this.setState({president: cabinet.President})
-      this.setState({treasurer: cabinet.Treasurer})
-      this.setState({recording: cabinet.Recording})
-      this.setState({corresponding: cabinet.Corresponding})
-      this.setState({historian: cabinet.Historian})
+      // console.log(cabinet.filter(role => role.role_name === "President"))
+      cabinet.filter(role => console.log(role))
+      this.setState({president: cabinet.filter(role => role.role_name === "President")[0]})
+      this.setState({treasurer: cabinet.filter(role => role.role_name === "Treasurer")[0]})
+      this.setState({recording: cabinet.filter(role => role.role_name === "Recording Secretary")[0]})
+      this.setState({corresponding: cabinet.filter(role => role.role_name === "Corresponding Secretary")[0]})
+      this.setState({historian: cabinet.filter(role => role.role_name === "Historian")[0]})
     })
     .catch(console.log)
     console.log(this.state)
@@ -36,6 +38,7 @@ export default class Cabinet extends React.Component {
 
   componentDidMount() {
     this.get_cabinet()
+    console.log(this.state)
   }
 
   render() {

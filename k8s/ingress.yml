@@ -4,7 +4,7 @@ metadata:
   name: pichapter-ingress
 spec:
   rules:
-  - host: test.alleghenyfiji.org
+  - host: key.test.org
     http:
       paths:
       - pathType: Prefix
@@ -14,3 +14,13 @@ spec:
             name: client-svc
             port: 
               number: 80
+  # - host: key.test.org
+  #   http:
+  #     paths:
+  #     - pathType: Prefix
+  #       path: "/"
+  #       backend:
+  #         service:
+  #           name: keycloak
+  #           port: 
+  #             number: 80

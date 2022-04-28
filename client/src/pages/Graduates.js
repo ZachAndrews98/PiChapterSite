@@ -20,7 +20,7 @@ export default class Graduates extends React.Component {
   }
 
   componentDidMount() {
-    fetch('/api/brother?grad=true')
+    fetch('/api/brother?role_id=3')
     .then(res => res.json())
     .then((graduates) => {
       let years = new Set()
