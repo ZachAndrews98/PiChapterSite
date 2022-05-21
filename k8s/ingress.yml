@@ -1,26 +1,23 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
+  annotations:
+    kubernetes.io/ingress.class: "traefik"
   name: pichapter-ingress
+  namespace: pi
 spec:
+  tls:
+  - hosts:
+    - pi.zachandrews.com
+    secretName: pi-chapter-tls
   rules:
-  - host: key.test.org
+  - host: pi.zachandrews.com
     http:
       paths:
-      - pathType: Prefix
-        path: "/"
+      - path: /
+        pathType: Prefix
         backend:
           service:
             name: client-svc
-            port: 
+            port:
               number: 80
-  # - host: key.test.org
-  #   http:
-  #     paths:
-  #     - pathType: Prefix
-  #       path: "/"
-  #       backend:
-  #         service:
-  #           name: keycloak
-  #           port: 
-  #             number: 80

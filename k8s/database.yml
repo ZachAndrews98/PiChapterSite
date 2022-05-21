@@ -2,6 +2,7 @@ apiVersion: v1
 kind: PersistentVolume
 metadata:
   name: db-pv
+  namespace: pi
 spec:
   capacity:
     storage: 5G
@@ -15,6 +16,7 @@ apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
   name: db-pvc
+  namespace: pi
 spec:
   resources:
     requests:
@@ -26,6 +28,7 @@ apiVersion: v1
 kind: Service
 metadata:
   name: db-svc
+  namespace: pi
 spec:
   selector:
     app: mysql-db
@@ -39,6 +42,7 @@ apiVersion: apps/v1
 kind: StatefulSet
 metadata:
   name: stateful-db
+  namespace: pi
 spec:
   selector:
     matchLabels:

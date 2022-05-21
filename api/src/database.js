@@ -2,7 +2,7 @@ const mysql = require('mysql')
 
 const database = mysql.createPool({
   connectLimit: 100,
-  host: "db",
+  host: "db-svc",
   port: "3306",
   user: "zach",
   password: "toor",

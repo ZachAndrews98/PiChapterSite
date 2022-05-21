@@ -1,0 +1,12 @@
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: pi-chapter-certificate
+  namespace: pi
+spec:
+  dnsNames:
+    - pi.zachandrews.com
+  secretName: pi-chapter-tls
+  issuerRef:
+    name: letsencrypt-cluster-issuer
+    kind: ClusterIssuer
