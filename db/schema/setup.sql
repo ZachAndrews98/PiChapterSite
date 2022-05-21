@@ -550,3 +550,43 @@ BEGIN
 END$$
 
 DELIMITER ;
+
+
+DROP proceure IF EXISTS `setup_brothers`;
+
+DELIMITER $$
+USE `piChapter`$$
+CREATE DEFINER=`zach`@`%` PROCEDURE `setup_brothers` ()
+BEGIN
+	INSERT INTO brothers (
+		last_name,first_name,grad_year,major,minor,email,phone,role_id
+	) VALUES 
+	("Andrews","Zachary","2020","Computer Science","Economics","zachandr98@gmail.com","5187950065",3),
+	("Bobeck","Jared","2020","Neuroscience","History","bobeckj@allegheny.edu","0000000000",3),
+	("Hornberger","Cayton","2020","Physics","Energy & Society","hornbergerc@allegheny.edu","0000000000",3),
+	("Cerda Meija","Jerfenson","2020","Computer Science","Economics","meijaj@allegheny.edu","0000000000",3),
+	("Spitalny","Devin","2020","Computer Science","Economics","spitalnyd@allegheny.edu","0000000000",3),
+	("Zoll","Zachary","2020","Physics","History","zollz@allegheny.edu","0000000000",3),
+	("Bauer","Matthew","2020","Economics","Global Health & Political Science","bauerm@allegheny.edu","0000000000",3),
+	("Kirn","Andrew","2020","Economics","English","kirna@allegheny.edu","0000000000",3),
+	("Moon","Caleb","2022","Neuroscience & Psychology","N/A","moons@allegheny.edu","0000000000",2),
+	("Drozd","Jakob","2021","Environmental Science","Music Performance","drozdj@allegheny.edu","0000000000",3),
+	("Quigley","Colin","2021","Neuroscience","Dance and Movement Studies","quigleyc2@allegheny.edu","0000000000",3),
+	("Sutherland","William","2021","History","Energy and Society","sutherlandw@allegheny.edu","0000000000",3),
+	("Boshaw","Max","2022","Physics","Energy and Society","boshawm@allegheny.edu","0000000000",2),
+	("Bruner","Nathan","2022","Psycology","Spanish","brunern@allegheny.edu","0000000000",2),
+	("Koscinski","Caden","2022","Computer Science","Economics","koscinskic@allegheny.edu","0000000000",2),
+	("Long","Wesley","2022","Computer Science","Art, Science, and Technology","longw@allegheny.edu","0000000000",2),
+	("Ullrich","Danny","2022","Computer Science","Economics","ullrichd@allegheny.edu","0000000000",2),
+	("Wolf","Marcus","2022","Business","Undecided","wolfm@allegheny.edu","0000000000",2),
+	("Yarborough","Aj","2022","Business","Philosophy & Psychology","yarborougha@allegheny.edu","0000000000",2),
+	("Chavez","Jose","2022","Business","Undecided","chavezj@allegheny.edu","0000000000",2),
+	("Ecker","Zachary","2022","Biology","Undecided","eckerz@allegheny.edu","0000000000",2),
+	("Mastalerz","Conner","2022","Economics & Environment Science","N/A","mastalerzc@allegheny.edu","0000000000",2),
+	("Salazar","David","2022","Biology","Political Science","salazard@allegheny.edu","0000000000",2),
+	("Caylor","Alton","2022","Environmental Science","Undecided","caylora@allegheny.edu","0000000000",2),
+	("Sesler","Ryan","2023","Biology","Music Performance","seslerr@allegheny.edu","0000000000",2),
+	("Stephenson","Luke","2023","Physics","Philosophy","stephensonl@allegheny.edu","7162242884",2);
+END$$
+
+DELIMITER ;

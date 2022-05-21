@@ -19,7 +19,6 @@ spec:
   resources:
     requests:
       storage: 5G
-  volumeMode: Filesystem
   accessModes:
     - ReadWriteOnce
 ---
@@ -52,7 +51,7 @@ spec:
         app: mysql-db
     spec:
       containers:
-        - image: mysql:8.0.24
+        - image: pi-db:1.0.0
           name: mysql-db
           env:
             - name: MYSQL_ROOT_PASSWORD

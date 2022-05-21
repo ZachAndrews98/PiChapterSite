@@ -9,13 +9,13 @@ import {
 import Brothers from './pages/Brothers';
 import About from './pages/About';
 import Home from './pages/Home';
-import Admin from './pages/Admin';
+// import Admin from './pages/Admin';
 // import Register from './pages/Register';
 import Graduates from './pages/Graduates';
 import Cabinet from './pages/Cabinet';
 import PigDinner from './pages/PigDinner';
 import Donate from './pages/Donate';
-import Login from './pages/Login';
+// import Login from './pages/Login';
 import NotFound from './pages/NotFound';
 
 import Footer from './components/Footer';
@@ -48,12 +48,12 @@ export default class App extends React.Component{
             <Route exact path="/about">
               <About />
             </Route>
-            <Route exact path="/admin">
+            {/* <Route exact path="/admin">
               <Admin />
             </Route>
             <Route exact path="/login">
               <Login />
-            </Route>
+            </Route> */}
             <Route exact path="/cabinet">
               <Cabinet />
             </Route>
@@ -63,9 +63,9 @@ export default class App extends React.Component{
             <Route exact path="/donate">
               <Donate />
             </Route>
-            <Route exact path="/login">
+            {/* <Route exact path="/login">
               <Login />
-            </Route>
+            </Route> */}
             <Route path="*">
               <NotFound />
             </Route>

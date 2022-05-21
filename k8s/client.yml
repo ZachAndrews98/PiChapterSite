@@ -51,7 +51,7 @@ spec:
     spec:
       containers:
         - name: client-deploy
-          image: pichapterclient:production
+          image: pi-ui:1.0.0
           imagePullPolicy: Never
           resources:
             limits:
