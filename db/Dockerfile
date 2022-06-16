@@ -1,4 +1,4 @@
-FROM mysql:8.0.24
+FROM mariadb:latest
 
 ENV MYSQL_DATABASE piChapter
 ENV MYSQL_ROOT_PASSWORD root

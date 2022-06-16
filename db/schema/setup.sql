@@ -552,7 +552,7 @@ END$$
 DELIMITER ;
 
 
-DROP proceure IF EXISTS `setup_brothers`;
+DROP procedure IF EXISTS `setup_brothers`;
 
 DELIMITER $$
 USE `piChapter`$$
@@ -590,3 +590,5 @@ BEGIN
 END$$
 
 DELIMITER ;
+
+CALL `piChapter`.`setup_brothers`();

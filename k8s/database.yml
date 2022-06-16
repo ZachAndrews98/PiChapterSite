@@ -35,7 +35,6 @@ spec:
   type: NodePort
   ports:
   - port: 3306
-    name: db-port
     nodePort: 30336
 ---
 apiVersion: apps/v1
@@ -57,15 +56,15 @@ spec:
       containers:
         - image: pi-db:1.0.0
           name: mysql-db
-          env:
-            - name: MYSQL_ROOT_PASSWORD
-              value: root
-            - name: MYSQL_DATABASE
-              value: piChapter
-            - name: MYSQL_USER
-              value: zach
-            - name: MYSQL_PASSWORD
-              value: toor
+          # env:
+          #   - name: MYSQL_ROOT_PASSWORD
+          #     value: root
+          #   - name: MYSQL_DATABASE
+          #     value: piChapter
+          #   - name: MYSQL_USER
+          #     value: zach
+          #   - name: MYSQL_PASSWORD
+          #     value: toor
           # ports:
           #   - containerPort: 3306
           #     name: mysql-db
